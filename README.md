@@ -1,24 +1,24 @@
-# README
+# muscle-log-3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project setup
+```
+yarn install
+```
 
-Things you may want to cover:
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-* Ruby version
+### Compiles and minifies for production
+```
+yarn build
+```
 
-* System dependencies
+### Lints and fixes files
+```
+yarn lint
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
