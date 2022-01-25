@@ -128,3 +128,63 @@ Migrating to Users (20220116034840)
   [1m[36mTRANSACTION (26.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ (erb):38:in `migration_template'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20220124215607)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar, "email" varchar, "tokens" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220124215607"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/auth" for 127.0.0.1 at 2022-01-25 08:31:05 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Auth::RegistrationsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 422 Unprocessable Entity in 202ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 25103)
+
+
+Started POST "/auth" for 127.0.0.1 at 2022-01-25 08:46:32 +0900
+  
+SyntaxError (/home/tomohiro/works/muscle-log-3/app/models/user.rb:5: syntax error, unexpected constant, expecting `do' or '{' or '('
+...        include DeviseTokenAuth::Concerns::User
+...                ^~~~~~~~~~~~~~~
+):
+  
+app/models/user.rb:5: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected constant, expecting `do' or '{' or '('
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "/auth" for 127.0.0.1 at 2022-01-25 08:48:13 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Auth::RegistrationsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "a@me.com"], ["encrypted_password", "$2a$12$.6XE3Gk/.oYUJ9qvye6su.Up9jdVbjo1kQe09FVa2GHyeJyjDhtVG"], ["name", "a"], ["email", "a@me.com"], ["created_at", "2022-01-24 23:48:13.861737"], ["updated_at", "2022-01-24 23:48:13.861737"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693}}"], ["updated_at", "2022-01-24 23:48:13.913895"], ["id", 1]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.2ms | ActiveRecord: 10.3ms | Allocations: 26508)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2022-01-25 08:52:52 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693},\"77Sp1A0cTjUY3oRlNOWvNA\":{\"token\":\"$2a$10$nBjs0ER.OBJEVqBTMrCKaOt6JU0aexFtAO3Vv8F2/cBtvO59I3a8O\",\"expiry\":1644277972}}"], ["updated_at", "2022-01-24 23:52:52.264638"], ["id", 1]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 0.2ms | ActiveRecord: 7.9ms | Allocations: 7547)
+
+
