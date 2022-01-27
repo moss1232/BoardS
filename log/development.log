@@ -282,3 +282,143 @@ Processing by DeviseTokenAuth::SessionsController#create as */*
 Completed 200 OK in 243ms (Views: 0.2ms | ActiveRecord: 16.7ms | Allocations: 12924)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikes (20220127024543)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "message_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_likes_on_message_id" ON "likes" ("message_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220127024543"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/sign_in" for 127.0.0.1 at 2022-01-27 13:30:34 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#new as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+Completed 405 Method Not Allowed in 8ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 7403)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2022-01-27 13:33:34 +0900
+Processing by DeviseTokenAuth::SessionsController#new as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+Completed 405 Method Not Allowed in 0ms (Views: 0.2ms | Allocations: 419)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2022-01-27 13:34:32 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693},\"77Sp1A0cTjUY3oRlNOWvNA\":{\"token\":\"$2a$10$nBjs0ER.OBJEVqBTMrCKaOt6JU0aexFtAO3Vv8F2/cBtvO59I3a8O\",\"expiry\":1644277972},\"es4dXxAz_RcCCrAjWKLZ9Q\":{\"token\":\"$2a$10$SfzFCZBkbYUIvQ17Id.JDOEWE2.R4C9TcSuhrTfcKdXsWovfdYzui\",\"expiry\":1644460768},\"0q9YZ6tMPLM0E08K7X5btA\":{\"token\":\"$2a$10$yCFNShJzl6yUIjDLtMQK2efnku.mViN6z289K/TDTPuF2fCdgNGdq\",\"expiry\":1644467672}}"], ["updated_at", "2022-01-27 04:34:32.230152"], ["id", 1]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 231ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 16257)
+
+
+Started POST "/messages/1/likes" for 127.0.0.1 at 2022-01-27 13:36:03 +0900
+Processing by LikesController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "id"=>"1"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 360)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2022-01-27 13:36:31 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693},\"77Sp1A0cTjUY3oRlNOWvNA\":{\"token\":\"$2a$10$nBjs0ER.OBJEVqBTMrCKaOt6JU0aexFtAO3Vv8F2/cBtvO59I3a8O\",\"expiry\":1644277972},\"es4dXxAz_RcCCrAjWKLZ9Q\":{\"token\":\"$2a$10$SfzFCZBkbYUIvQ17Id.JDOEWE2.R4C9TcSuhrTfcKdXsWovfdYzui\",\"expiry\":1644460768},\"0q9YZ6tMPLM0E08K7X5btA\":{\"token\":\"$2a$10$yCFNShJzl6yUIjDLtMQK2efnku.mViN6z289K/TDTPuF2fCdgNGdq\",\"expiry\":1644467672},\"aQcLC2DF4bzVBZ_OngbFOA\":{\"token\":\"$2a$10$XnhGWV253X0nP5u.ROLMXuYv9.chhPbYcNzxZ/b/S.TnC9sdVut.6\",\"expiry\":1644467791}}"], ["updated_at", "2022-01-27 04:36:31.923659"], ["id", 1]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 220ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 6803)
+
+
+Started POST "/messages/1/likes?access-token=[FILTERED]&client=aQcLC2DF4bzVBZ_OngbFOA&uid=a@me.com" for 127.0.0.1 at 2022-01-27 13:37:34 +0900
+Processing by LikesController#create as */*
+  Parameters: {"access-token"=>"[FILTERED]", "client"=>"aQcLC2DF4bzVBZ_OngbFOA", "uid"=>"a@me.com", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "message_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["message_id", 1], ["created_at", "2022-01-27 04:37:34.430462"], ["updated_at", "2022-01-27 04:37:34.430462"]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 0.3ms | ActiveRecord: 14.0ms | Allocations: 17995)
+
+
+Started POST "/messages/1/likes" for 127.0.0.1 at 2022-01-27 13:39:17 +0900
+Processing by LikesController#create as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "message_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["message_id", 1], ["created_at", "2022-01-27 04:39:17.563330"], ["updated_at", "2022-01-27 04:39:17.563330"]]
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 6981)
+
+
+Started DELETE "/likes/1" for 127.0.0.1 at 2022-01-27 13:46:08 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LikesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:15:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mLike Destroy (0.4ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:18:in `destroy'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 18774)
+
+
+Started DELETE "/likes/2" for 127.0.0.1 at 2022-01-27 13:46:14 +0900
+Processing by LikesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:15:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mLike Destroy (0.3ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:17:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:18:in `destroy'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 4439)
+
+
+Started DELETE "/likes/3" for 127.0.0.1 at 2022-01-27 13:46:17 +0900
+Processing by LikesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:15:in `destroy'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 553)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Like with 'id'=3):
+  
+app/controllers/likes_controller.rb:15:in `destroy'

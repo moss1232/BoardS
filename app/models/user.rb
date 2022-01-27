@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
   has_many :messages
+  has_many :likes
 
   validates :name, presence: true
   validates :name, length: {maximum: 30}
