@@ -422,3 +422,7 @@ Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 553)
 ActiveRecord::RecordNotFound (Couldn't find Like with 'id'=3):
   
 app/controllers/likes_controller.rb:15:in `destroy'
+Started GET "/%3C%=%20BASE_URL%20%%3Efavicon.ico" for 127.0.0.1 at 2022-01-27 15:30:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20BASE_URL%20%%3Efavicon.ico"):
+  
