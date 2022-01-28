@@ -7,4 +7,4 @@ import  './assets/main.css'
 
 const app = createApp(App)
 
-app.use(ElementPlus).use(router).mount('#app')
+app.use(ElementPlus, { size: 'small', zIndex: 3000 }).use(router).mount('#app')
