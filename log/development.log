@@ -426,3 +426,53 @@ Started GET "/%3C%=%20BASE_URL%20%%3Efavicon.ico" for 127.0.0.1 at 2022-01-27 15
   
 ActionController::RoutingError (No route matches [GET] "/%3C%=%20BASE_URL%20%%3Efavicon.ico"):
   
+Started POST "/auth" for ::1 at 2022-01-28 08:48:33 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"c", "email"=>"c@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"c", "email"=>"c@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "c@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "c@me.com"], ["encrypted_password", "$2a$12$q4QKUKGJED59TR2ySzZ1D.PneJ5CZiFKwprA2OFHlU8NIEOcG1sLe"], ["name", "c"], ["email", "c@me.com"], ["created_at", "2022-01-27 23:48:33.833685"], ["updated_at", "2022-01-27 23:48:33.833685"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"k80vAMa0T8XxTEGPhiBInQ\":{\"token\":\"$2a$10$eyvitGlbzq6uBGp3OjPFj.HSHEsJirNnWzUbboc0uvxNmJ3pYrUXW\",\"expiry\":1644536913}}"], ["updated_at", "2022-01-27 23:48:33.884742"], ["id", 2]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 0.2ms | ActiveRecord: 14.3ms | Allocations: 26335)
+
+
+Started POST "/auth" for ::1 at 2022-01-28 08:52:35 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"aa", "email"=>"aa@sa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"aa", "email"=>"aa@sa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "aa@sa"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 177ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 5371)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-01-28 08:56:23 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693},\"77Sp1A0cTjUY3oRlNOWvNA\":{\"token\":\"$2a$10$nBjs0ER.OBJEVqBTMrCKaOt6JU0aexFtAO3Vv8F2/cBtvO59I3a8O\",\"expiry\":1644277972},\"es4dXxAz_RcCCrAjWKLZ9Q\":{\"token\":\"$2a$10$SfzFCZBkbYUIvQ17Id.JDOEWE2.R4C9TcSuhrTfcKdXsWovfdYzui\",\"expiry\":1644460768},\"0q9YZ6tMPLM0E08K7X5btA\":{\"token\":\"$2a$10$yCFNShJzl6yUIjDLtMQK2efnku.mViN6z289K/TDTPuF2fCdgNGdq\",\"expiry\":1644467672},\"aQcLC2DF4bzVBZ_OngbFOA\":{\"token\":\"$2a$10$XnhGWV253X0nP5u.ROLMXuYv9.chhPbYcNzxZ/b/S.TnC9sdVut.6\",\"expiry\":1644467791},\"XdkPgKazU56yaZQBOvqulg\":{\"token\":\"$2a$10$EnVWfIL39EnpgO/swtPIVuek7Hpk13ZE0FDde1jMGIJdokuNEYwqi\",\"expiry\":1644537384}}"], ["updated_at", "2022-01-27 23:56:24.020403"], ["id", 1]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 221ms (Views: 0.2ms | ActiveRecord: 8.8ms | Allocations: 7653)
+
+
+Started GET "/%3C%=%20BASE_URL%20%%3Efavicon.ico" for 127.0.0.1 at 2022-01-28 08:59:18 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20BASE_URL%20%%3Efavicon.ico"):
+  

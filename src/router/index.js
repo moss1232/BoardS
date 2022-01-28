@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Welcome from '../views/Welcome.vue'
+import AppMain from '../components/AppMain.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Welcome',
     component: Welcome
+  },
+
+  {
+    path: '/appmain',
+    name: 'AppMain',
+    component: AppMain  
   }
 ]
 
