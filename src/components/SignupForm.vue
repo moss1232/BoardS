@@ -1,13 +1,33 @@
 <template>
-  <h2>アカウントを登録</h2>
-  <form @submit.prevent="signUp">
-    <input type="text" required placeholder="名前" v-model="name">
-    <input type="email" required placeholder="メールアドレス" v-model="email">
-    <input type="password" required placeholder="パスワード" v-model="password">
-    <input type="password" required placeholder="パスワード（確認用）" v-model="passwordConfirmation">
-    <div class="error">{{ error }}</div>
-    <button>登録する</button>
+
+<div class="form-wrapper">
+  <h1>Sport  book</h1>
+  <form @submit.prevent="signUp" >
+    <div class="form-item">
+      <label for="name"></label>
+      <input type="name" required placeholder="name" v-model="name">
+    </div>
+    <div class="form-item">
+      <label for="email"></label>
+      <input type="email" required placeholder="メールアドレス" v-model="email">
+    </div>
+
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="password" required placeholder="パスワード" v-model="password">
+    </div>
+    <div class="form-item">
+      <label for="password confirmation"></label>
+      <input type="password" required placeholder="確認" v-model="passwordConfirmation">
+    </div>
+    <div class="button-panel">
+      <input type="submit" class="button" title="登録" value="登録">
+    </div>
   </form>
+  <div class="form-footer">
+  </div>
+</div>
+    <div class="error">{{ error }}</div>
 </template>
 
 <script>

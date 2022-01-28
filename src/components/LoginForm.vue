@@ -1,11 +1,24 @@
 <template>
-  <h2>ログイン</h2>
-  <form @submit.prevent="login">
-    <input type="email" required placeholder="メールアドレス" v-model="email">
-    <input type="password" required placeholder="パスワード" v-model="password">
-    <div class="error">{{ error }}</div>
-    <button>ログインする</button>
+<div class="form-wrapper">
+  <h1>Sport  Book</h1>
+  <form @submit.prevent="login" >
+    <div class="form-item">
+      <label for="email"></label>
+      <input type="email" required placeholder="メールアドレス" v-model="email">
+    </div>
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="password" required placeholder="パスワード" v-model="password">
+    </div>
+    <div class="button-panel">
+      <input type="submit" class="button" title="Sign In" value="Sign In">
+    </div>
   </form>
+  <div class="form-footer">
+  </div>
+</div>
+    <div class="error">{{ error }}</div>
+
 </template>
 
 <script>
