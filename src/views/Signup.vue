@@ -1,7 +1,7 @@
 <template>
 
 <div class="form-wrapper">
-  <h1>Sport  book</h1>
+  <h1>Sign Up</h1>
   <form @submit.prevent="signUp" >
     <div class="form-item">
       <label for="name"></label>
@@ -25,6 +25,7 @@
     </div>
   </form>
   <div class="form-footer">
+    <p><a @click="shouldShowLoginForm = true">Sign in</a></p>
   </div>
 </div>
     <div class="error">{{ error }}</div>

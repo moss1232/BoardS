@@ -15,6 +15,7 @@
     </div>
   </form>
   <div class="form-footer">
+    <p><a @click="shouldShowLoginForm = true">Sign Up</a></p>
   </div>
 </div>
     <div class="error">{{ error }}</div>
@@ -26,7 +27,6 @@ import axios from 'axios'
 import setItem from '../auth/setItem'
 
 export default {
-  emits: ['redirectToAppMain'],
   data () {
     return {
       email: '',

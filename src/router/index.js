@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Welcome from '../views/Welcome.vue'
-import AppMain from '../views/AppMain.vue'
+import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import Signup from '../views/Signup.vue'
+import Chatboard from '../views/Chatboard.vue'
+import Todo from '../views/Todo.vue'
 import useValidate from '../auth/validate'
 
 const { error, validate } = useValidate()
@@ -13,7 +16,7 @@ const requireAuth = async (to, from, next) => {
 
   if (!uid || !client || !accessToken) {
     console.log('ログインしていません')
-    next({ name: 'Welcome' })
+    next({ name: 'Login' })
     return
   }
 
@@ -29,38 +32,54 @@ const requireAuth = async (to, from, next) => {
   next()
 }
 
-const noRequireAuth = async (to, from, next) => {
-  const uid = window.localStorage.getItem('uid')
-  const client = window.localStorage.getItem('client')
-  const accessToken = window.localStorage.getItem('access-token')
+// const noRequireAuth = async (to, from, next) => {
+//   const uid = window.localStorage.getItem('uid')
+//   const client = window.localStorage.getItem('client')
+//   const accessToken = window.localStorage.getItem('access-token')
 
-  if (!uid && !client && !accessToken) {
-    next()
-    return
-  }
+//   if (!uid && !client && !accessToken) {
+//     next()
+//     return
+//   }
 
-  await validate()
+//   await validate()
 
-  if (!error.value) {
-    next({ name: 'Chatroom' })
-  } else {
-    next()
-  }
-}
+//   if (!error.value) {
+//     next({ name: 'Chatroom' })
+//   } else {
+//     next()
+//   }
+// }
 
 const routes = [
   {
     path: '/',
-    name: 'Welcome',
-    component: Welcome,
-    beforeEnter: noRequireAuth
+    name: 'Home',
+    component: Home,
   },
 
   {
-    path: '/appmain',
-    name: 'AppMain',
-    component: AppMain,
-    beforeEnter: requireAuth
+    path: '/chatboard',
+    name: 'Chatboard',
+    component: Chatboard,
+  },
+
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo,
+  },
+
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup,
   }
 ]
 
