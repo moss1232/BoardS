@@ -8,7 +8,7 @@
 import Sidebar from '../components/Sidebar'
 
 export default {
-  components: { Sidebar },
+  components: { Sidebar }
 }
 </script>
 
