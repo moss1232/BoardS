@@ -1,10 +1,10 @@
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import  './assets/main.css'
 
-const app = createApp(App)
+Vue.config.productionTip = false
 
-app.use(ElementPlus, { size: 'small', zIndex: 3000 }).use(router).mount('#app')
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')

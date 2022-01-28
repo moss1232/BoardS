@@ -1,16 +1,5 @@
 <template>
-  <div class="container">
-    <Sidebar />
+  <div class="home">
+    hello
   </div>
 </template>
-
-<script>
-import Sidebar from '../components/Sidebar'
-
-export default {
-  components: { Sidebar }
-}
-</script>
-
-<style scoped>
-</style>
