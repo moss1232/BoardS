@@ -12,7 +12,9 @@
 
 <script>
 import axios from 'axios'
+import setItem from '../auth/setItem'
 export default {
+  emits: ['redirectToAppMain'],
   data () {
     return {
       name: '',
@@ -36,11 +38,13 @@ export default {
         if (!res) {
           throw new Error('アカウントを登録できませんでした')
         }
-        console.log({ res })
+        if (!this.error) {
+          setItem(res.headers, res.data.data.name)
+        }
+
         return res
       } catch (error) {
         this.error = 'アカウントを登録できませんでした'
-        console.log({ error })
       }
     }
   }

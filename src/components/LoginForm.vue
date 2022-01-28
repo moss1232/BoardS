@@ -10,8 +10,10 @@
 
 <script>
 import axios from 'axios'
+import setItem from '../auth/setItem'
 
 export default {
+  emits: ['redirectToAppMain'],
   data () {
     return {
       email: '',
@@ -33,7 +35,10 @@ export default {
           throw new Error('メールアドレスかパスワードが違います')
         }
 
-        console.log({ res })
+        if (!this.error) {
+          setItem(res.headers, res.data.data.name)
+          this.$emit('redirectToAppMain')
+        }
 
         return res
       } catch (error) {
