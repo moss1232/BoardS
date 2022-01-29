@@ -1,9 +1,16 @@
 <template>
-  <router-view/>
+<div>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
-</script>
 
-<style scoped>
-</style>
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+};
+</script>
