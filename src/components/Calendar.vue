@@ -1,6 +1,8 @@
 <template>
-  <v-app>
-    <v-main>
+  <v-col>
+    <v-sheet
+    min-height="70vh"
+    rounded="lg">
 
     <v-sheet
       tile
@@ -63,6 +65,6 @@
         @change="getEvents"
       ></v-calendar>
     </v-sheet>
-    </v-main>
-  </v-app>
+    </v-sheet>
+  </v-col>
 </template>

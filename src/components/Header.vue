@@ -33,6 +33,7 @@
         'Dashboard',
         'Schedule',
         'Todo',
+        'Member',
       ],
     }),
   }
