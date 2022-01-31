@@ -1,0 +1,14 @@
+<template>
+  <v-col>
+    <v-sheet
+    min-height="70vh"
+    rounded="lg">
+    <v-sheet
+      tile
+      height="54"
+      class="d-flex"
+    >
+    </v-sheet>
+    </v-sheet>
+  </v-col>
+</template>

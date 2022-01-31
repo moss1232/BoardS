@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DashBoard from '../views/DashBoard.vue'
-import Schedule from '../views/Schedule.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 
@@ -11,12 +9,18 @@ const routes = [
   {
     path: '/',
     name: 'DashBoard',
-    component: DashBoard
+    components: {
+    default: () => import('../views/DashBoard.vue'),
+    header: () => import('../views/Header.vue'),
+  }
   },
   {
     path: '/schedule',
     name: 'Schedule',
-    component: Schedule
+    components: {
+    default: () => import('../views/Schedule.vue'),
+    header: () => import('../views/Header.vue'),
+  }
   },
   {
     path: '/login',

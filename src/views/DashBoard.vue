@@ -1,32 +1,18 @@
 <template>
-  <v-app id="inspire">
-    <Header />    
-    <v-main class="grey lighten-3">
-      <v-container>
-        <v-row>
-
-          <!-- container -->
-          <v-col>
-            <v-sheet
-              min-height="70vh"
-              rounded="lg"
-            >
-            <calendar/>
-            </v-sheet>
-          </v-col>
-
-        </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+  <v-container>
+    <v-row>
+      <teamlist/>
+      <todolist/>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import Calendar from '../components/Calendar.vue'
-import Header from '../components/Header.vue'
+import Teamlist from '../components/Teamlist.vue'
+import Todolist from '../components/Todolist.vue'
 
 export default {
-  components: { Header, Calendar },
+  components: { Teamlist, Todolist },
   data: () => ({
     selectedItem: 1,
     items: [
