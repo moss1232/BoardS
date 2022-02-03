@@ -6,10 +6,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'DashBoard',
+    name: 'Message',
     components: {
-    default: () => import('../views/DashBoard.vue'),
-    header: () => import('../views/Header.vue'),
+    default: () => import('../views/Message.vue'),
+    sidebar: () => import('../components/Sidebar.vue'),
+    footer: () => import('../components/Footer.vue'),
+
   }
   },
   {
@@ -17,7 +19,8 @@ const routes = [
     name: 'Schedule',
     components: {
     default: () => import('../views/Schedule.vue'),
-    header: () => import('../views/Header.vue'),
+    sidebar: () => import('../components/Sidebar.vue'),
+
   }
   },
   {
@@ -25,7 +28,7 @@ const routes = [
     name: 'Login',
     components: {
     default: () => import('../views/Login.vue'),
-    // header: () => import('../views/Header.vue'),
+    // sidebar: () => import('../views/sidebar.vue'),
   }
   },
   {
@@ -33,9 +36,9 @@ const routes = [
     name: 'Signup',
     components: {
     default: () => import('../views/Signup.vue'),
-    // header: () => import('../views/Header.vue'),
+    // sidebar: () => import('../views/sidebar.vue'),
   }
-  }
+  },
 ]
 
 const router = new VueRouter({
