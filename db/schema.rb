@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_024543) do
+ActiveRecord::Schema.define(version: 2022_02_04_110024) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "name", limit: 100, null: false
+    t.datetime "start", null: false
+    t.datetime "end", null: false
+    t.boolean "timed", default: true
+    t.text "description"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"

@@ -24,6 +24,15 @@ const routes = [
   }
   },
   {
+    path: '/todo',
+    name: 'Todo',
+    components: {
+    default: () => import('../views/Todo.vue'),
+    sidebar: () => import('../components/Sidebar.vue'),
+
+  }
+  },
+  {
     path: '/login',
     name: 'Login',
     components: {

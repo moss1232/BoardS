@@ -27,10 +27,13 @@
         color="indigo"
       >
         <v-list-item
-          v-for="[icon, text] in links"
+          v-for="[icon, text, link_to] in links"
           :key="icon"
+          :to="link_to"
           link
         >
+            <!-- <router-link to="/todo"> -->
+
           <v-list-item-icon>
             <v-icon>{{ icon }}</v-icon>
           </v-list-item-icon>
@@ -38,6 +41,7 @@
           <v-list-item-content>
             <v-list-item-title>{{ text }}</v-list-item-title>
           </v-list-item-content>
+            <!-- </router-link> -->
         </v-list-item>
       </v-list-item-group>
       </v-list>
@@ -49,18 +53,16 @@
     data: () => ({
       drawer: null,
       links: [
-        ['mdi-message', 'Message'],
-        ['mdi-checkbox-outline', 'Todo'],
-        ['mdi-calendar', 'Schedule'],
-        ['mdi-account', 'Member'],
+        ['mdi-message', 'Message', '/'],
+        ['mdi-checkbox-outline', 'Todo', '/todo'],
+        ['mdi-calendar', 'Schedule', '/schedule'],
+        ['mdi-account', 'Member', '/member'],
+        ['mdi-account', 'Setting', '/setting'],
       ],
       
       items: [
         { state: 'Florida'},
         { state: 'Georgia'},
-        { state: 'Nebraska' },
-        { state: 'California' },
-        { state: 'New York' },
       ],
     }),
   }

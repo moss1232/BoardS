@@ -1,70 +1,45 @@
 <template>
-  <v-col>
-    <v-sheet
-    min-height="70vh"
-    rounded="lg">
-
-    <v-sheet
-      tile
-      height="54"
-      class="d-flex"
-    >
-      <v-btn
-        icon
-        class="ma-2"
-        @click="$refs.calendar.prev()"
-      >
+  <div>
+    <v-sheet tile height="6vh" color="grey lighten-3" class="d-flex align-center">
+      <v-btn icon @click="$refs.calendar.prev()">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-      <v-select
-        v-model="type"
-        :items="types"
-        dense
-        outlined
-        hide-details
-        class="ma-2"
-        label="type"
-      ></v-select>
-      <v-select
-        v-model="mode"
-        :items="modes"
-        dense
-        outlined
-        hide-details
-        label="event-overlap-mode"
-        class="ma-2"
-      ></v-select>
-      <v-select
-        v-model="weekday"
-        :items="weekdays"
-        dense
-        outlined
-        hide-details
-        label="weekdays"
-        class="ma-2"
-      ></v-select>
-      <v-spacer></v-spacer>
-      <v-btn
-        icon
-        class="ma-2"
-        @click="$refs.calendar.next()"
-      >
+      <v-btn icon @click="$refs.calendar.next()">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </v-sheet>
-    <v-sheet height="600">
+    <v-sheet height="94vh">
       <v-calendar
         ref="calendar"
-        v-model="value"
-        :weekdays="weekday"
-        :type="type"
         :events="events"
-        :event-overlap-mode="mode"
-        :event-overlap-threshold="30"
         :event-color="getEventColor"
         @change="getEvents"
       ></v-calendar>
     </v-sheet>
-    </v-sheet>
-  </v-col>
+  </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    events: [],
+  }),
+  methods: {
+    getEvents() {
+      const events = [
+        {
+          name: '会議',
+          start: new Date('2020-08-03T01:00:00'), // 開始時刻
+          end: new Date('2020-08-03T02:00:00'), // 終了時刻
+          color: 'blue',
+          timed: true, // 終日ならfalse
+        },
+      ];
+      this.events = events;
+    },
+    getEventColor(event) {
+      return event.color;
+    },
+  },
+};
+</script>

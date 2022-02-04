@@ -2,11 +2,11 @@
   <v-container fill-height>
     <v-card width="400px" class="mx-auto">
       <v-card-text> 
-        <v-form>
+        <v-form @submit.prevent="login">
           <v-text-field 
             prepend-icon="mdi-email" 
             label="メールアドレス" 
-            v-model="name" 
+            v-model="email" 
           />
           <v-text-field 
             v-bind:type="showPassword ? 'text' : 'password'"
@@ -16,6 +16,7 @@
             label="パスワード"
             v-model="password"
           />
+          <div class="error">{{ error }}</div>
           <v-container>
             <v-row justify="center">
               <v-col
@@ -23,7 +24,7 @@
                 sm="6"
               >
                 <div class="text-center">
-                  <v-btn class="info" @click="submit">ログイン</v-btn>
+                  <v-btn class="info" type="submit">ログイン</v-btn>
                   <v-btn text>新規登録はこちら</v-btn>
                 </div>
               </v-col>
@@ -36,19 +37,46 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   data(){
     return {
       showPassword : false,
-      name:'',
+      email:'',
       password:'',
+      error: null
     }
   },
-    methods:{
-    submit(){
-      console.log(this.name,this.password)
+  methods:{
+    async login() {
+      try {
+        this.error = null
+
+        const res = await axios.post('http://localhost:3000/auth/sign_in', {
+          email: this.email,
+          password: this.password,
+          }
+        )
+        if (!res) {
+          throw new Error('メールアドレスかパスワードが違います')
+        }
+
+        if (!this.error) {
+          this.redirectToChatRoom()
+        }
+
+        console.log({ res })
+
+        return res
+      } catch (error) {
+        console.log({ error })
+        this.error = 'メールアドレスかパスワードが違います'
+      }
+  },
+    redirectToChatRoom () {
+      this.$router.push({ name: 'Message' })
     }
   }
-};
+}
     </script>

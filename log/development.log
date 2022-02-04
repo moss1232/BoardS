@@ -582,3 +582,88 @@ Processing by DeviseTokenAuth::SessionsController#destroy as HTML
 Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 12.7ms | Allocations: 4629)
 
 
+Started POST "/auth" for ::1 at 2022-02-04 15:10:53 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"b", "email"=>"b@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"b", "email"=>"b@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "b@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "b@me.com"], ["encrypted_password", "$2a$12$T1o7lLhvWu5/wVBP2PwxnOfBDmIjPN2fX2C25N2V81vwfBEyUZbQy"], ["name", "b"], ["email", "b@me.com"], ["created_at", "2022-02-04 06:10:53.991112"], ["updated_at", "2022-02-04 06:10:53.991112"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"1k6E762BNQ40eDB7ZH-bKw\":{\"token\":\"$2a$10$ppo5SlLr5/l/D5w2SV6TROQeslHRrwoBQzqbz8Q2IF.LhzlsuVJwG\",\"expiry\":1645164654}}"], ["updated_at", "2022-02-04 06:10:54.043980"], ["id", 3]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.2ms | ActiveRecord: 12.7ms | Allocations: 27929)
+
+
+Started POST "/auth" for ::1 at 2022-02-04 15:23:38 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"a", "email"=>"a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"a", "email"=>"a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (12.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "a"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 182ms (Views: 0.4ms | ActiveRecord: 12.9ms | Allocations: 4498)
+
+
+Started POST "/auth" for ::1 at 2022-02-04 15:24:04 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 170ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 4048)
+
+
+Started POST "/auth" for ::1 at 2022-02-04 15:25:20 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"a", "email"=>"a@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 171ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 4813)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-04 16:21:06 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"o9zt5kdIzQzFudbGqhtNMA\":{\"token\":\"$2a$10$7xu3C2dFxErfm3bWKUN6W.OmD1sGol0YuTa1A7nT47jt0nY6YJdfq\",\"expiry\":1644277693},\"77Sp1A0cTjUY3oRlNOWvNA\":{\"token\":\"$2a$10$nBjs0ER.OBJEVqBTMrCKaOt6JU0aexFtAO3Vv8F2/cBtvO59I3a8O\",\"expiry\":1644277972},\"es4dXxAz_RcCCrAjWKLZ9Q\":{\"token\":\"$2a$10$SfzFCZBkbYUIvQ17Id.JDOEWE2.R4C9TcSuhrTfcKdXsWovfdYzui\",\"expiry\":1644460768},\"0q9YZ6tMPLM0E08K7X5btA\":{\"token\":\"$2a$10$yCFNShJzl6yUIjDLtMQK2efnku.mViN6z289K/TDTPuF2fCdgNGdq\",\"expiry\":1644467672},\"aQcLC2DF4bzVBZ_OngbFOA\":{\"token\":\"$2a$10$XnhGWV253X0nP5u.ROLMXuYv9.chhPbYcNzxZ/b/S.TnC9sdVut.6\",\"expiry\":1644467791},\"XdkPgKazU56yaZQBOvqulg\":{\"token\":\"$2a$10$EnVWfIL39EnpgO/swtPIVuek7Hpk13ZE0FDde1jMGIJdokuNEYwqi\",\"expiry\":1644537384},\"QuWA7lqG8W2ig7d7u6HWvQ\":{\"token\":\"$2a$10$bGJJqFdugwsIWTREzrw1lOwkev3MzmbpOHLO.jtPP3ppQyt1HjWUm\",\"expiry\":1644539071},\"csgGBrZYESZsTgNJ3_Ua1g\":{\"token\":\"$2a$10$b79tVYi.ICjzsIuzv6sQHOaE1OQFGIGI2WyStJ.7lFidI.77Xi7Lu\",\"expiry\":1645168866}}"], ["updated_at", "2022-02-04 07:21:06.353941"], ["id", 1]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 274ms (Views: 0.9ms | ActiveRecord: 9.3ms | Allocations: 9098)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20220204110024)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20220204110024)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100) NOT NULL, "start" datetime NOT NULL, "end" datetime NOT NULL, "timed" boolean DEFAULT 1, "description" text, "color" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220204110024"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

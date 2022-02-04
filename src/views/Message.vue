@@ -1,9 +1,5 @@
 <template>
-  <v-container>
-    <v-row>
-      <messageList/>
-    </v-row>
-  </v-container>
+  <messageList/>
 </template>
 
 <script>

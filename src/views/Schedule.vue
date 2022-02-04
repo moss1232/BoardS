@@ -1,9 +1,5 @@
 <template>
-  <v-container>
-    <v-row>
       <calendar/>
-    </v-row>
-  </v-container>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
   <v-container fill-height>
     <v-card width="400px" class="mx-auto">
       <v-card-text> 
-        <v-form>
+        <v-form @submit.prevent="signUp">
           <v-text-field 
             prepend-icon="mdi-account-circle" 
             label="ユーザ名" 
@@ -12,6 +12,7 @@
             prepend-icon="mdi-email" 
             label="メールアドレス" 
             v-model="email" 
+            type="email"
           />
           <v-text-field 
             v-bind:type="showPassword ? 'text' : 'password'"
@@ -27,8 +28,9 @@
             prepend-icon="mdi-lock-check" 
             v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             label="パスワード確認"
-            v-model="password_confirmation"
+            v-model="passwordConfirmation"
           />
+          <div class="error">{{error}}</div>
           <v-container>
             <v-row justify="center">
               <v-col
@@ -36,8 +38,8 @@
                 sm="6"
               >
                 <div class="text-center">
-                  <v-btn class="info" @click="submit">新規登録</v-btn>
-                  <!-- <v-btn text>新規登録はこちら</v-btn> -->
+                  <v-btn class="info" type="submit">新規登録</v-btn>
+                  <!-- <v-btn text>アカウントをお持ちの方はこちら</v-btn> -->
                 </div>
               </v-col>
             </v-row>
@@ -49,6 +51,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   data(){
@@ -57,13 +60,31 @@ export default {
       name:'',
       email:'',
       password:'',
-      password_confirmation:'',
+      passwordConfirmation:'',
+      error: null
     }
   },
-    methods:{
-    submit(){
-      console.log(this.name,this.password)
+  methods:{
+    async signUp () {
+      this.error = null
+      try {
+        const res = await axios.post('http://localhost:3000/auth', {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.passwordConfirmation
+          }
+        )
+        if (!res) {
+          throw new Error('アカウントを登録できませんでした')
+        }
+        this.error = null
+        console.log({ res })
+        return res
+      } catch (error) {
+        this.error = 'アカウントを登録できませんでした'
+      }
     }
   }
-};
-    </script>
+}
+  </script>
