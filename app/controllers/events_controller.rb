@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-    if event.update(event_padrams)
+    if event.update(event_params)
       render json: event
     else
       render json: event.errors, status: 422
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
       private
 
           def event_params
-          params.require(:event).permit(:id, :name, :start, :end, :timed, :description, :color)
+          params.require(:event).permit(:id, :name, :start, :end, :timed, :description, :color, :created_at, :updated_at)
         end
 end
 

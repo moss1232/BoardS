@@ -14,21 +14,22 @@
         <div v-show="!allDay">
           <TimeForm v-model="startTime" />
         </div>
-          <span class="px-2">–</span>
-          <DateForm v-model="endDate" :isError="isInvalidDatetime" />
+        <span class="px-2">–</span>
+        <DateForm v-model="endDate" :isError="isInvalidDatetime" />
         <div v-show="!allDay">
-            <TimeForm v-model="endTime" :isError="isInvalidDatetime" />
+          <TimeForm v-model="endTime" :isError="isInvalidDatetime" />
         </div>
       </DialogSection>
-        <DialogSection>
-          <CheckBox v-model="allDay" label="終日" class="ma-0 pa-0" />
-        </DialogSection>
+      <DialogSection>
+        <CheckBox v-model="allDay" label="終日" class="ma-0 pa-0" />
+      </DialogSection>
       <DialogSection icon="mdi-card-text-outline">
         <TextForm v-model="description" />
       </DialogSection>
     </v-card-text>
     <v-card-actions class="d-flex justify-end">
-        <v-btn :disabled="isInvalid" @click="submit">保存</v-btn>
+      <v-btn @click="cancel">キャンセル</v-btn>
+      <v-btn :disabled="isInvalid" @click="submit">保存</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -43,8 +44,7 @@ import DateForm from "./DateForm";
 import TimeForm from "./TimeForm";
 import TextForm from "./TextForm";
 import CheckBox from "./CheckBox";
-  import { isGreaterEndThanStart } from '../../functions/datetime';
-
+import { isGreaterEndThanStart } from "../../functions/datetime";
 
 export default {
   name: "EventFormDialog",
@@ -67,12 +67,18 @@ export default {
   }),
   computed: {
     ...mapGetters("events", ["event"]),
-      isInvalidDatetime() {
-        return !isGreaterEndThanStart(this.startDate, this.startTime, this.endDate, this.endTime, this.allDay);
-      },
-      isInvalid() {
-        return this.$v.$invalid || this.isInvalidDatetime;
-      },
+    isInvalidDatetime() {
+      return !isGreaterEndThanStart(
+        this.startDate,
+        this.startTime,
+        this.endDate,
+        this.endTime,
+        this.allDay
+      );
+    },
+    isInvalid() {
+      return this.$v.$invalid || this.isInvalidDatetime;
+    },
   },
   validations: {
     name: { required },
@@ -80,31 +86,49 @@ export default {
     endDate: { required },
   },
   created() {
+    this.name = this.event.name;
     this.startDate = this.event.startDate;
     this.startTime = this.event.startTime;
     this.endDate = this.event.endDate;
     this.endTime = this.event.endTime;
+    this.description = this.event.description;
     this.allDay = !this.event.timed;
   },
   methods: {
-    ...mapActions("events", ["setEvent", "setEditMode", "createEvent"]),
+    ...mapActions("events", [
+      "setEvent",
+      "setEditMode",
+      "createEvent",
+      "updateEvent",
+    ]),
     closeDialog() {
       this.setEditMode(false);
       this.setEvent(null);
     },
     submit() {
-        if (this.isInvalid) {
-          return
-        }
+      if (this.isInvalid) {
+        return;
+      }
       const params = {
+        ...this.event,
         name: this.name,
         start: `${this.startDate} ${this.startTime || ""}`,
         end: `${this.endDate} ${this.endTime || ""}`,
         description: this.description,
         timed: !this.allDay,
       };
-      this.createEvent(params);
+      if (params.id) {
+        this.updateEvent(params);
+      } else {
+        this.createEvent(params);
+      }
       this.closeDialog();
+    },
+    cancel() {
+      this.setEditMode(false);
+      if (!this.event.id) {
+        this.setEvent(null);
+      }
     },
   },
 };

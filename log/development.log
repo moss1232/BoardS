@@ -1682,3 +1682,107 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1721)
 
 
+Started GET "/events" for 127.0.0.1 at 2022-02-06 18:52:35 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 2.2ms | Allocations: 9675)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-06 18:55:23 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1764)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-06 18:55:27 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1735)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-06 18:55:39 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1735)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-06 18:55:58 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1721)
+
+
+Started PUT "/events/6" for 127.0.0.1 at 2022-02-06 18:56:51 +0900
+Processing by EventsController#update as HTML
+  Parameters: {"id"=>"6", "name"=>"会議", "start"=>"2022/02/09 00:15", "end"=>"2022/02/09 00:30", "timed"=>true, "description"=>"fｆｄさ", "color"=>"#2196F3", "created_at"=>"2022-02-06T17:20:19.961+09:00", "updated_at"=>"2022-02-06T17:20:19.961+09:00", "startDate"=>"2022/02/09", "startTime"=>"00:15", "endDate"=>"2022/02/09", "endTime"=>"00:15", "event"=>{"id"=>"6", "name"=>"会議", "start"=>"2022/02/09 00:15", "end"=>"2022/02/09 00:30", "timed"=>true, "description"=>"fｆｄさ", "color"=>"#2196F3", "created_at"=>"2022-02-06T17:20:19.961+09:00", "updated_at"=>"2022-02-06T17:20:19.961+09:00"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 5075)
+
+
+  
+NameError (undefined local variable or method `event_padrams' for #<EventsController:0x00000000007c60>
+Did you mean?  event_params):
+  
+app/controllers/events_controller.rb:21:in `update'
+Started PUT "/events/6" for 127.0.0.1 at 2022-02-06 18:57:15 +0900
+Processing by EventsController#update as HTML
+  Parameters: {"id"=>"6", "name"=>"会議", "start"=>"2022/02/09 00:15", "end"=>"2022/02/09 00:30", "timed"=>true, "description"=>"ミーティング", "color"=>"#2196F3", "created_at"=>"2022-02-06T17:20:19.961+09:00", "updated_at"=>"2022-02-06T17:20:19.961+09:00", "startDate"=>"2022/02/09", "startTime"=>"00:15", "endDate"=>"2022/02/09", "endTime"=>"00:15", "event"=>{"id"=>"6", "name"=>"会議", "start"=>"2022/02/09 00:15", "end"=>"2022/02/09 00:30", "timed"=>true, "description"=>"ミーティング", "color"=>"#2196F3", "created_at"=>"2022-02-06T17:20:19.961+09:00", "updated_at"=>"2022-02-06T17:20:19.961+09:00"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 2975)
+
+
+  
+NameError (undefined local variable or method `event_padrams' for #<EventsController:0x00000000007ee0>
+Did you mean?  event_params):
+  
+app/controllers/events_controller.rb:21:in `update'
+Started POST "/events" for 127.0.0.1 at 2022-02-06 19:00:58 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "startDate"=>"2022/02/08", "startTime"=>"20:00", "endDate"=>"2022/02/08", "endTime"=>"21:00", "color"=>"#2196F3", "description"=>"北海道", "event"=>{"name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "description"=>"北海道", "color"=>"#2196F3"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mEvent Create (2.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "start", "end", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "旅行"], ["start", "2022-02-08 11:00:00"], ["end", "2022-02-08 12:00:00"], ["description", "北海道"], ["color", "#2196F3"], ["created_at", "2022-02-06 10:00:58.148988"], ["updated_at", "2022-02-06 10:00:58.148988"]]
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 7.4ms | Allocations: 4976)
+
+
+Started PUT "/events/7" for 127.0.0.1 at 2022-02-06 19:03:08 +0900
+Processing by EventsController#update as HTML
+  Parameters: {"id"=>"7", "name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "description"=>"北海道\n更新", "color"=>"#2196F3", "created_at"=>"2022-02-06T19:00:58.148+09:00", "updated_at"=>"2022-02-06T19:00:58.148+09:00", "startDate"=>"2022/02/08", "startTime"=>"20:00", "endDate"=>"2022/02/08", "endTime"=>"21:00", "event"=>{"id"=>"7", "name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "description"=>"北海道\n更新", "color"=>"#2196F3", "created_at"=>"2022-02-06T19:00:58.148+09:00", "updated_at"=>"2022-02-06T19:00:58.148+09:00"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 2872)
+
+
+  
+NameError (undefined local variable or method `event_padrams' for #<EventsController:0x00000000008188>
+Did you mean?  event_params):
+  
+app/controllers/events_controller.rb:21:in `update'
+Started PUT "/events/7" for 127.0.0.1 at 2022-02-06 19:05:01 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#update as HTML
+  Parameters: {"id"=>"7", "name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "description"=>"北海道\n更新", "color"=>"#2196F3", "created_at"=>"2022-02-06T19:00:58.148+09:00", "updated_at"=>"2022-02-06T19:00:58.148+09:00", "startDate"=>"2022/02/08", "startTime"=>"20:00", "endDate"=>"2022/02/08", "endTime"=>"21:00", "event"=>{"id"=>"7", "name"=>"旅行", "start"=>"2022/02/08 20:00", "end"=>"2022/02/08 21:00", "timed"=>true, "description"=>"北海道\n更新", "color"=>"#2196F3", "created_at"=>"2022-02-06T19:00:58.148+09:00", "updated_at"=>"2022-02-06T19:00:58.148+09:00"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20:in `update'
+[31mUnpermitted parameters: :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:21:in `update'
+  [1m[36mEvent Update (0.3ms)[0m  [1m[33mUPDATE "events" SET "description" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["description", "北海道\n更新"], ["updated_at", "2022-02-06 10:05:01.085913"], ["id", 7]]
+  ↳ app/controllers/events_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:21:in `update'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 6.1ms | Allocations: 9049)
+
+
