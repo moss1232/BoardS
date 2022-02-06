@@ -31,11 +31,11 @@ class EventsController < ApplicationController
     event.destroy!
     render json: event
   end
+
       private
 
-        def event_params
+          def event_params
           params.require(:event).permit(:id, :name, :start, :end, :timed, :description, :color)
         end
-      end
-
 end
+

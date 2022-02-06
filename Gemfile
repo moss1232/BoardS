@@ -27,6 +27,8 @@ gem 'devise', '~> 4.8'
 gem 'devise_token_auth', '~> 1.2'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 
+gem 'prettier', '~> 0.13.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3', '~> 1.4'
