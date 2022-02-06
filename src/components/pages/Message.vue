@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MessageList from '../components/MessageList.vue'
+import MessageList from '../layouts/MessageList.vue'
 
 export default {
   components: { MessageList },

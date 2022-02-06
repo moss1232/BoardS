@@ -5,50 +5,47 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Message',
+    path: "/",
+    name: "Message",
     components: {
-    default: () => import('../views/Message.vue'),
-    sidebar: () => import('../components/Sidebar.vue'),
-    footer: () => import('../components/Footer.vue'),
-
-  }
+      default: () => import("../components/pages/Message.vue"),
+      sidebar: () => import("../components/layouts/Sidebar.vue"),
+      footer: () => import("../components/layouts/Footer.vue"),
+    },
   },
   {
-    path: '/schedule',
-    name: 'Schedule',
+    path: "/schedule",
+    name: "Schedule",
     components: {
-    default: () => import('../views/Schedule.vue'),
-    sidebar: () => import('../components/Sidebar.vue'),
-
-  }
+      default: () => import("../components/pages/Schedule.vue"),
+      sidebar: () => import("../components/layouts/Sidebar.vue"),
+    },
   },
   {
-    path: '/todo',
-    name: 'Todo',
+    path: "/todo",
+    name: "Todo",
     components: {
-    default: () => import('../views/Todo.vue'),
-    sidebar: () => import('../components/Sidebar.vue'),
-
-  }
+      default: () => import("../components/pages/Todo.vue"),
+      sidebar: () => import("../components/layouts/Sidebar.vue"),
+    },
   },
   {
-    path: '/login',
-    name: 'Login',
+    path: "/login",
+    name: "Login",
     components: {
-    default: () => import('../views/Login.vue'),
-    // sidebar: () => import('../views/sidebar.vue'),
-  }
+      default: () => import("../components/pages/Login.vue"),
+      // sidebar: () => import('../components/pages/sidebar.vue'),
+    },
   },
   {
-    path: '/signup',
-    name: 'Signup',
+    path: "/signup",
+    name: "Signup",
     components: {
-    default: () => import('../views/Signup.vue'),
-    // sidebar: () => import('../views/sidebar.vue'),
-  }
+      default: () => import("../components/pages/Signup.vue"),
+      // sidebar: () => import('../components/pages/sidebar.vue'),
+    },
   },
-]
+];
 
 const router = new VueRouter({
   mode: 'history',

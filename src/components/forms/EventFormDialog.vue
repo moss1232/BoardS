@@ -39,11 +39,11 @@ import { mapGetters, mapActions } from "vuex";
 import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 
-import DialogSection from "./DialogSection";
+import DialogSection from "../events/DialogSection.vue";
 import DateForm from "./DateForm";
 import TimeForm from "./TimeForm";
 import TextForm from "./TextForm";
-import CheckBox from "./CheckBox";
+import CheckBox from "../events/CheckBox";
 import { isGreaterEndThanStart } from "../../functions/datetime";
 
 export default {
