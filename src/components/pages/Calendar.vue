@@ -42,7 +42,7 @@
 import { format } from "date-fns";
 import { mapGetters, mapActions } from "vuex";
 
-import EventDetailDialog from "../events/EventDetailDialog";
+import EventDetailDialog from "../events/EventDetailDialog.vue";
 import EventFormDialog from "../forms/EventFormDialog.vue";
 import { getDefaultStartAndEnd } from "../../functions/datetime";
 

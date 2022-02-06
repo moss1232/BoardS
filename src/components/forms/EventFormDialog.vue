@@ -39,7 +39,7 @@ import { mapGetters, mapActions } from "vuex";
 import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 
-import DialogSection from "../events/DialogSection.vue";
+import DialogSection from "../layouts/DialogSection.vue";
 import DateForm from "./DateForm";
 import TimeForm from "./TimeForm";
 import TextForm from "./TextForm";
