@@ -6,12 +6,22 @@
       </v-btn>
     </v-card-actions>
     <v-card-text>
-      <DialogSection icon="mdi-square" :color="event.color || 'blue'">
+      <DialogSection icon="mdi-square" :color="event.color">
         <v-text-field v-model="name" label="タイトル"></v-text-field>
       </DialogSection>
       <DialogSection icon="mdi-clock-outline">
         <DateForm v-model="startDate" />
+        <div v-show="!allDay">
+          <TimeForm v-model="startTime" />
+        </div>
         <DateForm v-model="endDate" />
+        <div v-show="!allDay">
+          <TimeForm v-model="endTime" />
+        </div>
+        <CheckBox v-model="allDay" label="終日" />
+      </DialogSection>
+      <DialogSection icon="mdi-card-text-outline">
+        <TextForm v-model="description" />
       </DialogSection>
     </v-card-text>
     <v-card-actions class="d-flex justify-end">
@@ -24,25 +34,37 @@
 import { mapGetters, mapActions } from "vuex";
 import DialogSection from "./DialogSection";
 import DateForm from "./DateForm";
-import { format } from "date-fns";
+import TimeForm from "./TimeForm";
+import TextForm from "./TextForm";
+import CheckBox from "./CheckBox";
 
 export default {
   name: "EventFormDialog",
   components: {
     DialogSection,
     DateForm,
+    TimeForm,
+    TextForm,
+    CheckBox,
   },
   data: () => ({
     name: "",
     startDate: null,
+    startTime: null,
     endDate: null,
+    endTime: null,
+    description: "",
+    allDay: false,
   }),
   computed: {
     ...mapGetters("events", ["event"]),
   },
   created() {
-    this.startDate = format(this.event.start, "yyyy/MM/dd");
-    this.endDate = format(this.event.end, "yyyy/MM/dd");
+    this.startDate = this.event.startDate;
+    this.startTime = this.event.startTime;
+    this.endDate = this.event.endDate;
+    this.endTime = this.event.endTime;
+    this.allDay = !this.event.timed;
   },
   methods: {
     ...mapActions("events", ["setEvent", "setEditMode", "createEvent"]),
@@ -53,8 +75,10 @@ export default {
     submit() {
       const params = {
         name: this.name,
-        start: this.startDate,
-        end: this.endDate,
+        start: `${this.startDate} ${this.startTime || ""}`,
+        end: `${this.endDate} ${this.endTime || ""}`,
+        description: this.description,
+        timed: !this.allDay,
       };
       this.createEvent(params);
       this.closeDialog();
