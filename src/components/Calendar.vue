@@ -42,6 +42,7 @@ import { format } from "date-fns";
 import { mapGetters, mapActions } from "vuex";
   import EventDetailDialog from './event/EventDetailDialog';
   import EventFormDialog from './event/EventFormDialog.vue';
+  import { getDefaultStartAndEnd } from '../functions/datetime';
 
 export default {
     components: {
@@ -72,8 +73,7 @@ export default {
       },
       initEvent({ date }) {
         date = date.replace(/-/g, '/');
-        const start = format(new Date(date), 'yyyy/MM/dd 00:00:00')
-        const end = format(new Date(date), 'yyyy/MM/dd 01:00:00')
+        const [start, end] = getDefaultStartAndEnd(date);
         this.setEvent({ name: '', start, end, timed: true });
         this.setEditMode(true);
       },
