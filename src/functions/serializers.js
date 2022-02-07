@@ -32,5 +32,3 @@ const serializeMessage = (message) => {
     content,
   };
 };
-
-console.log(serializeMessage)

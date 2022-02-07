@@ -4,6 +4,7 @@
       v-model="dialog"
       persistent
       max-width="600px"
+      @click:outside="closeDialog"
       
     >
       <template v-slot:activator="{ on, attrs }">
@@ -120,5 +121,9 @@
     data: () => ({
       dialog: false,
     }),
+    methods: {
+    closeDialog() {
+    },
+    }
   }
 </script>

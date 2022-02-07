@@ -11,23 +11,18 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  data: () => ({
-    messages: [],
-  }),
+  data: () => ({}),
+  computed: {
+    ...mapGetters("messages", ["messages"]),
+  },
   methods: {
-    fetchMessages() {
-      axios
-        .get("http://localhost:3000/messages")
-        .then((response) => {
-          this.messages = response.data;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
+    ...mapActions("messages", ["fetchMessages"]),
+  },
+  mounted() {
+    this.fetchMessages();
   },
 };
 </script>

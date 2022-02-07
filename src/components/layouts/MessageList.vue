@@ -9,9 +9,9 @@
                 <v-list-item-avatar color="grey darken-1"> </v-list-item-avatar>
 
                 <v-list-item-content>
-                  <v-list-item-title
-                    >Title {{ messages.title }}</v-list-item-title
-                  >
+                  <v-list-item-title>
+                    Title 
+                    </v-list-item-title>
 
                   <v-list-item-subtitle>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -32,13 +32,19 @@
 
 <script>
 import MessageCreateFormButton from "./MessageCreateFormButton.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: { MessageCreateFormButton },
   data: () => ({}),
   computed: {
     ...mapGetters("messages", ["messages"]),
+  },
+  methods: {
+    ...mapActions("messages", ["fetchMessages"]),
+  },
+  mounted() {
+    this.fetchMessages()
   },
 };
 </script>
