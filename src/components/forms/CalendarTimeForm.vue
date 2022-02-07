@@ -17,7 +17,6 @@
   import { getTimeIntervalList } from '../../functions/datetime';
 
 export default {
-  name: 'TimeForm',
     props: ['value', 'isError'],
     computed: {
       times() {

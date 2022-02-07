@@ -10,21 +10,21 @@
         <v-text-field v-model="name" label="タイトル"></v-text-field>
       </DialogSection>
       <DialogSection icon="mdi-clock-outline">
-        <DateForm v-model="startDate" />
+        <CalendarDateForm v-model="startDate" />
         <div v-show="!allDay">
-          <TimeForm v-model="startTime" />
+          <CalendarTimeForm v-model="startTime" />
         </div>
         <span class="px-2">–</span>
-        <DateForm v-model="endDate" :isError="isInvalidDatetime" />
+        <CalendarDateForm v-model="endDate" :isError="isInvalidDatetime" />
         <div v-show="!allDay">
-          <TimeForm v-model="endTime" :isError="isInvalidDatetime" />
+          <CalendarTimeForm v-model="endTime" :isError="isInvalidDatetime" />
         </div>
       </DialogSection>
       <DialogSection>
         <CheckBox v-model="allDay" label="終日" class="ma-0 pa-0" />
       </DialogSection>
       <DialogSection icon="mdi-card-text-outline">
-        <TextForm v-model="description" />
+        <CalendarTextForm v-model="description" />
       </DialogSection>
     </v-card-text>
     <v-card-actions class="d-flex justify-end">
@@ -40,20 +40,19 @@ import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
 
 import DialogSection from "../layouts/DialogSection.vue";
-import DateForm from "./DateForm";
-import TimeForm from "./TimeForm";
-import TextForm from "./TextForm";
+import CalendarDateForm from "./CalendarDateForm";
+import CalendarTimeForm from "./CalendarTimeForm";
+import CalendarTextForm from "./CalendarTextForm";
 import CheckBox from "../events/CheckBox";
 import { isGreaterEndThanStart } from "../../functions/datetime";
 
 export default {
-  name: "EventFormDialog",
   mixins: [validationMixin],
   components: {
     DialogSection,
-    DateForm,
-    TimeForm,
-    TextForm,
+    CalendarDateForm,
+    CalendarTimeForm,
+    CalendarTextForm,
     CheckBox,
   },
   data: () => ({

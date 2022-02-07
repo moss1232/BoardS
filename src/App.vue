@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <router-view name="sidebar" />
     <v-main class="grey lighten-3">
+      <router-view name="main_header" />
       <router-view name="default" />
     </v-main>
     <router-view name="footer" />

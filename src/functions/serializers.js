@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 
-export const serializeEvent = (event) => {
+export
+  const serializeEvent = (event) => {
   if (event === null) {
     return null;
   }
@@ -17,3 +18,19 @@ export const serializeEvent = (event) => {
     color: event.color || "#2196F3",
   };
 };
+
+export
+const serializeMessage = (message) => {
+  if (message === null) {
+    return null;
+  }
+  const title = message.title;
+  const content = message.content;
+  return {
+    ...message,
+    title,
+    content,
+  };
+};
+
+console.log(serializeMessage)

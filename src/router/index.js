@@ -10,7 +10,7 @@ const routes = [
     components: {
       default: () => import("../components/pages/Message.vue"),
       sidebar: () => import("../components/layouts/Sidebar.vue"),
-      footer: () => import("../components/layouts/Footer.vue"),
+      // footer: () => import("../components/layouts/Footer.vue"),
     },
   },
   {
@@ -27,6 +27,7 @@ const routes = [
     components: {
       default: () => import("../components/pages/Todo.vue"),
       sidebar: () => import("../components/layouts/Sidebar.vue"),
+      // main_header: () => import("../components/layouts/TodoTab.vue"),
     },
   },
   {
@@ -42,6 +43,14 @@ const routes = [
     name: "Signup",
     components: {
       default: () => import("../components/pages/Signup.vue"),
+      // sidebar: () => import('../components/pages/sidebar.vue'),
+    },
+  },
+  {
+    path: "/test",
+    name: "Test",
+    components: {
+      default: () => import("../test/Test.vue"),
       // sidebar: () => import('../components/pages/sidebar.vue'),
     },
   },

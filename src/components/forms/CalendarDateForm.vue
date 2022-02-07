@@ -19,7 +19,6 @@
 <script>
   import { formatDateToJa } from '../../functions/datetime';
 export default {
-  name: 'DateForm',
     props: ['value', 'isError'],
     methods: {
       formatDateToJa,

@@ -17,8 +17,8 @@
     </v-sheet>
 
     <v-dialog :value="event !== null" @click:outside="closeDialog" width="600">
-      <EventDetailDialog v-if="event !== null && !isEditMode" />
-      <EventFormDialog v-if="event !== null && isEditMode" />
+      <CalendarEventDetailDialog v-if="event !== null && !isEditMode" />
+      <CalendarEventFormDialog v-if="event !== null && isEditMode" />
     </v-dialog>
     <v-sheet height="95vh">
       <v-calendar
@@ -42,14 +42,14 @@
 import { format } from "date-fns";
 import { mapGetters, mapActions } from "vuex";
 
-import EventDetailDialog from "../events/EventDetailDialog.vue";
-import EventFormDialog from "../forms/EventFormDialog.vue";
+import CalendarEventDetailDialog from "../events/CalendarEventDetailDialog.vue";
+import CalendarEventFormDialog from "../forms/CalendarEventFormDialog.vue";
 import { getDefaultStartAndEnd } from "../../functions/datetime";
 
 export default {
   components: {
-    EventDetailDialog,
-    EventFormDialog,
+    CalendarEventDetailDialog,
+    CalendarEventFormDialog,
   },
   data: () => ({
     value: format(new Date(), "yyyy/MM/dd"),

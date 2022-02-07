@@ -1,5 +1,5 @@
 3.times do |number|
-  Message.create(content: "#{number}番目のメッセージです！", user_id: User.first.id)
+  Message.create(content: "#{number}番目のメッセージです！", user_id: User.first.id, title: "#{number}番目のタイトルです！")
   puts "#{number}番目のメッセージを作成しました"
 end
 

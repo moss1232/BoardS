@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import events from "./modules/events";
+import messages from "./modules/messages";
 
 Vue.use(Vuex)
 
@@ -10,6 +11,7 @@ const store = new Vuex.Store({
   },
   modules: {
     events,
+    messages,
   },
 });
 

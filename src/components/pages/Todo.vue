@@ -1,13 +1,12 @@
 <template>
-      <todoList/>
+  <todoList />
 </template>
 
 <script>
-import TodoList from '../layouts/Todolist.vue'
+import TodoList from "../layouts/TodoList.vue";
 
 export default {
   components: { TodoList },
-  data: () => ({
-  }),
-}
+  data: () => ({}),
+};
 </script>

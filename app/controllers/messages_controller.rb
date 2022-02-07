@@ -1,18 +1,32 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!, only: ["index"]
+  # before_action :authenticate_user!, only: ["index"]
   def index
-    messages = Message.all
-    messages_array = messages.map do |message|
-      {
-        id: message.id,
-        user_id: message.user.id,
-        name: message.user.name,
-        content: message.content,
-        email: message.user.email,
-        created_at: message.created_at,
-        likes: message.likes.map { |like| { id: like.id, email: like.user.email }  }      }
-    end
-
-    render json: messages_array, status: 200
+    render json: Message.all
   end
+
+  def show
+    render json: Message.find(params[:id])
+  end
+
+  def create
+    message = Message.new(message_params)
+    if message.save
+      render json: message
+    else
+      render json: message.errors, status: 422
+    end
+  end
+
+  def destroy
+    # 指定したidのイベントデータを削除する
+    message = Message.find(params[:id])
+    message.destroy!
+    render json: message
+  end
+
+      private
+
+          def message_params
+          params.require(:message).permit(:id, :name, :start, :end, :timed, :description, :color, :created_at, :updated_at)
+        end
 end
