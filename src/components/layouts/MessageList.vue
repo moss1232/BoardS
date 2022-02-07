@@ -1,27 +1,33 @@
 <template>
-  <v-container class="py-8 px-6" fluid>
-    <v-row>
-      <v-col cols="12">
-        <v-card>
-          <v-list two-line>
-            <template>
-              <v-list-item v-for="message in messages" :key="message.title"
-              link to="#">
-                <v-list-item-avatar color="grey darken-1"> </v-list-item-avatar>
-
-                <v-list-item-content>
-                  <v-list-item-title>
-                    {{ message.title }}
-                    </v-list-item-title>
-                  <v-list-item-subtitle>
-                    {{ message.content }}
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-          </v-list>
-        </v-card>
-      </v-col>
+  <v-container>
+    <v-row justify="center">
+      <v-expansion-panels popout>
+        <v-expansion-panel
+          v-for="message in messages"
+          :key="message.title"
+          hide-actions
+        >
+          <v-expansion-panel-header>
+            <v-row align="center" class="spacer" no-gutters>
+              <v-col cols="4" sm="2" md="1">
+                <v-avatar size="36px">
+                  <img v-if="message.avatar" alt="Avatar" />
+                </v-avatar>
+              </v-col>
+              <v-col class="hidden-xs-only" sm="5" md="3">
+                <strong v-html="message.title"></strong>
+              </v-col>
+              <v-col class="text-no-wrap" cols="5" sm="3">
+                <strong v-html="message.content"></strong>
+              </v-col>
+            </v-row>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-divider></v-divider>
+            <v-card-text v-text="lorem"></v-card-text>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-row>
     <MessageCreateFormButton />
   </v-container>
@@ -33,8 +39,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: { MessageCreateFormButton },
-  data: () => ({
-      }),
+  data: () => ({}),
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
@@ -42,7 +47,7 @@ export default {
     ...mapActions("messages", ["fetchMessages"]),
   },
   mounted() {
-    this.fetchMessages()
+    this.fetchMessages();
   },
 };
 </script>
