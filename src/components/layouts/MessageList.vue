@@ -4,23 +4,20 @@
       <v-col cols="12">
         <v-card>
           <v-list two-line>
-            <template v-for="n in 6">
-              <v-list-item :key="n">
+            <template>
+              <v-list-item v-for="message in messages" :key="message.title"
+              link to="#">
                 <v-list-item-avatar color="grey darken-1"> </v-list-item-avatar>
 
                 <v-list-item-content>
                   <v-list-item-title>
-                    Title 
+                    {{ message.title }}
                     </v-list-item-title>
-
                   <v-list-item-subtitle>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Nihil repellendus distinctio similique
+                    {{ message.content }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
-
-              <v-divider v-if="n !== 6" :key="`divider-${n}`" inset></v-divider>
             </template>
           </v-list>
         </v-card>
@@ -36,7 +33,8 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: { MessageCreateFormButton },
-  data: () => ({}),
+  data: () => ({
+      }),
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
