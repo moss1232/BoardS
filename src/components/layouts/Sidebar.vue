@@ -42,7 +42,6 @@ export default {
       ["mdi-message", "Message", "/"],
       ["mdi-checkbox-outline", "Todo", "/todo"],
       ["mdi-calendar", "Schedule", "/schedule"],
-      ["mdi-account-circle", "Setting", "/setting"],
     ],
 
     items: [{ state: "Florida" }, { state: "Georgia" }],

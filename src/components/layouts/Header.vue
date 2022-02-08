@@ -1,40 +1,32 @@
 <template>
-    <v-app-bar
-      app
-      color="white"
-      flat
-    >
-      <v-container class="py-0 fill-height">
-        <v-avatar
-          class="mr-10"
-          color="grey darken-1"
-          size="32"
-        ></v-avatar>
+  <v-app-bar app color="white" flat>
+    <v-avatar
+      :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
+      size="32"
+    ></v-avatar>
 
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          text
-        >
-          {{ link }}
-        </v-btn>
+    <v-tabs centered class="ml-n9" color="grey darken-1">
+      <v-tab v-for="[icon, text, link_to] in links" :key="icon" :to="link_to">
+        {{ text }}
+      </v-tab>
+    </v-tabs>
 
-        <v-spacer></v-spacer>
-
-      <v-btn text>login</v-btn>
-      </v-container>
-    </v-app-bar>
+    <v-avatar
+      class="hidden-sm-and-down"
+      color="grey darken-1 shrink"
+      size="32"
+    ></v-avatar>
+  </v-app-bar>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      links: [
-        'Dashboard',
-        'Schedule',
-        'Todo',
-        'Member',
-      ],
-    }),
-  }
+export default {
+  data: () => ({
+    links: [
+      ["mdi-message", "Message", "/"],
+      // ["mdi-checkbox-outline", "Todo", "/todo"],
+      ["mdi-calendar", "Schedule", "/schedule"],
+    ],
+  }),
+};
 </script>

@@ -1,35 +1,30 @@
 <template>
-  <v-container>
-    <v-row justify="center">
-      <v-expansion-panels popout>
-        <v-expansion-panel
-          v-for="message in messages"
-          :key="message.title"
-          hide-actions
-        >
-          <v-expansion-panel-header>
-            <v-row align="center" class="spacer" no-gutters>
-              <v-col cols="4" sm="2" md="1">
-                <v-avatar size="36px">
-                  <img v-if="message.avatar" alt="Avatar" />
-                </v-avatar>
-              </v-col>
-              <v-col class="hidden-xs-only" sm="5" md="3">
-                <strong v-html="message.title"></strong>
-              </v-col>
-              <v-col class="text-no-wrap" cols="5" sm="3">
-                <strong v-html="message.content"></strong>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-divider></v-divider>
-            <v-card-text v-text="lorem"></v-card-text>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
+  <v-container class="py-8 px-6">
+    <v-row>
+      <v-col>
+        <v-card>
+          <v-list two-line>
+            <template>
+              <v-list-item v-for="message in messages" :key="message.title">
+                <v-list-item-avatar color="grey darken-1" size="36px">
+                </v-list-item-avatar>
+                <!-- {{ message.avatar }} -->
+                <v-list-item-content>
+                  <v-list-item-title class="hidden-xs-only" sm="5" md="3"
+                    >{{ message.title }}
+                  </v-list-item-title>
+
+                  <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
+                    {{ message.content }}
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </template>
+          </v-list>
+          <MessageCreateFormButton />
+        </v-card>
+      </v-col>
     </v-row>
-    <MessageCreateFormButton />
   </v-container>
 </template>
 

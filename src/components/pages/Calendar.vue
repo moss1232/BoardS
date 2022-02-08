@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <v-sheet
       tile
       height="5vh"
@@ -35,7 +35,7 @@
         @click:day="initEvent"
       ></v-calendar>
     </v-sheet>
-  </div>
+  </v-container>
 </template>
 
 <script>

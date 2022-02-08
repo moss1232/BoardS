@@ -9,7 +9,9 @@ const routes = [
     name: "Message",
     components: {
       default: () => import("../components/pages/Message.vue"),
-      sidebar: () => import("../components/layouts/Sidebar.vue"),
+      header: () => import("../components/layouts/Header.vue"),
+      
+      // sidebar: () => import("../components/layouts/Sidebar.vue"),
       // footer: () => import("../components/layouts/Footer.vue"),
     },
   },
@@ -18,18 +20,20 @@ const routes = [
     name: "Schedule",
     components: {
       default: () => import("../components/pages/Schedule.vue"),
-      sidebar: () => import("../components/layouts/Sidebar.vue"),
+      // sidebar: () => import("../components/layouts/Sidebar.vue"),
+      header: () => import("../components/layouts/Header.vue"),
     },
   },
-  {
-    path: "/todo",
-    name: "Todo",
-    components: {
-      default: () => import("../components/pages/Todo.vue"),
-      sidebar: () => import("../components/layouts/Sidebar.vue"),
-      // main_header: () => import("../components/layouts/TodoTab.vue"),
-    },
-  },
+  // {
+  //   path: "/todo",
+  //   name: "Todo",
+  //   components: {
+  //     default: () => import("../components/pages/Todo.vue"),
+  //     sidebar: () => import("../components/layouts/Sidebar.vue"),
+  //     header: () => import("../components/layouts/Header.vue"),
+  //     main_header: () => import("../components/layouts/TodoTab.vue"),
+  //   },
+  // },
   {
     path: "/login",
     name: "Login",

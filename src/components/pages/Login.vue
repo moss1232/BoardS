@@ -1,17 +1,17 @@
 <template>
   <v-container fill-height>
     <v-card width="400px" class="mx-auto">
-      <v-card-text> 
+      <v-card-text>
         <v-form @submit.prevent="login">
-          <v-text-field 
-            prepend-icon="mdi-email" 
-            label="メールアドレス" 
-            v-model="email" 
+          <v-text-field
+            prepend-icon="mdi-email"
+            label="メールアドレス"
+            v-model="email"
           />
-          <v-text-field 
+          <v-text-field
             v-bind:type="showPassword ? 'text' : 'password'"
             @click:append="showPassword = !showPassword"
-            prepend-icon="mdi-lock" 
+            prepend-icon="mdi-lock"
             v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             label="パスワード"
             v-model="password"
@@ -19,10 +19,7 @@
           <div class="error">{{ error }}</div>
           <v-container>
             <v-row justify="center">
-              <v-col
-                cols="12"
-                sm="6"
-              >
+              <v-col cols="12" sm="6">
                 <div class="text-center">
                   <v-btn class="info" type="submit">ログイン</v-btn>
                   <v-btn text>新規登録はこちら</v-btn>
@@ -37,46 +34,45 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  data(){
+  data() {
     return {
-      showPassword : false,
-      email:'',
-      password:'',
-      error: null
-    }
+      showPassword: false,
+      email: "",
+      password: "",
+      error: null,
+    };
   },
-  methods:{
+  methods: {
     async login() {
       try {
-        this.error = null
+        this.error = null;
 
-        const res = await axios.post('http://localhost:3000/auth/sign_in', {
+        const res = await axios.post("http://localhost:3000/auth/sign_in", {
           email: this.email,
           password: this.password,
-          }
-        )
+        });
         if (!res) {
-          throw new Error('メールアドレスかパスワードが違います')
+          throw new Error("メールアドレスかパスワードが違います");
         }
 
         if (!this.error) {
-          this.redirectToChatRoom()
+          this.redirectToChatRoom();
         }
 
-        console.log({ res })
+        console.log({ res });
 
-        return res
+        return res;
       } catch (error) {
-        console.log({ error })
-        this.error = 'メールアドレスかパスワードが違います'
+        console.log({ error });
+        this.error = "メールアドレスかパスワードが違います";
       }
+    },
+    redirectToChatRoom() {
+      this.$router.push({ name: "Message" });
+    },
   },
-    redirectToChatRoom () {
-      this.$router.push({ name: 'Message' })
-    }
-  }
-}
-    </script>
+};
+</script>

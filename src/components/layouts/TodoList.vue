@@ -2,11 +2,9 @@
   <v-container class="py-8 px-6" fluid>
     <v-row>
       <v-col cols="4">
-        <v-card v-if="tasks.length > 0">
+        <v-card>
           <v-slide-y-transition class="py-0" group tag="v-list">
             <template v-for="(task, i) in tasks">
-              <!-- タスク間の分割線 -->
-              <v-divider v-if="i !== 0" :key="`${i}-divider`"></v-divider>
 
               <v-list-item :key="`${i}-${task.text}`">
                 <v-list-item-action>
