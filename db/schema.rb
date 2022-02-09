@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_07_043039) do
+ActiveRecord::Schema.define(version: 2022_02_04_110024) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", limit: 100, null: false
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2022_02_07_043039) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
+    t.string "title"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 

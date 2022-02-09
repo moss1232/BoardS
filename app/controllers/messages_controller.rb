@@ -27,6 +27,6 @@ class MessagesController < ApplicationController
       private
 
           def message_params
-          params.require(:message).permit(:id, :name, :start, :end, :timed, :description, :color, :created_at, :updated_at)
+          params.require(:message).permit(:id, :title, :content, :created_at, :updated_at)
         end
 end

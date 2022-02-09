@@ -30,7 +30,7 @@
             label="パスワード確認"
             v-model="passwordConfirmation"
           />
-          <div class="error">{{error}}</div>
+          <div class="red--text">{{ error }}</div>
           <v-container>
             <v-row justify="center">
               <v-col
@@ -78,13 +78,18 @@ export default {
         if (!res) {
           throw new Error('アカウントを登録できませんでした')
         }
-        this.error = null
+        if (!this.error) {
+          this.redirectToMessage();
+        }
         console.log({ res })
         return res
       } catch (error) {
         this.error = 'アカウントを登録できませんでした'
       }
-    }
+    },
+    redirectToMessage() {
+      this.$router.push({ name: "Message" });
+    },
   }
 }
   </script>

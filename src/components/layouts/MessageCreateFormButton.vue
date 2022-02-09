@@ -17,7 +17,7 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field label="タイトル" required></v-text-field>
+                <v-text-field label="タイトル" required v-model="title"></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-textarea
@@ -25,6 +25,7 @@
                   type="text"
                   required
                   auto-grow
+                  v-model="content"
                 ></v-textarea>
               </v-col>
             </v-row>
@@ -32,7 +33,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false; submit" >
+          <v-btn color="blue darken-1" text @click="submit">
             <v-icon>mdi-send</v-icon>
           </v-btn>
         </v-card-actions>
@@ -42,14 +43,32 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   data: () => ({
+    title: '',
+    content: '',
     dialog: false,
     newTask: null,
   }),
+  computed: {
+    ...mapGetters("messages", ["message"]),
+  },
   methods: {
+    ...mapActions("messages", ['setMessage', 'setEditMode', "createMessage"]),
     closeDialog() {
-      this.dialog = false;
+      this.setEditMode(false);
+      this.setMessage(null);
+    },
+    submit() {
+      const params = {
+        title: this.title,
+        content: this.content,
+        
+      };
+      this.createMessage(params);
+      this.closeDialog();
     },
   },
 };
