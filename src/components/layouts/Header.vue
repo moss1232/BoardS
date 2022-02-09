@@ -10,7 +10,7 @@
         {{ text }}
       </v-tab>
     </v-tabs>
-
+    <v-btn @click="logout">logout</v-btn>
     <v-avatar
       class="hidden-sm-and-down"
       color="grey darken-1 shrink"
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     links: [
@@ -28,5 +29,31 @@ export default {
       ["mdi-calendar", "Schedule", "/schedule"],
     ],
   }),
+
+  methods: {
+    async logout() {
+      try {
+        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+        });
+
+        console.log("ログアウトしました")
+        window.localStorage.removeItem('name')
+        window.localStorage.removeItem('access-token')
+        window.localStorage.removeItem('client')
+        window.localStorage.removeItem('uid')
+        // window.localStorage.removeItem('name')
+        this.$router.push({ name: "Login" });
+
+        return res;
+      } catch (error) {
+        console.log({ error });
+      }
+    },
+  },
 };
 </script>

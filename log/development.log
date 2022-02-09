@@ -5163,3 +5163,1583 @@ Processing by Auth::RegistrationsController#create as HTML
 Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 5169)
 
 
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 15:33:34 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"fffff", "password"=>"[FILTERED]", "session"=>{"email"=>"fffff", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "fffff"], ["provider", "email"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 11ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 2882)
+
+
+Started POST "/auth/signin" for 127.0.0.1 at 2022-02-09 16:32:11 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/auth/signin"):
+  
+Started POST "/auth/sign_in" for 127.0.0.1 at 2022-02-09 16:33:09 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589}}"], ["updated_at", "2022-02-09 07:33:09.387736"], ["id", 1]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 363ms (Views: 0.3ms | ActiveRecord: 11.3ms | Allocations: 11617)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:34:06 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646}}"], ["updated_at", "2022-02-09 07:34:06.245640"], ["id", 1]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 228ms (Views: 0.2ms | ActiveRecord: 8.9ms | Allocations: 6398)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:35:40 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741}}"], ["updated_at", "2022-02-09 07:35:41.181151"], ["id", 1]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 7150)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:35:41 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 347)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-09 16:35:46 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1459)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:35:47 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 222)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-09 16:41:50 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2065)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:41:50 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:42:04 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124}}"], ["updated_at", "2022-02-09 07:42:04.310674"], ["id", 1]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 229ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 11166)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:42:04 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 204)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:43:04 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"dddddd", "password"=>"[FILTERED]", "session"=>{"email"=>"dddddd", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "dddddd"], ["provider", "email"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1035)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:44:14 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254}}"], ["updated_at", "2022-02-09 07:44:14.539469"], ["id", 1]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 10.5ms | Allocations: 17719)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:44:14 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5166)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 16:44:58 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298}}"], ["updated_at", "2022-02-09 07:44:58.774868"], ["id", 1]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 233ms (Views: 0.5ms | ActiveRecord: 9.6ms | Allocations: 17915)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 16:44:58 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5059)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:13:52 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (Allocations: 2356)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x000000000096f0>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 17:14:24 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065}}"], ["updated_at", "2022-02-09 08:14:25.193189"], ["id", 1]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 235ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 17855)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:14:25 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2364)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000007c88>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:14:36 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2257)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000007f30>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:17:59 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2224)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000008138>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:18:26 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x000000000082f0>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:18:34 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000008480>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:18:50 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2224)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000008660>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 17:20:02 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000008818>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:08:46 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"tNjJCv6xpI4szUC25abaug\":{\"token\":\"$2a$10$YViBUXc3m5hgogjoGBwwd.Dzr3x/qvCgcWTghnWZHsSyK2tO4AGxC\",\"expiry\":1645588590},\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927}}"], ["updated_at", "2022-02-09 10:08:47.013809"], ["id", 1]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 236ms (Views: 0.3ms | ActiveRecord: 7.3ms | Allocations: 17924)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:08:47 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2364)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000007c88>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:10:23 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"GB7ktQeLM7gbwZtDTP9okA\":{\"token\":\"$2a$10$GSkZkPmgRZtWsECl0HGRSuCUDJJBpDqTpj5AO1O4Qm6iTw79seYuy\",\"expiry\":1645589836},\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024}}"], ["updated_at", "2022-02-09 10:10:24.161170"], ["id", 1]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 223ms (Views: 3.0ms | ActiveRecord: 7.0ms | Allocations: 7130)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:10:24 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2241)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x00000000007fa8>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:11:17 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2225)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<MessagesController:0x000000000081b0>
+Did you mean?  authenticate_user!):
+  
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:105:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 19:13:12 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 8008)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:14:19 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"ds2oj7VZKlEAdqD_7AEzlA\":{\"token\":\"$2a$10$/8QVRBpz.Xl5DO1XM0gEU.v67TEbPTw5gV1pA5l4CzMdWA8rxClu.\",\"expiry\":1645601589},\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259}}"], ["updated_at", "2022-02-09 10:14:19.552603"], ["id", 1]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 0.3ms | ActiveRecord: 7.8ms | Allocations: 12356)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:14:19 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 398)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:15:20 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.8ms | Allocations: 6383)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:17:50 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"Q0Fa7DI9vg3PW341Zz4g1g\":{\"token\":\"$2a$10$UGPtfEG1/wjdfUyx2Xij3.1iiIrsVrcKvWzf8mW0knAN55EN5yote\",\"expiry\":1645601646},\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470}}"], ["updated_at", "2022-02-09 10:17:50.251966"], ["id", 1]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 228ms (Views: 0.3ms | ActiveRecord: 6.1ms | Allocations: 13063)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:17:50 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 980)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:20:32 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"52KfYWYiKjdUgS5pXdG2Bw\":{\"token\":\"$2a$10$2ktfGISb0u2WzdJZsAJO2ebCTGrjtro0.5y1NTwE0GWDkWtZNoHee\",\"expiry\":1645601741},\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632}}"], ["updated_at", "2022-02-09 10:20:32.695855"], ["id", 1]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 229ms (Views: 0.5ms | ActiveRecord: 6.7ms | Allocations: 18025)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:20:32 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.9ms | Allocations: 5546)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:20:49 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1002)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:20:51 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:21:11 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"Th_0uUkaqag8sVyDtwi-TQ\":{\"token\":\"$2a$10$o0ToOjaY2c5HsyB7DA5kguAiWZLhNQJi38yIQyHGrSMqeWq8k4m9S\",\"expiry\":1645602124},\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671}}"], ["updated_at", "2022-02-09 10:21:11.802854"], ["id", 1]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 0.1ms | ActiveRecord: 7.1ms | Allocations: 7871)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:21:11 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 969)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:24:52 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:26:18 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"MWROBAeSO2zYq_A42yBvZg\":{\"token\":\"$2a$10$Bq.kvTubAvkmolCJC9MENO0utIhfFbN5Zp0yFQuAagONXOOq6VTM2\",\"expiry\":1645602254},\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978}}"], ["updated_at", "2022-02-09 10:26:18.926238"], ["id", 1]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 7012)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:26:19 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 1336)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:35:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1601)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:42:55 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"zeiBWBSkSAvPdKoU5Q6wzw\":{\"token\":\"$2a$10$Krfc9EEz7VEksIRX3RxHNuR7l8bV8qc/duJi99Vdf0.RjK1n3alaG\",\"expiry\":1645602298},\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975}}"], ["updated_at", "2022-02-09 10:42:55.582543"], ["id", 1]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 223ms (Views: 0.4ms | ActiveRecord: 5.8ms | Allocations: 7409)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:42:55 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 987)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:43:21 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"JtmYraEH9oVshG_zxbGIxg\":{\"token\":\"$2a$10$ID6jU7RZXLtkTVzD24E13e63TUo4SU.NWUe/dzCo19Ot5vACdb3O6\",\"expiry\":1645604065},\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001}}"], ["updated_at", "2022-02-09 10:43:21.808429"], ["id", 1]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 221ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 7025)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:43:21 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:49:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.9ms | Allocations: 1546)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:50:05 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"0yNKyVq2wKAjpwM0z-zPkg\":{\"token\":\"$2a$10$DjlgP6fAkNW9R.7rG3qDT.YOlwXcbIZLiYprjP6CZp2cyBqNGWbFa\",\"expiry\":1645610927},\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406}}"], ["updated_at", "2022-02-09 10:50:06.039768"], ["id", 1]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 0.2ms | ActiveRecord: 8.8ms | Allocations: 7671)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:50:06 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 19:54:27 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"koqU_7QT60pB-nxPEnmJJw\":{\"token\":\"$2a$10$L1Aow8CAmDhK.IsokoyV2.guWcuhXQB45GJpTxts1eldjGIqsrau.\",\"expiry\":1645611024},\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667}}"], ["updated_at", "2022-02-09 10:54:27.368286"], ["id", 1]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 0.3ms | ActiveRecord: 6.1ms | Allocations: 7024)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 19:54:27 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:17:07 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 9.0ms | ActiveRecord: 1.3ms | Allocations: 8272)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 20:17:25 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"EypKk6998G15uhSfV5CDeQ\":{\"token\":\"$2a$10$wdOg5jnJP3P0N/CZgh2XH.ibiDv2xacnnHC8Nvev1uQDmcHDUWeam\",\"expiry\":1645611259},\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045}}"], ["updated_at", "2022-02-09 11:17:25.975791"], ["id", 1]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 14553)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:17:26 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1015)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:24:33 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1586)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 20:25:18 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"SNvqN2eL-UWkygzxsihHNg\":{\"token\":\"$2a$10$GxJZs3xIZYX5.IqLbTBLUuPrHnuzrQ0Kjoffo00rprPG8PKV38o8K\",\"expiry\":1645611470},\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518}}"], ["updated_at", "2022-02-09 11:25:18.458123"], ["id", 1]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 6773)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:25:18 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 985)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 20:27:02 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"k7zMjyxb1NjJ1bvJ1_dTkA\":{\"token\":\"$2a$10$HVi3cSfWGlhUKqIGdCgk5evoIxMZT2FLYMKrWD2XNtUbM1hs9IHGe\",\"expiry\":1645611632},\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-09 11:27:03.056844"], ["id", 1]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 239ms (Views: 0.2ms | ActiveRecord: 9.4ms | Allocations: 7035)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:27:03 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 969)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 20:35:57 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"jZ0ahgsk1CZhb_H1FNd07A\":{\"token\":\"$2a$10$.D9XzWgWsCZUkSUUGpr28usIThW2p8SaKEIl8lnh3muJr9SkBwVjO\",\"expiry\":1645616157}}"], ["updated_at", "2022-02-09 11:35:57.287504"], ["id", 1]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 225ms (Views: 0.2ms | ActiveRecord: 7.9ms | Allocations: 7753)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:35:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 986)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:36:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 971)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:40:53 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 7278)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:41:25 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 988)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:42:31 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 843)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:43:35 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1030)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:43:42 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 840)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 20:48:25 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:49:23 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 840)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:58:14 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1595)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 20:59:54 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 19ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 840)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:00:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 988)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 21:00:22 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "undefined"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 841)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 21:05:31 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-09 12:05:31.566442"], ["id", 1]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 9.5ms | Allocations: 4792)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 21:05:53 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"U4uYoUBVJS7vJtFaHFLJrg\":{\"token\":\"$2a$10$OeG/6AAuZGEP4ALxts.MpOJzcS7YT1WaaVFpQ2uj8wtsMFHJLOO7i\",\"expiry\":1645617953}}"], ["updated_at", "2022-02-09 12:05:53.431803"], ["id", 1]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 7030)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:05:53 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 21:06:28 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-09 12:06:28.634715"], ["id", 1]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 5.5ms | Allocations: 4658)
+
+
+Started POST "/auth" for ::1 at 2022-02-09 21:07:16 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"d", "email"=>"d@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"d", "email"=>"d@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :registration[0m
+[31mUnpermitted parameters: :name, :registration[0m
+[31mUnpermitted parameters: :name, :registration[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "d@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 174ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 4962)
+
+
+Started POST "/auth" for ::1 at 2022-02-09 21:10:29 +0900
+Processing by Auth::RegistrationsController#create as HTML
+  Parameters: {"name"=>"d", "email"=>"d@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"d", "email"=>"d@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."provider" = ? LIMIT ?[0m  [["email", "d@me.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "d@me.com"], ["encrypted_password", "$2a$12$6k8ZMfgwpgRE3cWWdMGDuemsYEkvSU3h4fBazGj37zYaoj6aaOKRi"], ["name", "d"], ["email", "d@me.com"], ["created_at", "2022-02-09 12:10:30.238873"], ["updated_at", "2022-02-09 12:10:30.238873"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"_gsQV49A5X-hflAJRy28wA\":{\"token\":\"$2a$10$Wu1MieCx3MgsQeTozaTD6O/DiGDPKlByi7mDSFbf4sHMPAdpjx9QC\",\"expiry\":1645618230}}"], ["updated_at", "2022-02-09 12:10:30.295223"], ["id", 3]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.2ms | ActiveRecord: 12.8ms | Allocations: 17826)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:10:30 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.8ms | Allocations: 5086)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-09 21:10:42 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "d@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", nil], ["updated_at", "2022-02-09 12:10:42.492156"], ["id", 3]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 140ms (Views: 14.6ms | ActiveRecord: 9.3ms | Allocations: 4742)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:10:48 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 982)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-09 21:11:24 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"fCWEy0YC5cs8WtRnxZiqIQ\":{\"token\":\"$2a$10$Le5g49gT2wE0VVNV9gTqmOZS2ayVFQZGJBcV00oA0lh8tGn5jTRR.\",\"expiry\":1645618284}}"], ["updated_at", "2022-02-09 12:11:24.711258"], ["id", 1]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 226ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 7108)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:11:24 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 969)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-09 21:13:12 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 6ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 3165)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:13:17 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1084)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-09 21:18:13 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1428)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:18:14 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1028)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-09 21:19:23 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.6ms | Allocations: 970)
+
+
