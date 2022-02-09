@@ -4,7 +4,7 @@
       v-model="dialog"
       max-width="600px"
       persistent
-      @click:outside="closeDialog"
+      @click:outside="closeDialog()"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" v-bind="attrs" v-on="on" fab bottom right fixed>
@@ -49,10 +49,10 @@ export default {
   data: () => ({
     title: '',
     content: '',
-    dialog: false,
     newTask: null,
   }),
   computed: {
+    dialog: false,
     ...mapGetters("messages", ["message"]),
   },
   methods: {

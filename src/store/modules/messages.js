@@ -6,12 +6,15 @@ const apiUrl = "http://127.0.0.1:3000";
 const state = {
   messages: [],
   message: null,
+  isEditMode: false,
   // clickedDate: null,
 };
 
 const getters = {
-  messages: (state) => state.messages.map((message) => serializeMessage(message)),
+  messages: (state) =>
+    state.messages.map((message) => serializeMessage(message)),
   message: (state) => serializeMessage(state.message),
+  isEditMode: (state) => state.isEditMode,
   // clickedDate: (state) => state.clickedDate,
 };
 
