@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    # @user = current_user
     event = Event.new(event_params)
     if event.save
       render json: event

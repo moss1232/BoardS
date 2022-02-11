@@ -4,7 +4,7 @@
       v-model="dialog"
       max-width="600px"
       persistent
-      @click:outside="closeDialog()"
+      @click:outside="closeDialog"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" v-bind="attrs" v-on="on" fab bottom right fixed>
@@ -34,6 +34,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="submit">
+            {{user}}
             <v-icon>mdi-send</v-icon>
           </v-btn>
         </v-card-actions>
@@ -43,29 +44,31 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data: () => ({
+    dialog: false,
     title: '',
     content: '',
-    newTask: null,
+    // user_id: window.localStorage.getItem("uid"),
+    // user_id: window.localStorage.getItem("uid")
   }),
-  computed: {
-    dialog: false,
-    ...mapGetters("messages", ["message"]),
-  },
+  // computed: {
+  //   ...mapGetters("messages", ["message"]),
+  // },
   methods: {
-    ...mapActions("messages", ['setMessage', 'setEditMode', "createMessage"]),
+    ...mapActions("messages",  ["createMessage"]),
     closeDialog() {
-      this.setEditMode(false);
-      this.setMessage(null);
+      this.title = null
+      this.content = null
+      this.dialog = false;
     },
     submit() {
       const params = {
         title: this.title,
         content: this.content,
-        
+        // user_id: this.user_id,
       };
       this.createMessage(params);
       this.closeDialog();

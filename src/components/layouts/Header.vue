@@ -42,7 +42,6 @@ export default {
         });
 
         console.log("ログアウトしました")
-        window.localStorage.removeItem('name')
         window.localStorage.removeItem('access-token')
         window.localStorage.removeItem('client')
         window.localStorage.removeItem('uid')

@@ -6766,3 +6766,757 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 1.8ms | Allocations: 1577)
 
 
+Started GET "/events" for 127.0.0.1 at 2022-02-10 06:53:46 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 3824)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 06:58:38 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 5908)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:00:18 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1002)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:00:43 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 984)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:00:51 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:00:59 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 984)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:01:05 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:15:54 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 1.3ms | Allocations: 1586)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:25:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 1547)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 07:26:50 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"", "content"=>"", "message"=>{"title"=>"", "content"=>""}}
+Completed 422 Unprocessable Entity in 27ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 8202)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:28:25 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1085)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:29:05 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:29:31 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:29:35 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 07:29:47 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaaa", "content"=>"aaa", "message"=>{"title"=>"aaaa", "content"=>"aaa"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:31:08 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 630)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 07:31:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 07:44:36 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1079)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:44:53 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 624)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-02-10 07:44:59 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"aaaa", "start"=>"2022/02/08 08:00", "end"=>"2022/02/08 09:00", "timed"=>true, "startDate"=>"2022/02/08", "startTime"=>"08:00", "endDate"=>"2022/02/08", "endTime"=>"09:00", "color"=>"#2196F3", "event"=>{"name"=>"aaaa", "start"=>"2022/02/08 08:00", "end"=>"2022/02/08 09:00", "timed"=>true, "color"=>"#2196F3"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "start", "end", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "aaaa"], ["start", "2022-02-07 23:00:00"], ["end", "2022-02-08 00:00:00"], ["color", "#2196F3"], ["created_at", "2022-02-09 22:44:59.434339"], ["updated_at", "2022-02-09 22:44:59.434339"]]
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 6.6ms | Allocations: 8288)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:47:44 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 801)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:52:13 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 790)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:52:41 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 790)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 07:53:56 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 790)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 08:03:35 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1372)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 08:03:38 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 790)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 08:03:52 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 790)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 08:06:37 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 987)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 08:06:42 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaaa", "content"=>"aaaaa", "message"=>{"title"=>"aaaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 600)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 08:09:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 972)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 08:10:00 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 08:13:49 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 972)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 08:13:59 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "user_id"=>"a@me.com", "message"=>{"user_id"=>"a@me.com", "title"=>"aaa", "content"=>"aaaaa"}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 645)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 08:15:06 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.4ms | Allocations: 5989)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 08:15:10 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "user_id"=>"a@me.com", "message"=>{"user_id"=>"a@me.com", "title"=>"aaa", "content"=>"aaaaa"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 11ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 5045)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 08:16:45 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.9ms | Allocations: 5741)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-02-10 08:16:50 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"aaaa", "start"=>"2022/02/09 09:00", "end"=>"2022/02/09 10:00", "timed"=>true, "startDate"=>"2022/02/09", "startTime"=>"09:00", "endDate"=>"2022/02/09", "endTime"=>"10:00", "color"=>"#2196F3", "description"=>"a", "event"=>{"name"=>"aaaa", "start"=>"2022/02/09 09:00", "end"=>"2022/02/09 10:00", "timed"=>true, "description"=>"a", "color"=>"#2196F3"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "start", "end", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "aaaa"], ["start", "2022-02-09 00:00:00"], ["end", "2022-02-09 01:00:00"], ["description", "a"], ["color", "#2196F3"], ["created_at", "2022-02-09 23:16:50.683895"], ["updated_at", "2022-02-09 23:16:50.683895"]]
+  ↳ app/controllers/events_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:12:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 4324)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 08:37:18 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 57ms (Views: 42.4ms | ActiveRecord: 0.4ms | Allocations: 6402)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 09:35:50 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 7741)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 09:35:59 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"あああ", "content"=>"ｇふぁあ", "user_id"=>"a@me.com", "message"=>{"user_id"=>"a@me.com", "title"=>"あああ", "content"=>"ｇふぁあ"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 20ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 13498)
+
+
+  
+NameError (undefined local variable or method `flash' for #<MessagesController:0x00000000007b98>):
+  
+app/controllers/messages_controller.rb:17:in `create'
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 09:36:43 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.4ms | Allocations: 5529)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 09:36:48 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"あああ", "content"=>"あああああ", "user_id"=>"a@me.com", "message"=>{"user_id"=>"a@me.com", "title"=>"あああ", "content"=>"あああああ"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/messages_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 6ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 3688)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:13:18 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 4.7ms | Allocations: 1547)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:14:44 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 9ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 3453)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:29:03 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 363)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-10 13:29:05 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-10 04:29:05.615539"], ["id", 1]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 12.5ms | Allocations: 11763)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-10 13:29:14 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"S5wfoBLFrCB6o19soIdJLA\":{\"token\":\"$2a$10$sNRIR7VLJSaGzV/iJxMjHuPiEH3IwpeVzUY6PgHUoODLsoqa.hlAO\",\"expiry\":1645676954}}"], ["updated_at", "2022-02-10 04:29:14.786162"], ["id", 1]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 226ms (Views: 0.2ms | ActiveRecord: 7.3ms | Allocations: 8226)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:29:14 +0900
+Processing by MessagesController#index as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 213)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-10 13:30:31 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-10 04:30:31.297744"], ["id", 1]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 11081)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-10 13:30:32 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"swh-JwKtI3ADWZleEYSxRg\":{\"token\":\"$2a$10$42S5xC.TrXMiO7ukuGM2UefqqULj9RsWL2QrUx/TObW90m3jv2KKW\",\"expiry\":1645677032}}"], ["updated_at", "2022-02-10 04:30:32.976597"], ["id", 1]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 223ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 7182)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:30:33 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 1.4ms | Allocations: 4595)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:40:54 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 3290)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:42:33 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 7ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 3477)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:42:48 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 13ms (Views: 5.1ms | ActiveRecord: 1.5ms | Allocations: 12800)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:47:15 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.2ms | Allocations: 5648)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:47:26 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 17ms (Views: 4.5ms | ActiveRecord: 0.9ms | Allocations: 12800)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:50:03 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 1.5ms | Allocations: 5648)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:51:21 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1008)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:51:24 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 970)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:51:37 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 1.6ms | Allocations: 5456)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:52:33 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1009)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:53:07 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 970)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:53:13 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 852)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:54:23 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "usr"=>"a@me.com", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 570)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:54:29 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 972)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:54:50 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"ffffff", "usr"=>"a@me.com", "message"=>{"title"=>"aaa", "content"=>"ffffff"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 566)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:55:23 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aaa", "content"=>"aaaaa", "user"=>"a@me.com", "message"=>{"title"=>"aaa", "content"=>"aaaaa"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 565)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 13:55:43 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 972)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 13:55:49 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aa", "content"=>"aa", "user"=>"a@me.com", "message"=>{"title"=>"aa", "content"=>"aa"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 565)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 14:02:23 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 1547)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-02-10 14:02:29 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"title"=>"aa", "content"=>"aaaaa", "user_id"=>"a@me.com", "message"=>{"user_id"=>"a@me.com", "title"=>"aa", "content"=>"aaaaa"}}
+[31mUnpermitted parameter: :user_id[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 610)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 14:03:25 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (1.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.6ms | Allocations: 972)
+
+
+Started GET "/%3C%=%20BASE_URL%20%%3Efavicon.ico" for 127.0.0.1 at 2022-02-10 14:06:26 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20BASE_URL%20%%3Efavicon.ico"):
+  
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 14:06:50 +0900
+Processing by MessagesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 207)
+
+
+Started GET "/messages/" for 127.0.0.1 at 2022-02-10 14:07:00 +0900
+Processing by MessagesController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 43)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-10 14:07:07 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 1.6ms | Allocations: 7421)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 14:07:22 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.8ms | Allocations: 5888)
+
+
+Started GET "/messages/test" for 127.0.0.1 at 2022-02-10 14:07:27 +0900
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"test"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:12:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1356)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Message with 'id'=test):
+  
+app/controllers/messages_controller.rb:12:in `show'
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-10 16:18:15 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-10 07:18:15.426940"], ["id", 1]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 115ms (Views: 1.0ms | ActiveRecord: 16.3ms | Allocations: 12301)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-10 16:18:41 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"8wO0zu7e8R9w4j6JdGmPWQ\":{\"token\":\"$2a$10$ztcVPljkj7cBd6fekzD1wOe.rWMqa2XKBVxViaogfriG1UYzzXB02\",\"expiry\":1645687121}}"], ["updated_at", "2022-02-10 07:18:41.390539"], ["id", 1]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 8805)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 16:18:41 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4281)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-10 16:18:52 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-10 07:18:52.959961"], ["id", 1]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 4859)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-10 16:18:54 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"L86YMY4f-zoODCuMH-iDWQ\":{\"token\":\"$2a$10$JlWTX.q44uCD0df3DrMdx.pxtP.y7PbXzEK0FXLZmucgY51f3v9we\",\"expiry\":1645687134}}"], ["updated_at", "2022-02-10 07:18:54.376427"], ["id", 1]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 0.2ms | ActiveRecord: 9.7ms | Allocations: 7574)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-10 16:18:54 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 969)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-11 16:15:40 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2896)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-11 16:15:42 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623}}"], ["updated_at", "2022-02-11 07:15:42.641375"], ["id", 1]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 66ms (Views: 0.3ms | ActiveRecord: 7.4ms | Allocations: 12553)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-11 16:15:44 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"r_APAqS3pY9cX_KZrdQqJQ\":{\"token\":\"$2a$10$6ueZ8CkmsQAant/63CDysuIqNgNBDfmCt8jn//aF.y5zUk9yOiNdC\",\"expiry\":1645611671},\"Jbi1oQUZM8a2TKRKOVjyfQ\":{\"token\":\"$2a$10$P/pdEdXnKxm1WcsCz8g/euuE2DlQSu9vjtwRC4qYyH7rJrc./rQhG\",\"expiry\":1645611978},\"AqDJQTZrmCGKn967Ap3l4w\":{\"token\":\"$2a$10$PzxUVak5giQbXXUz7lJ5Tuazga66Xt8GzSxNO9f9Sx2uzoSdBQSOO\",\"expiry\":1645612975},\"kk0QACWJIyYzYlqSXs6AIA\":{\"token\":\"$2a$10$pkVNdQSjwRP0N4L91Ti16.MNWYeE0HkEwkQizzGWJ8uhbnysX6ymy\",\"expiry\":1645613001},\"Tkb7t27W5uzswMvzmrjs-Q\":{\"token\":\"$2a$10$rqs4MGqWJfdKSfEgV3On/urc3hgySUuYEONHz.veo5Iro0VORdGQe\",\"expiry\":1645613406},\"m0g0ymbUCPFC8oCDmg28nA\":{\"token\":\"$2a$10$6FVPiHq/jUXASF4SM6AFKeOnfLKbQtjH8mfTS7yUyCwZCWYn9laXa\",\"expiry\":1645613667},\"kVTnMfAcGSIdOBGJ4QdeIw\":{\"token\":\"$2a$10$x.AM6bivS1X9VF7ctX8cg.mdMM0QVtze3A5pOffRVoIvfK0LVDw9e\",\"expiry\":1645615045},\"SakRDUvq6iUYpw2E3tgTww\":{\"token\":\"$2a$10$gmPJurMmC9.Xf3dQtJlM1e0yuo1OqfhLXlra0NaZH9BLRez6K1mnO\",\"expiry\":1645615518},\"kii0UME5wPFIxsRdF5ugPg\":{\"token\":\"$2a$10$bLTzWYMoNCWuO7ZlCNBYk.bpQZeK94x1ECZ0Ek4ux/P7krBPTHxQK\",\"expiry\":1645615623},\"gWgJXA8Y9Hbha9MNA2ekKg\":{\"token\":\"$2a$10$Jlf0SRFf42hRE9ZIy8wINuhOynHsWwxaugzy6h6QSx5YCDyIRycWi\",\"expiry\":1645773344}}"], ["updated_at", "2022-02-11 07:15:44.238968"], ["id", 1]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 238ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 7918)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-11 16:15:44 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 599)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-11 16:16:01 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 2.5ms | Allocations: 6052)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-11 16:17:45 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 692)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-11 16:19:42 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 690)
+
+
+  
+NoMethodError (undefined method `Message' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
