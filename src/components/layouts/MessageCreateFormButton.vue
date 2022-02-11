@@ -34,7 +34,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="submit">
-            {{user}}
+            <!-- {{user}} -->
             <v-icon>mdi-send</v-icon>
           </v-btn>
         </v-card-actions>
@@ -51,6 +51,7 @@ export default {
     dialog: false,
     title: '',
     content: '',
+    // user: [],
     // user_id: window.localStorage.getItem("uid"),
     // user_id: window.localStorage.getItem("uid")
   }),
@@ -68,7 +69,7 @@ export default {
       const params = {
         title: this.title,
         content: this.content,
-        // user_id: this.user_id,
+        // user: current_user,
       };
       this.createMessage(params);
       this.closeDialog();

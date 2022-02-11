@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
   # end
 
   def index
-    # render json: current_user.Message.all
     render json: Message.all
+    # render json: current_user
   end
 
   def show

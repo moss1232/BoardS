@@ -26,11 +26,12 @@ const serializeMessage = (message) => {
   }
   const title = message.title;
   const content = message.content;
+  // const user = message.user
   // const user_id =  message.user_id
   return {
     ...message,
     title,
     content,
-    // user_id,
+    // user,
   };
 };
