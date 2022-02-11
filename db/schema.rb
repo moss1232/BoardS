@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_02_04_110024) do
 
   create_table "events", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name", limit: 100, null: false
     t.datetime "start", null: false
     t.datetime "end", null: false
@@ -21,15 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_110024) do
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "message_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["message_id"], name: "index_likes_on_message_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|

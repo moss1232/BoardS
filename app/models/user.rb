@@ -3,7 +3,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
-  has_many :messages
+  has_many :messages, dependent: :destroy
+  has_many :events, dependent: :destroy
   # has_many :likes
 
   validates :name, presence: true
