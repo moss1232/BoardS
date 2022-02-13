@@ -8025,3 +8025,217 @@ Processing by MessagesController#index as HTML
 Completed 204 No Content in 8ms (ActiveRecord: 0.4ms | Allocations: 7415)
 
 
+Started POST "/auth/sign_in" for ::1 at 2022-02-13 10:30:26 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"b@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"b@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "b@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"n4V_1aFVDSpjLUWR7QEx7g\":{\"token\":\"$2a$10$YtSUuT5Yg3N8ON7Dp6rFyOUCCqFk445OUJBKdhpW/7GspaTIsGEfi\",\"expiry\":1645925426}}"], ["updated_at", "2022-02-13 01:30:26.678135"], ["id", 1]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.3ms | ActiveRecord: 9.3ms | Allocations: 16564)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 10:30:26 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 5265)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-13 10:30:30 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 1.8ms | Allocations: 7095)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-02-13 10:30:37 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"aaa", "start"=>"2022/02/07 11:00", "end"=>"2022/02/07 12:00", "timed"=>true, "startDate"=>"2022/02/07", "startTime"=>"11:00", "endDate"=>"2022/02/07", "endTime"=>"12:00", "color"=>"#2196F3", "event"=>{"name"=>"aaa", "start"=>"2022/02/07 11:00", "end"=>"2022/02/07 12:00", "timed"=>true, "color"=>"#2196F3"}}
+Completed 422 Unprocessable Entity in 31ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 7004)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-02-13 10:30:47 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"kkk", "start"=>"2022/02/08 11:00", "end"=>"2022/02/08 12:00", "timed"=>true, "startDate"=>"2022/02/08", "startTime"=>"11:00", "endDate"=>"2022/02/08", "endTime"=>"12:00", "color"=>"#2196F3", "event"=>{"name"=>"kkk", "start"=>"2022/02/08 11:00", "end"=>"2022/02/08 12:00", "timed"=>true, "color"=>"#2196F3"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 763)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-13 10:30:51 +0900
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1440)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-02-13 10:31:28 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"aaaa", "start"=>"2022/02/09 11:00", "end"=>"2022/02/09 12:00", "timed"=>true, "startDate"=>"2022/02/09", "startTime"=>"11:00", "endDate"=>"2022/02/09", "endTime"=>"12:00", "color"=>"#2196F3", "event"=>{"name"=>"aaaa", "start"=>"2022/02/09 11:00", "end"=>"2022/02/09 12:00", "timed"=>true, "color"=>"#2196F3"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 708)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-13 13:02:57 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 3.0ms | Allocations: 7384)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:07:46 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.8ms | Allocations: 5722)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-13 13:07:57 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "b@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", nil], ["updated_at", "2022-02-13 04:07:57.426566"], ["id", 1]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 66ms (Views: 0.1ms | ActiveRecord: 8.6ms | Allocations: 9676)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-13 13:16:57 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"b@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"b@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "b@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"p6VtpuTAPVZZM4h_GOC0tw\":{\"token\":\"$2a$10$Ryw7aVE09aKy/Ews0MVcrO8FCAXnkvQ04OFTenNYZNeEddDDiKhBq\",\"expiry\":1645935417}}"], ["updated_at", "2022-02-13 04:16:57.841582"], ["id", 1]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 231ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 7268)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:16:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1112)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-13 13:17:01 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "b@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", nil], ["updated_at", "2022-02-13 04:17:01.944557"], ["id", 1]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 8.3ms | Allocations: 4218)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-13 13:17:47 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"b@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"b@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "b@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"Nigb6ehH_wmO0NFqDSZiZA\":{\"token\":\"$2a$10$6qF9odkLoM0CvshlJrg79ezXONx6k/3bS6301ddr6koA9f.V9yAyK\",\"expiry\":1645935467}}"], ["updated_at", "2022-02-13 04:17:47.316487"], ["id", 1]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 226ms (Views: 0.1ms | ActiveRecord: 6.0ms | Allocations: 12906)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:17:47 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 716)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:17:51 +0900
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 602)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:8:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:19:46 +0900
+Processing by MessagesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:8:in `index'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/messages_controller.rb:9:in `index'
+Completed 200 OK in 27ms (Views: 6.4ms | ActiveRecord: 1.9ms | Allocations: 13446)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:25:30 +0900
+  
+SyntaxError (/home/tomohiro/works/muscle-log-3/app/controllers/messages_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/messages_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/messages_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:26:11 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:11:in `index'
+Completed 200 OK in 17ms (Views: 9.4ms | ActiveRecord: 1.6ms | Allocations: 7990)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:35:07 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2896)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:9:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:35:41 +0900
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2900)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/messages_controller.rb:9:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-13 13:53:07 +0900
+  
+NoMethodError (undefined method `helper_method' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/messages_controller.rb:1:in `<main>'
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-13 17:52:34 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "b@me.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", nil], ["updated_at", "2022-02-13 08:52:35.060127"], ["id", 1]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 84ms (Views: 0.9ms | ActiveRecord: 10.1ms | Allocations: 12416)
+
+

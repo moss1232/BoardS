@@ -1,12 +1,15 @@
 class MessagesController < ApplicationController
-  # before_action :authenticate_user!, only: ["index"]
+  before_action :authenticate_user!, only: ["index"]
   # def initialize(message_params)
     # @message = current_user.message.new()
   # end
 
   def index
-    render json: Message.all
-    # render json: current_user
+    # if current_user
+      # render json: current_user.messages.all
+    # else
+      render json: Message.all
+    # end
   end
 
   def show
@@ -32,6 +35,6 @@ class MessagesController < ApplicationController
 
       private
           def message_params
-          params.require(:message).permit(:title, :content, :user)
+          params.require(:message).permit(:title, :content)
         end
 end
