@@ -6,29 +6,26 @@ class MessagesController < ApplicationController
 
   def index
       render json: current_user.messages.all
-    # else
-    #   render json: Message.all
-    # end
   end
 
-  # def show
-  #   render json: Message.find(params[:id])
-  # end
+  def show
+    render json: Message.find(params[:id])
+  end
 
-  # def create
-  #   message = current_user.essages.new(message_params)
-  #   if message.save
-  #     render json: message
-  #   else
-  #     render json: message.errors, status: 422
-  #   end
-  # end
+  def create
+    message = current_user.essages.new(message_params)
+    if message.save
+      render json: message
+    else
+      render json: message.errors, status: 422
+    end
+  end
 
-  # def destroy
-  #   message = Message.find(params[:id])
-  #   message.destroy!
-  #   render json: message
-  # end
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy!
+    render json: message
+  end
 
       private
           def message_params

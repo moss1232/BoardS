@@ -32,20 +32,44 @@ const mutations = {
 
 const actions = {
   async fetchEvents({ commit }) {
-    const response = await axios.get(`${apiUrl}/events`);
+    const response = await axios.get(`${apiUrl}/events`, {
+      headers: {
+        uid: window.localStorage.getItem("uid"),
+        "access-token": window.localStorage.getItem("access-token"),
+        client: window.localStorage.getItem("client"),
+      },
+    });
     commit("setEvents", response.data);
   },
   async createEvent({ commit }, event) {
-    const response = await axios.post(`${apiUrl}/events`, event);
+    const response = await axios.post(`${apiUrl}/events`, event, {
+      headers: {
+        uid: window.localStorage.getItem("uid"),
+        "access-token": window.localStorage.getItem("access-token"),
+        client: window.localStorage.getItem("client"),
+      },
+    });
     commit("appendEvent", response.data);
   },
   async deleteEvent({ commit }, id) {
-    const response = await axios.delete(`${apiUrl}/events/${id}`);
+    const response = await axios.delete(`${apiUrl}/events/${id}`, {
+      headers: {
+        uid: window.localStorage.getItem("uid"),
+        "access-token": window.localStorage.getItem("access-token"),
+        client: window.localStorage.getItem("client"),
+      },
+    });
     commit("removeEvent", response.data);
     commit("resetEvent");
   },
   async updateEvent({ commit }, event) {
-    const response = await axios.put(`${apiUrl}/events/${event.id}`, event);
+    const response = await axios.put(`${apiUrl}/events/${event.id}`, event, {
+      headers: {
+        uid: window.localStorage.getItem("uid"),
+        "access-token": window.localStorage.getItem("access-token"),
+        client: window.localStorage.getItem("client"),
+      },
+    });
     commit("updateEvent", response.data);
   },
   setEvent({ commit }, event) {
