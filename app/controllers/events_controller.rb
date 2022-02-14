@@ -1,15 +1,15 @@
 class EventsController < ApplicationController
   def index
-    render json: Event.all
+    render json: current_user.events.all
   end
   
   def show
-    render json: Event.find(params[:id])
+    render json: current_user.events.find_by(id: params[:id])
   end
 
   def create
     # @user = current_user
-    event = Event.new(event_params)
+    event = current_user.events.new(event_params)
     if event.save
       render json: event
     else
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find(params[:id])
+    event = current_user.events.find_by(id: params[:id])
     if event.update(event_params)
       render json: event
     else
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
 
   def destroy
     # 指定したidのイベントデータを削除する
-    event = Event.find(params[:id])
+    event = current_user.events.find_by(id: params[:id])
     event.destroy!
     render json: event
   end
