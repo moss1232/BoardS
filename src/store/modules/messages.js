@@ -32,8 +32,19 @@ const mutations = {
 };
 
 const actions = {
+  // async fetchMessages({ commit }) {
+  // const response = await axios.get(`${apiUrl}/messages`);
+  //   commit("setMessages", response.data);
+  // },
   async fetchMessages({ commit }) {
-    const response = await axios.get(`${apiUrl}/messages`);
+  const response = await axios.get(`${apiUrl}/messages`,{},{
+      headers: {
+        uid: window.localStorage.getItem("uid"),
+        "access-token": window.localStorage.getItem("access-token"),
+        client: window.localStorage.getItem("client"),
+      },
+    }
+  );
     commit("setMessages", response.data);
   },
   async createMessage({ commit }, message) {
