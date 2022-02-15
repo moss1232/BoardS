@@ -32,3 +32,14 @@ const serializeMessage = (message) => {
     content,
   };
 };
+
+export const serializeTeam = (team) => {
+  if (team === null) {
+    return null;
+  }
+  const name = team.name;
+  return {
+    ...team,
+    name,
+  };
+};

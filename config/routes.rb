@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
+  resources :teams, only: ['index', 'show', 'create', 'destroy']
+
   resources :events, only: ['index', 'show', 'create', 'destroy', 'update']
 
   resources :messages, only: ['index', 'show', 'create', 'destroy']
+
 end

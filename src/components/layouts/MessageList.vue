@@ -43,6 +43,8 @@ export default {
   },
   mounted() {
     this.fetchMessages();
+    console.log(this.messages)
+
   },
 };
 </script>

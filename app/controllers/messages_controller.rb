@@ -1,10 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
-  # def initialize(message_params)
-  # @message = current_user.message.new()
-  # end
-
   def index
     render json: current_user.messages.all
   end

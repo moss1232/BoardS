@@ -1,6 +1,35 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" app> </v-navigation-drawer>
+    <v-navigation-drawer v-model="drawer" app>
+      <!-- <v-sheet color="grey lighten-4" class="pt-4 px-4">
+        <v-row align="center">
+          <v-col cols="12">
+            <v-select :items="items" item-text="state" label="Team"></v-select>
+          </v-col>
+        </v-row>
+      </v-sheet>
+
+      <v-divider></v-divider> -->
+
+      <v-list>
+        <v-list-item-group mandatory color="indigo">
+          <v-list-item
+            v-for="[icon, text, link_to] in team_links"
+            :key="icon"
+            :to="link_to"
+            link
+          >
+            <v-list-item-icon>
+              <v-icon>{{ icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ text }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -26,6 +55,8 @@
 
 <script>
 import axios from "axios";
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   data: () => ({
     drawer: null,
@@ -33,8 +64,16 @@ export default {
       ["mdi-message", "Message", "/"],
       ["mdi-calendar", "Schedule", "/schedule"],
     ],
+    team_links: [
+      ["mdi-message", "team1", "/"],
+      ["mdi-checkbox-outline", "team2", "/todo"],
+      ["mdi-calendar", "team3", "/schedule"],
+    ],
   }),
 
+    computed: {
+      ...mapGetters("teams", ["teams"]),
+    },
   methods: {
     async logout() {
       try {
@@ -50,7 +89,6 @@ export default {
         window.localStorage.removeItem("access-token");
         window.localStorage.removeItem("client");
         window.localStorage.removeItem("uid");
-        // window.localStorage.removeItem('name')
         this.$router.push({ name: "Login" });
 
         return res;
@@ -58,6 +96,12 @@ export default {
         console.log({ error });
       }
     },
+        ...mapActions("teams", ["fetchTeams"]),
+  },
+
+  mounted() {
+    this.fetchTeams();
+    console.log(this.teams)
   },
 };
 </script>
