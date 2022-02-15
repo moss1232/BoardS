@@ -1,31 +1,36 @@
 <template>
-  <v-app-bar app color="white" flat>
-    <v-avatar
-      :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
-      size="32"
-    ></v-avatar>
+  <div>
+    <v-navigation-drawer v-model="drawer" app> </v-navigation-drawer>
 
-    <v-tabs centered class="ml-n9" color="grey darken-1">
-      <v-tab v-for="[icon, text, link_to] in links" :key="icon" :to="link_to">
-        {{ text }}
-      </v-tab>
-    </v-tabs>
-    <v-btn @click="logout">logout</v-btn>
-    <v-avatar
-      class="hidden-sm-and-down"
-      color="grey darken-1 shrink"
-      size="32"
-    ></v-avatar>
-  </v-app-bar>
+    <v-app-bar app color="white" flat>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-avatar
+        :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
+        size="32"
+      ></v-avatar>
+
+      <v-tabs centered class="ml-n9" color="grey darken-1">
+        <v-tab v-for="[icon, text, link_to] in links" :key="icon" :to="link_to">
+          {{ text }}
+        </v-tab>
+      </v-tabs>
+      <v-btn @click="logout">logout</v-btn>
+      <v-avatar
+        class="hidden-sm-and-down"
+        color="grey darken-1 shrink"
+        size="32"
+      ></v-avatar>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
   data: () => ({
+    drawer: null,
     links: [
       ["mdi-message", "Message", "/"],
-      // ["mdi-checkbox-outline", "Todo", "/todo"],
       ["mdi-calendar", "Schedule", "/schedule"],
     ],
   }),
@@ -41,10 +46,10 @@ export default {
           },
         });
 
-        console.log("ログアウトしました")
-        window.localStorage.removeItem('access-token')
-        window.localStorage.removeItem('client')
-        window.localStorage.removeItem('uid')
+        console.log("ログアウトしました");
+        window.localStorage.removeItem("access-token");
+        window.localStorage.removeItem("client");
+        window.localStorage.removeItem("uid");
         // window.localStorage.removeItem('name')
         this.$router.push({ name: "Login" });
 
