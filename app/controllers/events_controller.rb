@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def index
     render json: current_user.events.all
   end
-  
+
   def show
     render json: current_user.events.find_by(id: params[:id])
   end
@@ -33,10 +33,11 @@ class EventsController < ApplicationController
     render json: event
   end
 
-      private
+  private
 
-          def event_params
-          params.require(:event).permit(:name, :start, :end, :timed, :description, :color)
-        end
+  def event_params
+    params
+      .require(:event)
+      .permit(:name, :start, :end, :timed, :description, :color)
+  end
 end
-

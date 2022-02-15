@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
+
   # def initialize(message_params)
-    # @message = current_user.message.new()
+  # @message = current_user.message.new()
   # end
 
   def index
@@ -27,8 +28,9 @@ class MessagesController < ApplicationController
     render json: message
   end
 
-      private
-        def message_params
-          params.require(:message).permit(:title, :content)
-        end
+  private
+
+  def message_params
+    params.require(:message).permit(:title, :content)
+  end
 end

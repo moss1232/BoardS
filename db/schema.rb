@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_110024) do
+ActiveRecord::Schema.define(version: 2022_02_15_001308) do
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2022_02_04_110024) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "password", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_teams_on_name"
+  end
+
+  create_table "user_team_relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_user_team_relationships_on_team_id"
+    t.index ["user_id"], name: "index_user_team_relationships_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -47,4 +64,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_110024) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "user_team_relationships", "teams"
+  add_foreign_key "user_team_relationships", "users"
 end
