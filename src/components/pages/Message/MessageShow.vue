@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import MessageCreateFormButton from "./MessageCreateFormButton.vue";
+import MessageCreateFormButton from "../../layouts/MessageCreateFormButton.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -41,7 +41,7 @@ export default {
   methods: {
     ...mapActions("messages", ["fetchMessages"]),
   },
-  mounted() {
+  created() {
     this.fetchMessages();
     console.log(this.messages)
 

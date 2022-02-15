@@ -70,7 +70,7 @@ export default {
       }
     },
     redirectToMessage() {
-      this.$router.push({ name: "Message" });
+      this.$router.push({ name: 'MessageShow', params: { id: 1 } });
     },
   },
 };

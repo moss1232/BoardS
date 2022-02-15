@@ -8,32 +8,33 @@ const routes = [
     path: "/",
     name: "Message",
     components: {
-      default: () => import("../components/pages/Message.vue"),
+      default: () => import("../components/pages/Message/MessageRootPage.vue"),
       header: () => import("../components/layouts/Header.vue"),
-      
-      // sidebar: () => import("../components/layouts/Sidebar.vue"),
-      // footer: () => import("../components/layouts/Footer.vue"),
     },
+    children: [
+      {
+        path: ":id",
+        name: "MessageShow",
+        component: () => import("../components/pages/Message/MessageShow.vue"),
+        // meta: { requireAuth: true },
+      },
+    ],
   },
   {
-    path: "/schedule",
-    name: "Schedule",
+    path: "/Calendar",
+    name: "Calendar",
     components: {
-      default: () => import("../components/pages/Schedule.vue"),
-      // sidebar: () => import("../components/layouts/Sidebar.vue"),
+      default: () => import("../components/pages/Calendar/CalendarRootPage.vue"),
       header: () => import("../components/layouts/Header.vue"),
     },
+    children: [
+      {
+        path: ":id",
+        name: "CalendarShow",
+        component: () => import("../components/pages/Calendar/CalendarShow.vue"),
+      },
+    ],
   },
-  // {
-  //   path: "/todo",
-  //   name: "Todo",
-  //   components: {
-  //     default: () => import("../components/pages/Todo.vue"),
-  //     sidebar: () => import("../components/layouts/Sidebar.vue"),
-  //     header: () => import("../components/layouts/Header.vue"),
-  //     main_header: () => import("../components/layouts/TodoTab.vue"),
-  //   },
-  // },
   {
     path: "/login",
     name: "Login",

@@ -42,9 +42,9 @@
 import { format } from "date-fns";
 import { mapGetters, mapActions } from "vuex";
 
-import CalendarEventDetailDialog from "../events/CalendarEventDetailDialog.vue";
-import CalendarEventFormDialog from "../forms/CalendarEventFormDialog.vue";
-import { getDefaultStartAndEnd } from "../../functions/datetime";
+import CalendarEventDetailDialog from "/src/components/events/CalendarEventDetailDialog.vue";
+import CalendarEventFormDialog from "/src/components/forms/CalendarEventFormDialog.vue";
+import { getDefaultStartAndEnd } from "/src/functions/datetime";
 
 export default {
   components: {

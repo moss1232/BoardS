@@ -1,31 +1,18 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" app>
-      <!-- <v-sheet color="grey lighten-4" class="pt-4 px-4">
-        <v-row align="center">
-          <v-col cols="12">
-            <v-select :items="items" item-text="state" label="Team"></v-select>
-          </v-col>
-        </v-row>
-      </v-sheet>
-
-      <v-divider></v-divider> -->
-
       <v-list>
         <v-list-item-group mandatory color="indigo">
           <v-list-item
-            v-for="[icon, text, link_to] in team_links"
-            :key="icon"
-            :to="link_to"
+            v-for="team in teams"
+            :key="team.name"
+            :to= "{ name: 'MessageShow', params: { id: team.id } }"
             link
           >
             <v-list-item-icon>
-              <v-icon>{{ icon }}</v-icon>
+              <v-icon>{{ team.name }}</v-icon>
             </v-list-item-icon>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ text }}</v-list-item-title>
-            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -39,8 +26,8 @@
       ></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab v-for="[icon, text, link_to] in links" :key="icon" :to="link_to">
-          {{ text }}
+        <v-tab v-for="tab in tabs" :key="tab.icon" :to="tab.link_to">
+          {{ tab.text }}
         </v-tab>
       </v-tabs>
       <v-btn @click="logout">logout</v-btn>
@@ -60,14 +47,9 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     drawer: null,
-    links: [
-      ["mdi-message", "Message", "/"],
-      ["mdi-calendar", "Schedule", "/schedule"],
-    ],
-    team_links: [
-      ["mdi-message", "team1", "/"],
-      ["mdi-checkbox-outline", "team2", "/todo"],
-      ["mdi-calendar", "team3", "/schedule"],
+    tabs: [
+    {icon: "mdi-message",text: "Message", link_to: "/1"},
+      {icon: "mdi-calendar",text: "Calendar",link_to: "/calendar/1"},
     ],
   }),
 
@@ -99,7 +81,7 @@ export default {
         ...mapActions("teams", ["fetchTeams"]),
   },
 
-  mounted() {
+  created() {
     this.fetchTeams();
     console.log(this.teams)
   },

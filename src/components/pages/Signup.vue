@@ -91,7 +91,7 @@ export default {
       }
     },
     redirectToMessage() {
-      this.$router.push({ name: "Message" });
+      this.$router.push({ name: 'CalendarShow', params: { id: 1 } });
     },
   }
 }
