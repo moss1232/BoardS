@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  
+  has_one_attached :image
   has_many :user_team_relationships
   has_many :users, through: :user_team_relationships
   has_many :message_team_relationships
