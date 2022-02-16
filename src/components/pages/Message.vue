@@ -15,7 +15,7 @@
                   </v-list-item-title>
 
                   <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
-                    {{ message.content }}
+                    {{ message.content }},{{$route.params.id}}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -35,6 +35,9 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   components: { MessageCreateFormButton },
   data: () => ({}),
+  // watch: {
+  //   $route
+  // },
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
@@ -42,7 +45,7 @@ export default {
     ...mapActions("messages", ["fetchMessages"]),
   },
   created() {
-    this.fetchMessages();
+    this.fetchMessages(this.$route.params.id);
     console.log(this.messages)
 
   },

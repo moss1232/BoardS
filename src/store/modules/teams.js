@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeTeam } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:3000";
+const apiUrl = "http://127.0.0.1:3000/api";
 
 const state = {
   teams: [],
@@ -24,7 +24,7 @@ const mutations = {
 
 const actions = {
   async fetchTeams({ commit }) {
-    const response = await axios.get(`${apiUrl}/teams`, {
+    const response = await axios.get(`${apiUrl}/user/team`, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),
@@ -34,7 +34,7 @@ const actions = {
     commit("setTeams", response.data);
   },
   async createTeam({ commit }, team) {
-    const response = await axios.post(`${apiUrl}/teams`, team, {
+    const response = await axios.post(`${apiUrl}/user/team`, team, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),

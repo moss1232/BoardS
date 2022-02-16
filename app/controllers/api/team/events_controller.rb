@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+  class Api::Team::EventsController < ApplicationController
   def index
     render json: current_user.events.all
   end
@@ -41,3 +41,4 @@ class EventsController < ApplicationController
       .permit(:name, :start, :end, :timed, :description, :color)
   end
 end
+

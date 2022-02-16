@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeMessage } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:3000";
+const apiUrl = "http://127.0.0.1:3000/api";
 
 const state = {
   messages: [],
@@ -22,8 +22,11 @@ const mutations = {
 };
 
 const actions = {
-  async fetchMessages({ commit }) {
-  const response = await axios.get(`${apiUrl}/messages`,{
+  async fetchMessages({ commit }, current_team_id) {
+  const response = await axios.get(
+    `${apiUrl}/team/messages/${current_team_id}`,
+    {
+      // `${apiUrl}/team/messages`,{
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),
@@ -34,7 +37,7 @@ const actions = {
     commit("setMessages", response.data);
   },
   async createMessage({ commit }, message) {
-    const response = await axios.post(`${apiUrl}/messages`, message, {
+    const response = await axios.post(`${apiUrl}/user/messages`, message, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),

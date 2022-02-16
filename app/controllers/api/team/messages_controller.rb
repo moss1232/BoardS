@@ -1,15 +1,13 @@
-class MessagesController < ApplicationController
+class Api::Team::MessagesController < ApplicationController
   # before_action :authenticate_user!
 
-  def index
-    # render json: current_user.messages.all
-    render json: Message.all
-    # current_team = current_user.Team.find_by(id: 1)
-    # render json: current_team.messages.all
-  end
 
+  
   def show
-    render json: current_user.messages.find_by(id: params[:id])
+    teams = current_user.teams.all
+    current_team = teams.find_by(id: params[:id])
+    render json: current_team.messages.all
+    # render json: current_user.messages.all
   end
 
   def create
@@ -29,7 +27,9 @@ class MessagesController < ApplicationController
 
   private
 
-  def message_params
-    params.require(:message).permit(:title, :content)
-  end
+  # def message_params
+  #   params.require(:message).permit(:title, :content)
+  # end
+
+
 end

@@ -4,10 +4,15 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
-  resources :teams, only: ['index', 'show', 'create', 'destroy']
-
-  resources :events, only: ['index', 'show', 'create', 'destroy', 'update']
-
-  resources :messages, only: ['index', 'show', 'create', 'destroy']
-
+  namespace :api do
+    namespace :team do
+      resources :messages, only: ['index', 'show', 'create', 'destroy']
+      resources :events, only: ['index', 'show', 'create', 'destroy']
+    end
+    
+    namespace :user do
+      resources :message, only: ['index', 'show', 'create', 'destroy']
+      resources :team, only: ['index', 'show', 'create', 'destroy']
+    end
+  end
 end

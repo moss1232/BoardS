@@ -26,11 +26,11 @@
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab 
-        :to="{ name: 'Message', params: { id: $route.params.id } }">
+        :to="{ name: 'Message', params: { id: $route.params['id'] } }">
           message
         </v-tab>
         <v-tab 
-        :to="{ name: 'Calendar', params: { id: $route.params.id } }">
+        :to="{ name: 'Calendar', params: { id: $route.params['id'] } }">
           calendar
         </v-tab>
       </v-tabs>
@@ -85,7 +85,7 @@ export default {
     ...mapActions("teams", ["fetchTeams"]),
   },
 
-  created() {
+  mounted() {
     this.fetchTeams();
     console.log(this.teams);
   },
