@@ -9,7 +9,6 @@ const routes = [
     name: "Login",
     components: {
       default: () => import("../components/pages/Login.vue"),
-      // sidebar: () => import('../components/pages/sidebar.vue'),
     },
   },
   {
@@ -17,46 +16,22 @@ const routes = [
     name: "Signup",
     components: {
       default: () => import("../components/pages/Signup.vue"),
-      // sidebar: () => import('../components/pages/sidebar.vue'),
     },
   },
   {
-    path: "/",
+    path: "/Message/:id",
     name: "Message",
     components: {
-      default: () => import("../components/pages/Message/MessageRootPage.vue"),
+      default: () => import("../components/pages/Message.vue"),
       header: () => import("../components/layouts/Header.vue"),
     },
-    children: [
-      {
-        path: ":id",
-        name: "MessageShow",
-        component: () => import("../components/pages/Message/MessageShow.vue"),
-        // meta: { requireAuth: true },
-      },
-    ],
   },
   {
-    path: "/Calendar",
+    path: "/Calendar/:id",
     name: "Calendar",
     components: {
-      default: () => import("../components/pages/Calendar/CalendarRootPage.vue"),
+      default: () => import("../components/pages/Calendar.vue"),
       header: () => import("../components/layouts/Header.vue"),
-    },
-    children: [
-      {
-        path: ":id",
-        name: "CalendarShow",
-        component: () => import("../components/pages/Calendar/CalendarShow.vue"),
-      },
-    ],
-  },
-  {
-    path: "/test",
-    name: "Test",
-    components: {
-      default: () => import("../test/Test.vue"),
-      // sidebar: () => import('../components/pages/sidebar.vue'),
     },
   },
 ];

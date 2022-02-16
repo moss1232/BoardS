@@ -6,13 +6,12 @@
           <v-list-item
             v-for="team in teams"
             :key="team.name"
-            :to= "{ name: 'MessageShow', params: { id: team.id } }"
+            :to="`${team.id}`"
             link
           >
             <v-list-item-icon>
               <v-icon>{{ team.name }}</v-icon>
             </v-list-item-icon>
-
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -26,8 +25,13 @@
       ></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab v-for="tab in tabs" :key="tab.icon" :to="tab.link_to">
-          {{ tab.text }}
+        <v-tab 
+        :to="{ name: 'Message', params: { id: $route.params.id } }">
+          message
+        </v-tab>
+        <v-tab 
+        :to="{ name: 'Calendar', params: { id: $route.params.id } }">
+          calendar
         </v-tab>
       </v-tabs>
       <v-btn @click="logout">logout</v-btn>
@@ -47,15 +51,15 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     drawer: null,
-    tabs: [
-    {icon: "mdi-message",text: "Message", link_to: "/1"},
-      {icon: "mdi-calendar",text: "Calendar",link_to: "/calendar/1"},
-    ],
+    // tabs: [
+    //   { text: "message", link: { id: "1"} },
+    //   { text: "calendar", link: { id: "2"} },
+    // ],
   }),
 
-    computed: {
-      ...mapGetters("teams", ["teams"]),
-    },
+  computed: {
+    ...mapGetters("teams", ["teams"]),
+  },
   methods: {
     async logout() {
       try {
@@ -78,12 +82,12 @@ export default {
         console.log({ error });
       }
     },
-        ...mapActions("teams", ["fetchTeams"]),
+    ...mapActions("teams", ["fetchTeams"]),
   },
 
   created() {
     this.fetchTeams();
-    console.log(this.teams)
+    console.log(this.teams);
   },
 };
 </script>

@@ -21038,3 +21038,1690 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1233)
 
 
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 09:48:45 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 09:48:45 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 09:48:46 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 09:48:46 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 09:49:02 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1536)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 09:49:02 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 09:49:25 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 09:49:25 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:28:31 +0900
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 3399)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:30:12 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1548)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:30:12 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:30:48 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:30:48 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:30:51 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:30:51 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:31:36 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:31:36 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2835)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:31:59 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:32:04 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:32:13 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 1535)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:32:32 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:32:32 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:32:33 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:32:34 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:34:40 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:34:40 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2837)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:34:41 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:34:41 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:34:43 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:34:43 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:34:45 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:34:45 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 2835)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:34:55 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:34:55 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1253)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:34:57 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:35:07 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:35:09 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:35:36 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:35:37 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:35:38 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:35:39 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:35:39 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2835)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:36:01 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:36:48 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:36:48 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:36:49 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:36:54 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:36:58 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:37:05 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 1235)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:37:07 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:37:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:37:42 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:37:43 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:38:16 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:38:16 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:38:42 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 2835)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:38:44 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:26 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:29 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:32 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:35 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:36 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:39 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1535)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:43 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:50 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:39:51 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:27 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:31 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1535)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:41:33 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:35 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:41:35 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:37 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:41:37 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:41 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1535)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:41:41 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:41:55 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:00 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:00 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:01 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:01 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:03 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:03 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:05 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:05 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:21 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:23 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:23 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:34 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:34 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:40 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:42:56 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:42:56 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2835)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:43:03 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:43:04 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:43:06 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:43:07 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:43:07 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1235)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:47:57 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:47:57 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:47:57 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:47:57 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:39 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:52:39 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2835)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:40 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:52:40 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:40 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:52:40 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:41 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1697)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:52:41 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:42 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:52:42 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:53 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:52:56 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:04 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:56:04 +0900
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1866)
+
+
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:05 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:56:05 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:06 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:56:06 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:07 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:56:07 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2836)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:10 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:56:10 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:14 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 10:56:14 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 10:56:16 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 10:56:16 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:45:37 +0900
+Processing by TeamsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 2017)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:45:37 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 2882)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:45:38 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1533)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:45:38 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1253)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:46:22 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1699)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:46:22 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:46:29 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1737)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:46:29 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:46:39 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1712)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:46:39 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:46:42 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:46:42 +0900
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1911)
+
+
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:47:33 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 2835)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:47:34 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:47:36 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 2835)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:56:35 +0900
+Processing by TeamsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 2016)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:56:35 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2884)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:56:40 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:56:40 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:56:46 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1533)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 11:56:46 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 2834)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:57:19 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:57:19 +0900
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1881)
+
+
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1253)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:59:08 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:59:09 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:59:09 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:59:15 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 11:59:15 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 11:59:58 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:00:10 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:00:10 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:00:11 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:00:36 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:00:36 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:00:39 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:19:37 +0900
+Processing by TeamsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2018)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:19:38 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:19:43 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:19:57 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:20:18 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:21:08 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:21:08 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1254)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:22:04 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.8ms | Allocations: 1535)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:22:04 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:22:07 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:22:07 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:22:15 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:22:15 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:22:22 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:22:22 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:24:30 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:24:34 +0900
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1534)
+
+
+Started GET "/teams" for 127.0.0.1 at 2022-02-16 12:30:16 +0900
+Processing by TeamsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/teams_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 2017)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:30:16 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1253)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 12:31:19 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 2882)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:31:20 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 12:31:21 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:31:21 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 12:31:23 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:31:24 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 12:31:26 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:31:26 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1234)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-16 12:31:37 +0900
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/events_controller.rb:3:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 2834)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-02-16 12:31:38 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+

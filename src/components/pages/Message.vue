@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import MessageCreateFormButton from "../../layouts/MessageCreateFormButton.vue";
+import MessageCreateFormButton from "../layouts/MessageCreateFormButton.vue"
 import { mapGetters, mapActions } from "vuex";
 
 export default {
