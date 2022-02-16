@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    render json: current_user.messages.all
+    # render json: current_user.messages.all
+    render json: Message.all
     # current_team = current_user.Team.find_by(id: 1)
     # render json: current_team.messages.all
   end

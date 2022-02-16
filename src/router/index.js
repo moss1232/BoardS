@@ -5,6 +5,22 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: "/login",
+    name: "Login",
+    components: {
+      default: () => import("../components/pages/Login.vue"),
+      // sidebar: () => import('../components/pages/sidebar.vue'),
+    },
+  },
+  {
+    path: "/signup",
+    name: "Signup",
+    components: {
+      default: () => import("../components/pages/Signup.vue"),
+      // sidebar: () => import('../components/pages/sidebar.vue'),
+    },
+  },
+  {
     path: "/",
     name: "Message",
     components: {
@@ -34,22 +50,6 @@ const routes = [
         component: () => import("../components/pages/Calendar/CalendarShow.vue"),
       },
     ],
-  },
-  {
-    path: "/login",
-    name: "Login",
-    components: {
-      default: () => import("../components/pages/Login.vue"),
-      // sidebar: () => import('../components/pages/sidebar.vue'),
-    },
-  },
-  {
-    path: "/signup",
-    name: "Signup",
-    components: {
-      default: () => import("../components/pages/Signup.vue"),
-      // sidebar: () => import('../components/pages/sidebar.vue'),
-    },
   },
   {
     path: "/test",

@@ -27,10 +27,12 @@ ActiveRecord::Schema.define(version: 2022_02_15_001308) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "team_id"
     t.string "title"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_messages_on_team_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
