@@ -46,8 +46,10 @@ export default {
   created() {
     this.fetchMessages(this.$route.params.id);
     this.$watch(
-      () => this.$route.params,
-      this.fetchMessages(this.$route.params.id)
+      () => this.$route.params.id,
+      (newVal) => {
+        this.fetchMessages(newVal)
+      }
     );
   },
 };

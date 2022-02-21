@@ -26456,3 +26456,526 @@ Processing by Api::Team::MessagesController#show as HTML
 Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 3248)
 
 
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:11:05 +0900
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:11:05 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::User::TeamController#index as HTML
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 9541)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  
+NoMethodError (undefined method `teams' for nil:NilClass):
+  
+app/controllers/api/user/team_controller.rb:3:in `index'
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.4ms | Allocations: 40262)
+
+
+  
+NoMethodError (undefined method `teams' for nil:NilClass):
+  
+app/controllers/api/team/messages_controller.rb:7:in `show'
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-21 21:11:52 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 6316)
+
+
+Started DELETE "/auth/sign_out" for ::1 at 2022-02-21 21:11:53 +0900
+Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1051)
+
+
+Started POST "/auth/sign_in" for ::1 at 2022-02-21 21:12:08 +0900
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"a@me.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@me.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "a@me.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"_AneYIMlqSyRbtGVmH3KlA\":{\"token\":\"$2a$10$MOVD.6bjHrp.2ShRhEmhQ.b2sfmYKZZMMRVLgAdEkwgY//h/W87WK\",\"expiry\":1646226622},\"qtv4ctIVwH8kHQh16V6E4Q\":{\"token\":\"$2a$10$Os44xAOLgRGR8vOwhTno9ejSfzUDkvU1qviUpJmZoF7FKlFk163ty\",\"expiry\":1646655128}}"], ["updated_at", "2022-02-21 12:12:08.718372"], ["id", 1]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 238ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 8638)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:12:08 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 5.9ms | ActiveRecord: 1.6ms | Allocations: 13187)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:12:08 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 13.3ms | ActiveRecord: 2.5ms | Allocations: 8531)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:12:17 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 3372)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:12:17 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 3258)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:12:19 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:12:19 +0900
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 2871)
+
+
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (7.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 6.0ms | ActiveRecord: 8.2ms | Allocations: 3259)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:12:19 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 3260)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:43 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:43 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 3129)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:44 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:44 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 3128)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:12:52 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2669)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:52 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:12:52 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:13:00 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 3130)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:13:00 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:13:05 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:13:05 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:15:48 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 3259)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:15:52 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 3258)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:15:55 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 2656)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 21:15:55 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 3258)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 21:51:25 +0900
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 21:51:25 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::Team::MessagesController#show as HTML
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 1.7ms | Allocations: 4267)
+
+
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 1.2ms | Allocations: 6344)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 22:02:41 +0900
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:02:41 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::Team::MessagesController#show as HTML
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 3.4ms | ActiveRecord: 1.6ms | Allocations: 4773)
+
+
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 1.3ms | Allocations: 6347)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:02:41 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 3128)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 22:03:59 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:03:59 +0900
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 4.3ms | ActiveRecord: 1.5ms | Allocations: 2846)
+
+
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 4.6ms | ActiveRecord: 1.1ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:03:59 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 5.6ms | ActiveRecord: 1.1ms | Allocations: 3128)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-02-21 22:04:07 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:04:07 +0900
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2870)
+
+
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 3128)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 22:04:10 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 3258)
+
+
+Started GET "/api/team/messages/2" for 127.0.0.1 at 2022-02-21 22:04:15 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 3128)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-02-21 22:04:17 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 22:04:22 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 3551)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 22:04:34 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 3258)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-02-21 22:04:36 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:8:in `show'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:9:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 3258)
+
+
