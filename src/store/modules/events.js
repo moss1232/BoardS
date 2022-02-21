@@ -1,7 +1,7 @@
 import axios from "axios";
   import { serializeEvent } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:3000";
+const apiUrl = "http://127.0.0.1:3000/api";
 
 const state = {
   events: [],
@@ -31,14 +31,17 @@ const mutations = {
 };
 
 const actions = {
-  async fetchEvents({ commit }) {
-    const response = await axios.get(`${apiUrl}/events`, {
-      headers: {
-        uid: window.localStorage.getItem("uid"),
-        "access-token": window.localStorage.getItem("access-token"),
-        client: window.localStorage.getItem("client"),
-      },
-    });
+  async fetchEvents({ commit }, current_team_id) {
+    const response = await axios.get(
+      `${apiUrl}/team/events/${current_team_id}`,
+      {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+      }
+    );
     commit("setEvents", response.data);
   },
   async createEvent({ commit }, event) {

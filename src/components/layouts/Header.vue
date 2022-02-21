@@ -51,10 +51,6 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     drawer: null,
-    // tabs: [
-    //   { text: "message", link: { id: "1"} },
-    //   { text: "calendar", link: { id: "2"} },
-    // ],
   }),
 
   computed: {
@@ -85,7 +81,7 @@ export default {
     ...mapActions("teams", ["fetchTeams"]),
   },
 
-  mounted() {
+  created() {
     this.fetchTeams();
     console.log(this.teams);
   },

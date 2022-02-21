@@ -1,10 +1,13 @@
-  class Api::Team::EventsController < ApplicationController
-  def index
-    render json: current_user.events.all
-  end
+class Api::Team::EventsController < ApplicationController
 
+  def index
+    render json: Team.find(1).events.all
+  end
+  
   def show
-    render json: current_user.events.find_by(id: params[:id])
+    teams = current_user.teams.all
+    current_team = teams.find_by(id: params[:id])
+    render json: current_team.events.all
   end
 
   def create

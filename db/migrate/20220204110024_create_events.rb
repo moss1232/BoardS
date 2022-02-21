@@ -2,6 +2,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
   def change
     create_table :events do |t|
       t.references :user
+      t.references :team
       t.string :name, limit: 100, null: false  # オプションを追加
       t.datetime :start, null: false           # オプションを追加
       t.datetime :end, null: false             

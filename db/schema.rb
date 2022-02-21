@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_02_16_042521) do
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "team_id"
     t.string "name", limit: 100, null: false
     t.datetime "start", null: false
     t.datetime "end", null: false
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_02_16_042521) do
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_events_on_team_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 

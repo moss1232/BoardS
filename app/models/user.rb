@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :validatable
   include DeviseTokenAuth::Concerns::User
   has_many :messages, dependent: :destroy
-  # has_many :events, dependent: :destroy
+  has_many :events, dependent: :destroy
   has_many :user_team_relationships, dependent: :destroy
   has_many :teams, through: :user_team_relationships
 
