@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules.
-  has_one_attached :image
+  has_one_attached :avatar
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -15,4 +15,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :name, length: { maximum: 30 }
+
+  def user_avatar_url
+    avatar.attached? ? url_for(avatar) : nil
+  end
+
 end

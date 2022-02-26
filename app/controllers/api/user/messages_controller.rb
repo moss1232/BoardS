@@ -1,4 +1,6 @@
 class Api::User::MessagesController < ApplicationController
+
+  
   
     def create
         message = current_user.messages.new(message_params)

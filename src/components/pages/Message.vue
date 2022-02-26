@@ -8,7 +8,6 @@
               <v-list-item v-for="message in messages" :key="message.title">
                 <v-list-item-avatar color="grey darken-1" size="36px">
                 </v-list-item-avatar>
-                <!-- {{ message.avatar }} -->
                 <v-list-item-content>
                   <v-list-item-title class="hidden-xs-only" sm="5" md="3"
                     >{{ message.title }}
