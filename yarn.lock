@@ -964,6 +964,11 @@
     "cssnano-preset-default" "^4.0.0"
     "postcss" "^7.0.0"
 
+"@mdi/font@^6.5.95":
+  "integrity" "sha512-ES5rj6J39FUkHe/b3C9SJs8bqIungYhuU7rBINTBaHOv/Ce4RCb3Gw08CZVl32W33UEkgRkzyWaIedV4at+QHg=="
+  "resolved" "https://registry.npmjs.org/@mdi/font/-/font-6.5.95.tgz"
+  "version" "6.5.95"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   "integrity" "sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g=="
   "resolved" "https://registry.npmjs.org/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz"
@@ -4356,7 +4361,7 @@
     "function-bind" "^1.1.1"
 
 "hash-base@^3.0.0":
-  "integrity" "sha512-1nmYp/rhMDiE7AYkDw+lLwlAzz0AntGIe51F3RfFfEqyQ3feY2eI/NcwC6umIQVOASPMsWJLJScWKSSvzL9IVA=="
+  "integrity" "sha512-1nmYp/rhE7AYkDw+lLwlAzz0AntGIe51F3RfFfEqyQ3feY2eI/NcwC6umIQVOASPMsWJLJScWKSSvzL9IVA=="
   "resolved" "https://registry.npmjs.org/hash-base/-/hash-base-3.1.0.tgz"
   "version" "3.1.0"
   dependencies:

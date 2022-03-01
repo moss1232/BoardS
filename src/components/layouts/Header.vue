@@ -22,10 +22,7 @@
 
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-avatar
-        :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
-        size="32"
-      ></v-avatar>
+      <v-avatar></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab :to="{ name: 'Message', params: { id: $route.params['id'] } }">
@@ -36,11 +33,6 @@
         </v-tab>
       </v-tabs>
       <v-btn @click="logout">logout</v-btn>
-      <v-avatar
-        class="hidden-sm-and-down"
-        color="grey darken-1 shrink"
-        size="32"
-      ></v-avatar>
     </v-app-bar>
   </div>
 </template>
