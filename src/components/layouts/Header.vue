@@ -14,9 +14,7 @@
               <img v-else src='../../../public/images/default.png'>
             </v-list-item-avatar>
 
-            <v-list-item-icon>
-              <v-icon>{{ team.name }}</v-icon>
-            </v-list-item-icon>
+            <v-list-item-title>{{ team.name }}</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>

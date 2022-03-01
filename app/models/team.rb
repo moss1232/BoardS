@@ -15,7 +15,4 @@ class Team < ApplicationRecord
     avatar.attached? ? url_for(avatar) : nil
   end
 
-  def user_avatar_url
-    avatar.attached? ? url_for(avatar) : nil
-  end
 end

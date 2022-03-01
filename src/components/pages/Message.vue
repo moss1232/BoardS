@@ -6,15 +6,17 @@
           <v-list two-line>
             <template>
               <v-list-item v-for="message in messages" :key="message.title">
-                <v-list-item-avatar color="grey darken-1" size="36px">
-                </v-list-item-avatar>
+            <v-list-item-avatar>
+              <img v-if = "message.message_user_avatar" alt="Avatar" :src="message.message_user_avatar" />
+              <img v-else src='../../../public/images/default.png'>
+            </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title class="hidden-xs-only" sm="5" md="3"
                     >{{ message.title }}
                   </v-list-item-title>
 
                   <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
-                    {{ message.content }},{{ $route.params.id }}
+                    {{ message.content }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>

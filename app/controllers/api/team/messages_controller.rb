@@ -5,7 +5,7 @@ class Api::Team::MessagesController < ApplicationController
   def show
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:id])
-    render json: current_team.messages.all, methods: [:user_avatar_url]
+    render json: current_team.messages.all, methods: [:message_user_avatar]
     # current_team.users.all, methods: [:team_avatar_url]
   end
 
