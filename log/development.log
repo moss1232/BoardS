@@ -37121,3 +37121,501 @@ FOREIGN KEY ("blob_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/user/team" for 127.0.0.1 at 2022-03-02 17:16:39 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 4.3ms | ActiveRecord: 1.4ms | Allocations: 19375)
+
+
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:16:39 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2243)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-03-02 17:16:43 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:6:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2133)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/api/team/messages_controller.rb:8:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:16:45 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1824)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-03-02 17:16:46 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:6:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1824)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/api/team/messages_controller.rb:8:in `show'
+Started GET "/api/user/team" for 127.0.0.1 at 2022-03-02 17:16:47 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 2260)
+
+
+Started GET "/api/team/messages/1" for 127.0.0.1 at 2022-03-02 17:16:47 +0900
+Processing by Api::Team::MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:6:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/messages_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `messages' for nil:NilClass):
+  
+app/controllers/api/team/messages_controller.rb:8:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:44 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:45 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:45 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:46 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:47 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:48 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:48 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:48 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:48 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:48 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:49 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:50 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:50 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:50 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:51 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:51 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:51 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1805)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:51 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-02 17:17:51 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1804)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/api/team/events_controller.rb:10:in `show'
