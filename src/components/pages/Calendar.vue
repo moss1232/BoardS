@@ -20,7 +20,7 @@
       <CalendarEventDetailDialog v-if="event !== null && !isEditMode" />
       <CalendarEventFormDialog v-if="event !== null && isEditMode" />
     </v-dialog>
-    <v-sheet height="95vh">
+    <v-sheet height="80vh">
       <v-calendar
         ref="calendar"
         :events="events"

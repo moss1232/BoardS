@@ -36884,3 +36884,136 @@ Processing by Api::Team::EventsController#show as HTML
 Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 3057)
 
 
+Started GET "/api/user/team" for 127.0.0.1 at 2022-03-01 16:31:38 +0900
+Processing by Api::User::TeamController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 23.8ms | ActiveRecord: 4.2ms | Allocations: 5441)
+
+
+Started GET "/api/team/events/2" for 127.0.0.1 at 2022-03-01 16:31:38 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 1.5ms | Allocations: 3099)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b120c80a7125f737f6ad18b8dfd9bfec35132207/universe.png" for ::1 at 2022-03-01 16:31:38 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b120c80a7125f737f6ad18b8dfd9bfec35132207", "filename"=>"universe"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (3.9ms) [0m[34mGenerated URL for file at key: b3lige4zav85de4g5q7msaud3qam (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDc6MzY6MzguNTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--8ea77ea17d29a88c3f6eb06d766204f039557485/universe.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDc6MzY6MzguNTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--8ea77ea17d29a88c3f6eb06d766204f039557485/universe.png
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms | Allocations: 1253)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDc6MzY6MzguNTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--8ea77ea17d29a88c3f6eb06d766204f039557485/universe.png" for ::1 at 2022-03-01 16:31:38 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"universe"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 204)
+
+
+Started GET "/api/user/team" for 127.0.0.1 at 2022-03-01 18:50:29 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::User::TeamController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/user/team_controller.rb:3:in `index'
+Started GET "/api/team/events/2" for 127.0.0.1 at 2022-03-01 18:50:29 +0900
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+Processing by Api::Team::EventsController#show as HTML
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  ↳ app/models/team.rb:15:in `team_avatar_url'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+Completed 200 OK in 144ms (Views: 56.6ms | ActiveRecord: 5.0ms | Allocations: 42170)
+
+
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 10.6ms | ActiveRecord: 3.4ms | Allocations: 17679)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b120c80a7125f737f6ad18b8dfd9bfec35132207/universe.png" for ::1 at 2022-03-01 18:50:29 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b120c80a7125f737f6ad18b8dfd9bfec35132207", "filename"=>"universe"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (14.0ms) [0m[34mGenerated URL for file at key: b3lige4zav85de4g5q7msaud3qam (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDk6NTU6MjkuMzk5WiIsInB1ciI6ImJsb2Jfa2V5In19--fdf31db43e4b7d289b5b257f9e5fdd9e717d3930/universe.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDk6NTU6MjkuMzk5WiIsInB1ciI6ImJsb2Jfa2V5In19--fdf31db43e4b7d289b5b257f9e5fdd9e717d3930/universe.png
+Completed 302 Found in 21ms (ActiveRecord: 0.1ms | Allocations: 7893)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZak5zYVdkbE5IcGhkamcxWkdVMFp6VnhOMjF6WVhWa00zRmhiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5WdWFYWmxjbk5sTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVzVwZG1WeWMyVXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDMtMDFUMDk6NTU6MjkuMzk5WiIsInB1ciI6ImJsb2Jfa2V5In19--fdf31db43e4b7d289b5b257f9e5fdd9e717d3930/universe.png" for ::1 at 2022-03-01 18:50:29 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"universe"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-01 18:54:27 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 3755)
+
+
+Started GET "/api/team/events/2" for 127.0.0.1 at 2022-03-01 18:54:27 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 3057)
+
+
+Started GET "/api/team/events/1" for 127.0.0.1 at 2022-03-01 18:54:28 +0900
+Processing by Api::Team::EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "a@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:8:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "user_team_relationships" ON "teams"."id" = "user_team_relationships"."team_id" WHERE "user_team_relationships"."user_id" = ? AND "teams"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:9:in `show'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."team_id" = ?[0m  [["team_id", 1]]
+  ↳ app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 3455)
+
+
