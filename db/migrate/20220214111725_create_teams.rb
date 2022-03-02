@@ -1,11 +1,11 @@
 class CreateTeams < ActiveRecord::Migration[6.1]
-    def change
-    create_table :user_team_relationships do |t|
-      t.references :user, foreign_key: true
-      t.references :team, foreign_key: true
+      def change
+    create_table :teams do |t|
+      t.string :name, null: false
+      t.string :password, null: false
 
+      t.index :name
       t.timestamps
     end
-
   end
 end
