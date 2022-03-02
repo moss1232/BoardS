@@ -24,7 +24,7 @@ const mutations = {
 const actions = {
   async fetchMessages({ commit }, current_team_id) {
   const response = await axios.get(
-    `${apiUrl}/team/messages/${current_team_id}`,
+    `${apiUrl}/messages/${current_team_id}`,
     {
       // `${apiUrl}/team/messages`,{
       headers: {
@@ -37,7 +37,7 @@ const actions = {
     commit("setMessages", response.data);
   },
   async createMessage({ commit }, message) {
-    const response = await axios.post(`${apiUrl}/user/messages`, message, {
+    const response = await axios.post(`${apiUrl}/messages`, message, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),

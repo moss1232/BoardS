@@ -24,7 +24,7 @@ const mutations = {
 
 const actions = {
   async fetchTeams({ commit }) {
-    const response = await axios.get(`${apiUrl}/user/team`, {
+    const response = await axios.get(`${apiUrl}/teams`, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),
@@ -34,7 +34,7 @@ const actions = {
     commit("setTeams", response.data);
   },
   async createTeam({ commit }, team) {
-    const response = await axios.post(`${apiUrl}/user/team`, team, {
+    const response = await axios.post(`${apiUrl}/teams`, team, {
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),

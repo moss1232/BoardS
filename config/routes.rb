@@ -5,14 +5,9 @@ Rails.application.routes.draw do
   }
 
   namespace :api do
-    namespace :team do
-      resources :messages, only: ['index', 'show', 'create', 'destroy']
+      resources :users, only: ['index']
+      resources :messages, only: ['show', 'destroy', 'create']
       resources :events, only: ['index', 'show', 'create', 'destroy']
+      resources :teams, only: ['index', 'show', 'create', 'destroy', 'update']
     end
-    
-    namespace :user do
-      resources :message, only: ['index', 'show', 'create', 'destroy']
-      resources :team, only: ['index', 'show', 'create', 'destroy']
-    end
-  end
 end

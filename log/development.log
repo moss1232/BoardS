@@ -37619,3 +37619,109 @@ Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1
 NoMethodError (undefined method `events' for nil:NilClass):
   
 app/controllers/api/team/events_controller.rb:10:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teams" WHERE "teams"."name" = ? LIMIT ?[0m  [["name", "team1"], ["LIMIT", 1]]
+  [1m[36mTeam Create (0.2ms)[0m  [1m[32mINSERT INTO "teams" ("name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "team1"], ["password", "aaaaaa"], ["created_at", "2022-03-02 17:26:51.579950"], ["updated_at", "2022-03-02 17:26:51.579950"]]
+  [1m[36mUserTeamRelationship Create (0.1ms)[0m  [1m[32mINSERT INTO "user_team_relationships" ("user_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["created_at", "2022-03-02 17:26:51.581945"], ["updated_at", "2022-03-02 17:26:51.581945"]]
+  [1m[36mUserTeamRelationship Create (0.1ms)[0m  [1m[32mINSERT INTO "user_team_relationships" ("user_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["team_id", 1], ["created_at", "2022-03-02 17:26:51.583462"], ["updated_at", "2022-03-02 17:26:51.583462"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teams" WHERE "teams"."name" = ? LIMIT ?[0m  [["name", "team2"], ["LIMIT", 1]]
+  [1m[36mTeam Create (0.1ms)[0m  [1m[32mINSERT INTO "teams" ("name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "team2"], ["password", "bbbbbb"], ["created_at", "2022-03-02 17:26:51.594643"], ["updated_at", "2022-03-02 17:26:51.594643"]]
+  [1m[36mUserTeamRelationship Create (0.1ms)[0m  [1m[32mINSERT INTO "user_team_relationships" ("user_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 2], ["created_at", "2022-03-02 17:26:51.595757"], ["updated_at", "2022-03-02 17:26:51.595757"]]
+  [1m[36mUserTeamRelationship Create (0.0ms)[0m  [1m[32mINSERT INTO "user_team_relationships" ("user_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["team_id", 2], ["created_at", "2022-03-02 17:26:51.597070"], ["updated_at", "2022-03-02 17:26:51.597070"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "team_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["title", "予定1"], ["content", "content1"], ["created_at", "2022-03-02 17:26:51.614811"], ["updated_at", "2022-03-02 17:26:51.614811"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "team_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["title", "予定2"], ["content", "content1"], ["created_at", "2022-03-02 17:26:51.666798"], ["updated_at", "2022-03-02 17:26:51.666798"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "team_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["team_id", 1], ["title", "予定3"], ["content", "content1"], ["created_at", "2022-03-02 17:26:51.678812"], ["updated_at", "2022-03-02 17:26:51.678812"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "team_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["team_id", 2], ["title", "予定4"], ["content", "content1"], ["created_at", "2022-03-02 17:26:51.690438"], ["updated_at", "2022-03-02 17:26:51.690438"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "team_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["team_id", 2], ["title", "予定5"], ["content", "content1"], ["created_at", "2022-03-02 17:26:51.700412"], ["updated_at", "2022-03-02 17:26:51.700412"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("user_id", "team_id", "name", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["name", "予定1"], ["start", "2021-07-14 01:00:00"], ["end", "2021-07-14 02:00:00"], ["created_at", "2022-03-02 17:26:51.719535"], ["updated_at", "2022-03-02 17:26:51.719535"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("user_id", "team_id", "name", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["name", "予定2"], ["start", "2021-07-14 01:00:00"], ["end", "2021-07-14 02:00:00"], ["created_at", "2022-03-02 17:26:51.731346"], ["updated_at", "2022-03-02 17:26:51.731346"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("user_id", "team_id", "name", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 1], ["name", "予定3"], ["start", "2021-07-14 01:00:00"], ["end", "2021-07-14 02:00:00"], ["created_at", "2022-03-02 17:26:51.743763"], ["updated_at", "2022-03-02 17:26:51.743763"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Create (0.2ms)[0m  [1m[32mINSERT INTO "events" ("user_id", "team_id", "name", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["team_id", 2], ["name", "予定4"], ["start", "2021-07-14 01:00:00"], ["end", "2021-07-14 02:00:00"], ["created_at", "2022-03-02 17:26:51.754471"], ["updated_at", "2022-03-02 17:26:51.754471"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teams" WHERE "teams"."name" = ? AND "teams"."id" != ? LIMIT ?[0m  [["name", "team2"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Team"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "hy1zin8v5jz5nf3uor3dtmrpdtd6"], ["filename", "universe.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 5411], ["checksum", "I/zXN9UI6o/ooT6i+ekRMQ=="], ["created_at", "2022-03-02 17:26:51.785553"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "Team"], ["record_id", 2], ["blob_id", 1], ["created_at", "2022-03-02 17:26:51.787208"]]
+  [1m[36mTeam Update (0.1ms)[0m  [1m[33mUPDATE "teams" SET "updated_at" = ? WHERE "teams"."id" = ?[0m  [["updated_at", "2022-03-02 17:26:51.788611"], ["id", 2]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: hy1zin8v5jz5nf3uor3dtmrpdtd6 (checksum: I/zXN9UI6o/ooT6i+ekRMQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: df42ee4c-6850-44b9-a65b-576df44fd497) to Async(default) with arguments: #<GlobalID:0x000055d55c4769b8 @uri=#<URI::GID gid://muscle-log3-skip-turbolinks/ActiveStorage::Blob/1>>
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "t1yf2mcv7bl5q5posncp7q6e2tvf"], ["filename", "doctor.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 16523], ["checksum", "dNETipsPibc57rWiJXRGFQ=="], ["created_at", "2022-03-02 17:26:51.806599"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [df42ee4c-6850-44b9-a65b-576df44fd497] Performing ActiveStorage::AnalyzeJob (Job ID: df42ee4c-6850-44b9-a65b-576df44fd497) from Async(default) enqueued at 2022-03-02T17:26:51Z with arguments: #<GlobalID:0x00007f5968067278 @uri=#<URI::GID gid://muscle-log3-skip-turbolinks/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 2], ["blob_id", 2], ["created_at", "2022-03-02 17:26:51.813888"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-03-02 17:26:51.815558"], ["id", 2]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [df42ee4c-6850-44b9-a65b-576df44fd497] [36m  Disk Storage (1.4ms) [0m[34mDownloaded file from key: hy1zin8v5jz5nf3uor3dtmrpdtd6[0m
+[36m  Disk Storage (4.8ms) [0m[32mUploaded file to key: t1yf2mcv7bl5q5posncp7q6e2tvf (checksum: dNETipsPibc57rWiJXRGFQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 74faf5ef-7373-40b1-a90d-6a002697c1ff) to Async(default) with arguments: #<GlobalID:0x000055d55c57f698 @uri=#<URI::GID gid://muscle-log3-skip-turbolinks/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [df42ee4c-6850-44b9-a65b-576df44fd497] Performed ActiveStorage::AnalyzeJob (Job ID: df42ee4c-6850-44b9-a65b-576df44fd497) from Async(default) in 30.75ms

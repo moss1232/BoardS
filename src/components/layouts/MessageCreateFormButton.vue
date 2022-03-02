@@ -17,7 +17,11 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="4">
-                <v-text-field label="タイトル" required v-model="title"></v-text-field>
+                <v-text-field
+                  label="タイトル"
+                  required
+                  v-model="title"
+                ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-textarea
@@ -36,6 +40,7 @@
           <v-btn color="blue darken-1" text @click="submit">
             <!-- {{user}} -->
             <v-icon>mdi-send</v-icon>
+            <v-icon></v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -49,27 +54,22 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     dialog: false,
-    title: '',
-    content: '',
-    // user: [],
-    // user_id: window.localStorage.getItem("uid"),
-    // user_id: window.localStorage.getItem("uid")
+    title: "",
+    content: "",
+    team_id: ""
   }),
-  // computed: {
-  //   ...mapGetters("messages", ["message"]),
-  // },
   methods: {
-    ...mapActions("messages",  ["createMessage"]),
+    ...mapActions("messages", ["createMessage"]),
     closeDialog() {
-      this.title = null
-      this.content = null
+      this.title = null;
+      this.content = null;
       this.dialog = false;
     },
     submit() {
       const params = {
         title: this.title,
         content: this.content,
-        // user: current_user,
+        team_id: this.$route.params['id'],
       };
       this.createMessage(params);
       this.closeDialog();

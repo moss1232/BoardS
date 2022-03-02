@@ -1,4 +1,4 @@
-class Api::Team::MessagesController < ApplicationController
+class Api::MessagesController < ApplicationController
   # before_action :authenticate_user!
 
 
@@ -6,11 +6,10 @@ class Api::Team::MessagesController < ApplicationController
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:id])
     render json: current_team.messages.all, methods: [:message_user_avatar]
-    # current_team.users.all, methods: [:team_avatar_url]
   end
 
-  def create
-    message = current_user.messages.new(message_params)
+    def create
+        message = current_user.messages.new(message_params)
     if message.save
       render json: message
     else
@@ -26,9 +25,11 @@ class Api::Team::MessagesController < ApplicationController
 
   private
 
-  # def message_params
-  #   params.require(:message).permit(:title, :content)
-  # end
+  def message_params
+    params
+      .require(:message)
+      .permit(:title, :content, :team_id)
+  end
 
 
 end

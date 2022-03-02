@@ -1,4 +1,4 @@
-class Api::Team::EventsController < ApplicationController
+class Api::EventsController < ApplicationController
 
   def index
     render json: Team.find(1).events.all
@@ -41,7 +41,7 @@ class Api::Team::EventsController < ApplicationController
   def event_params
     params
       .require(:event)
-      .permit(:name, :start, :end, :timed, :description, :color)
+      .permit(:name, :team_id, :start, :end, :timed, :description, :color)
   end
 end
 
