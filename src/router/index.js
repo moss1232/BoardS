@@ -1,15 +1,29 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Login",
+    path: "/:id",
     components: {
-      default: () => import("../components/pages/Login.vue"),
+      header: () => import("../components/layouts/Header.vue"),
+      default: () => import("../components/pages/Home.vue"),
     },
+    children: [
+      {
+        path: "Message",
+        name: "Message",
+        components: () => import("../components/pages/Message.vue")
+      },
+      {
+        path: "Calendar",
+        name: "Calendar",
+        components: {
+          content: () => import("../components/pages/Calendar.vue"),
+        },
+      },
+    ],
   },
   {
     path: "/signup",
@@ -19,27 +33,18 @@ const routes = [
     },
   },
   {
-    path: "/Message/:id",
-    name: "Message",
+    path: "/login",
+    name: "Login",
     components: {
-      default: () => import("../components/pages/Message.vue"),
-      header: () => import("../components/layouts/Header.vue"),
-    },
-  },
-  {
-    path: "/Calendar/:id",
-    name: "Calendar",
-    components: {
-      default: () => import("../components/pages/Calendar.vue"),
-      header: () => import("../components/layouts/Header.vue"),
+      default: () => import("../components/pages/Login.vue"),
     },
   },
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -25,10 +25,12 @@
       <v-avatar></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab :to="{ name: 'Message', params: { id: $route.params['id'] } }">
+        <!-- <v-tab :to="{ name: 'Message', params: { id: $route.params['id'] } }"> -->
+        <v-tab :to="{ name: 'Message'}">
           message
         </v-tab>
-        <v-tab :to="{ name: 'Calendar', params: { id: $route.params['id'] } }">
+        <!-- <v-tab :to="{ name: 'Calendar', params: { id: $route.params['id'] } }"> -->
+        <v-tab :to="{ name: 'Calendar'}">
           calendar
         </v-tab>
       </v-tabs>

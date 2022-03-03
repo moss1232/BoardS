@@ -5,7 +5,7 @@
         <v-card>
           <v-list two-line>
             <template>
-              <v-list-item v-for="message in messages" :key="message.title">
+              <v-list-item v-for="message in messages" :key="message.title" link>
             <v-list-item-avatar>
               <img v-if = "message.message_user_avatar" alt="Avatar" :src="message.message_user_avatar" />
               <img v-else src='../../../public/images/default.png'>
@@ -36,7 +36,8 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   components: { MessageCreateFormButton },
 
-  data: () => ({}),
+  data: () => ({
+  }),
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
