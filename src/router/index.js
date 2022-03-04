@@ -5,25 +5,11 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/:id",
+    path: "/login",
+    name: "Login",
     components: {
-      header: () => import("../components/layouts/Header.vue"),
-      default: () => import("../components/pages/Home.vue"),
+      default: () => import("../components/pages/Login.vue"),
     },
-    children: [
-      {
-        path: "Message",
-        name: "Message",
-        components: () => import("../components/pages/Message.vue")
-      },
-      {
-        path: "Calendar",
-        name: "Calendar",
-        components: {
-          content: () => import("../components/pages/Calendar.vue"),
-        },
-      },
-    ],
   },
   {
     path: "/signup",
@@ -33,11 +19,57 @@ const routes = [
     },
   },
   {
-    path: "/login",
-    name: "Login",
+    path: "/:team_id",
     components: {
-      default: () => import("../components/pages/Login.vue"),
+      default: () => import("../components/pages/Home.vue"),
+      header: () => import("../components/layouts/Header.vue"),
     },
+    children: [
+      {
+        path: "Message",
+        components: {
+          default: () => import("../components/pages/Homea.vue"),
+        },
+        children: [
+          {
+            path: "",
+            name: "TeamMessages",
+            components: {
+              default: () => import("../components/pages/Message.vue"),
+            },
+          },
+          {
+            path: ":message_id",
+            name: "TeamMessageDetail",
+            components: {
+              default: () => import("../components/pages/MessageDetail.vue"),
+            },
+          },
+        ],
+      },
+      {
+        path: "Calendar",
+        components: {
+          default: () => import("../components/pages/Homea.vue"),
+        },
+        children: [
+          {
+            path: "",
+            name: "TeamCalendars",
+            components: {
+              default: () => import("../components/pages/Calendar.vue"),
+            },
+          },
+          {
+            path: ":event_id",
+            name: "TeamCalendarDetail",
+            components: {
+              default: () => import("../components/pages/Calendar.vue"),
+            },
+          },
+        ]
+      },
+    ],
   },
 ];
 

@@ -31,9 +31,9 @@ const mutations = {
 };
 
 const actions = {
-  async fetchEvents({ commit }, current_team_id) {
+  async fetchEvents({ commit }, team_id) {
     const response = await axios.get(
-      `${apiUrl}/team/events/${current_team_id}`,
+      `${apiUrl}/team/events/${team_id}`,
       {
         headers: {
           uid: window.localStorage.getItem("uid"),

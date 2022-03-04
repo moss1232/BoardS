@@ -22,9 +22,9 @@ const mutations = {
 };
 
 const actions = {
-  async fetchMessages({ commit }, current_team_id) {
+  async fetchMessages({ commit }, team_id) {
   const response = await axios.get(
-    `${apiUrl}/messages/${current_team_id}`,
+    `${apiUrl}/messages/${team_id}`,
     {
       // `${apiUrl}/team/messages`,{
       headers: {

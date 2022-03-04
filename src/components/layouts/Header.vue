@@ -6,8 +6,8 @@
           <v-list-item
             v-for="team in teams"
             :key="team.name"
-            :to="`${team.id}`"
             link
+            :to="{ name: 'TeamMessages', params: { team_id: team.id } }"
           >
             <v-list-item-avatar>
               <img v-if = "team.team_avatar_url" alt="Avatar" :src="team.team_avatar_url" />
@@ -25,12 +25,10 @@
       <v-avatar></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
-        <!-- <v-tab :to="{ name: 'Message', params: { id: $route.params['id'] } }"> -->
-        <v-tab :to="{ name: 'Message'}">
+        <v-tab :to="{ name: 'TeamMessages', params: { team_id: $route.params['team_id'] } }">
           message
         </v-tab>
-        <!-- <v-tab :to="{ name: 'Calendar', params: { id: $route.params['id'] } }"> -->
-        <v-tab :to="{ name: 'Calendar'}">
+        <v-tab :to="{ name: 'TeamCalendars', params: { team_id: $route.params['team_id'] } }">
           calendar
         </v-tab>
       </v-tabs>
@@ -79,7 +77,6 @@ export default {
   created() {
     this.fetchTeams();
     console.log(this.teams);
-    // console.log(this.teams[0].avatar)
   },
 };
 </script>

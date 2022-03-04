@@ -3,25 +3,26 @@
     <v-row>
       <v-col>
         <v-card>
-          <v-list two-line>
-            <template>
-              <v-list-item v-for="message in messages" :key="message.title">
-            <v-list-item-avatar>
-              <img v-if = "message.message_user_avatar" alt="Avatar" :src="message.message_user_avatar" />
-              <img v-else src='../../../public/images/default.png'>
-            </v-list-item-avatar>
-                <v-list-item-content>
-                  <v-list-item-title class="hidden-xs-only" sm="5" md="3"
-                    >{{ message.title }}
-                  </v-list-item-title>
+          <v-card-title class="text-h5">
+            <v-avatar class="mr-6">
+              <img src="../../../public/images/default.png" />
+            </v-avatar>
+            <span>
+              {{ current_message.title }}
+            </span>
+          </v-card-title>
+          <v-card-text class="text-h6">
+            {{ current_message.content }}
+          </v-card-text>
 
-                  <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
-                    {{ message.content }}
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-          </v-list>
+          <!-- <v-avatar>
+            <img
+              v-if="message.message_user_avatar"
+              alt="Avatar"
+              :src="message.message_user_avatar"
+            />
+            <img v-else src="../../../public/images/default.png" />
+          </v-avatar> -->
         </v-card>
       </v-col>
     </v-row>
@@ -32,23 +33,19 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-
-  data: () => ({}),
+  data() {
+    return {
+    };
+  },
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
   methods: {
     ...mapActions("messages", ["fetchMessages"]),
+    // getMessage() {},
   },
-
   created() {
-    this.fetchMessages(this.$route.params.id);
-    this.$watch(
-      () => this.$route.params.id,
-      (newVal) => {
-        this.fetchMessages(newVal)
-      }
-    );
+    this.fetchMessages(this.$route.params.team_id)
   },
 };
 </script>
