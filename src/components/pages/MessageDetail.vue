@@ -8,21 +8,14 @@
               <img src="../../../public/images/default.png" />
             </v-avatar>
             <span>
-              {{ current_message.title }}
+              {{ message.title }}
             </span>
           </v-card-title>
           <v-card-text class="text-h6">
-            {{ current_message.content }}
+            {{ message.content }}
           </v-card-text>
 
-          <!-- <v-avatar>
-            <img
-              v-if="message.message_user_avatar"
-              alt="Avatar"
-              :src="message.message_user_avatar"
-            />
-            <img v-else src="../../../public/images/default.png" />
-          </v-avatar> -->
+
         </v-card>
       </v-col>
     </v-row>
@@ -31,6 +24,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+// import { mapGetters } from "vuex";
 
 export default {
   data() {
@@ -38,14 +32,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("messages", ["messages"]),
+    ...mapGetters("messages", ["message"]),
   },
   methods: {
-    ...mapActions("messages", ["fetchMessages"]),
-    // getMessage() {},
+    ...mapActions("messages", ["fetchDetailMessages"]),
   },
   created() {
-    this.fetchMessages(this.$route.params.team_id)
+    // store.dispatch('fetchDetailMessages', { team_id: this.$route.params.team_id, id: this.$route.params.id })
+    this.fetchDetailMessages({team_id: this.$route.params.team_id, message_id: this.$route.params.message_id})
+    console.log(this.message)
   },
 };
 </script>

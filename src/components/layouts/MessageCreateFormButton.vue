@@ -69,7 +69,7 @@ export default {
       const params = {
         title: this.title,
         content: this.content,
-        team_id: this.$route.params['id'],
+        team_id: this.$route.params['team_id'],
       };
       this.createMessage(params);
       this.closeDialog();
