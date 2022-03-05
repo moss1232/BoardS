@@ -86,14 +86,14 @@ export default {
     // };
     // this.createMessage(params);
     async submit() {
-      let formData = new FormData();
-      formData.append("title", this.title);
-      formData.append("content", this.content);
-      formData.append("team_id", this.$route.params.team_id);
+      let params = new FormData();
+      params.append("title", this.title);
+      params.append("content", this.content);
+      params.append("team_id", this.$route.params.team_id);
       if (this.imageFile !== null) {
-        formData.append("files", this.files);
+        params.append("files", this.files);
       }
-      this.createMessage({message: formData, team_id: this.$route.params.team_id});
+      this.createMessage(params);
       this.closeDialog();
     },
 }

@@ -47,9 +47,9 @@ const actions = {
     );
     commit("setMessage", response.data);
   },
-  async createMessage({ commit }, {message, team_id} ) {
+  async createMessage({ commit }, message ) {
     const response = await axios.post(
-      `${apiUrl}/${team_id}/messages`,
+      `${apiUrl}/${message.get("team_id")}/messages`,
       message,
       {
         headers: {

@@ -14,6 +14,6 @@ class Message < ApplicationRecord
   end
   
   def message_files_url
-    files.attached? ? url_for(message.files) : nil
+    files.attached? ? url_for(files) : nil
   end
 end

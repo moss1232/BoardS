@@ -31,8 +31,6 @@ class Api::MessagesController < ApplicationController
 
   def message_params
     params
-      .require(:message)
-      # .permit(:title, :content, :team_id, :files)
       .permit(:title, :content, :files, :team_id)
   end
 
