@@ -16,7 +16,8 @@ const getters = {
 
 const mutations = {
   setMessages: (state, messages) => (state.messages = messages),
-  appendMessage: (state, message) => (state.messages = [...state.messages, message]),
+  appendMessage: (state, message) =>
+    (state.messages = [...state.messages, message]),
   setMessage: (state, message) => (state.message = message),
   setEditMode: (state, bool) => (state.isEditMode = bool),
 };
@@ -46,9 +47,9 @@ const actions = {
     );
     commit("setMessage", response.data);
   },
-  async createMessage({ commit }, message) {
+  async createMessage({ commit }, {message, team_id} ) {
     const response = await axios.post(
-      `${apiUrl}/${message.team_id}/messages`,
+      `${apiUrl}/${team_id}/messages`,
       message,
       {
         headers: {

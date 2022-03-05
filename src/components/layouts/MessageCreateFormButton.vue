@@ -16,31 +16,41 @@
         <v-card-text>
           <v-container>
             <v-row>
+              <!-- <form> -->
               <v-col cols="12" sm="6" md="4">
-                <v-text-field
-                  label="タイトル"
-                  required
-                  v-model="title"
-                ></v-text-field>
+                <v-text-field label="タイトル" required v-model="title">
+                </v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-textarea
+                  filled
                   label="テキスト"
                   type="text"
                   required
                   auto-grow
                   v-model="content"
-                ></v-textarea>
+                >
+                </v-textarea>
               </v-col>
+              <v-col cols="12">
+                <v-file-input
+                  truncate-length="100"
+                  label="ファイル名"
+                  chips
+                  type="file"
+                  v-model="files"
+                ></v-file-input>
+                  <!-- multiple -->
+                  <!-- @change="onChangeFileInput" -->
+              </v-col>
+              <!-- </form> -->
             </v-row>
           </v-container>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="submit">
-            <!-- {{user}} -->
             <v-icon>mdi-send</v-icon>
-            <v-icon></v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -54,26 +64,38 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     dialog: false,
-    title: "",
-    content: "",
-    team_id: ""
+    title: null,
+    content: null,
+    files: null,
+    // fileData: null,
   }),
   methods: {
     ...mapActions("messages", ["createMessage"]),
     closeDialog() {
       this.title = null;
       this.content = null;
+      this.files = null;
       this.dialog = false;
     },
-    submit() {
-      const params = {
-        title: this.title,
-        content: this.content,
-        team_id: this.$route.params['team_id'],
-      };
-      this.createMessage(params);
+    // submit() {
+    // const params = {
+    //   title: this.title,
+    //   content: this.content,
+    //   team_id: this.$route.params["team_id"],
+    //   files: this.files,
+    // };
+    // this.createMessage(params);
+    async submit() {
+      let formData = new FormData();
+      formData.append("title", this.title);
+      formData.append("content", this.content);
+      formData.append("team_id", this.$route.params.team_id);
+      if (this.imageFile !== null) {
+        formData.append("files", this.files);
+      }
+      this.createMessage({message: formData, team_id: this.$route.params.team_id});
       this.closeDialog();
     },
-  },
-};
+}
+}
 </script>

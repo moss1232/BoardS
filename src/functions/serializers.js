@@ -29,11 +29,13 @@ const serializeMessage = (message) => {
   const title = message.title;
   const content = message.content;
   const team_id = message.team_id;
+  const files = message.files;
   return {
     ...message,
     title,
     content,
     team_id,
+    files,
   };
 };
 

@@ -15,7 +15,7 @@ class Api::MessagesController < ApplicationController
     def create
         message = current_user.messages.new(message_params)
     if message.save
-      render json: message
+      render json: message, methods: [:message_files_url]
     else
       render json: message.errors, status: 422
     end
@@ -32,7 +32,8 @@ class Api::MessagesController < ApplicationController
   def message_params
     params
       .require(:message)
-      .permit(:title, :content, :team_id)
+      # .permit(:title, :content, :team_id, :files)
+      .permit(:title, :content, :files, :team_id)
   end
 
 
