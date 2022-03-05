@@ -3,7 +3,8 @@ class Api::MessagesController < ApplicationController
   def index
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:team_id])
-    render json: current_team.messages.all, methods: [:message_user_avatar]
+    render json: current_team.messages.all, methods:[:message_files_url]
+    # :message_user_avatar,
   end
 
   def show
@@ -11,11 +12,11 @@ class Api::MessagesController < ApplicationController
     current_message = Message.find_by(id: params[:id])
     render json: current_message, methods: [:message_user_avatar]
   end
-
-    def create
-        message = current_user.messages.new(message_params)
+  
+  def create
+    message = current_user.messages.new(message_params)
     if message.save
-      render json: message, methods: [:message_files_url]
+      render json: message
     else
       render json: message.errors, status: 422
     end
@@ -30,8 +31,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params
-      .permit(:title, :content, :files, :team_id)
+    params.permit(:title, :content, :team_id, :files)
   end
 
 

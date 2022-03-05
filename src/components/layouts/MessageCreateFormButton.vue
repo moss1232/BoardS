@@ -90,7 +90,8 @@ export default {
       params.append("title", this.title);
       params.append("content", this.content);
       params.append("team_id", this.$route.params.team_id);
-      if (this.imageFile !== null) {
+      // params.append("uid", window.localStorage.getItem("uid"));
+      if (this.files !== null) {
         params.append("files", this.files);
       }
       this.createMessage(params);
