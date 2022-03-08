@@ -4,7 +4,7 @@ import events from "./modules/events";
 import messages from "./modules/messages";
 import teams from "./modules/teams";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
@@ -17,4 +17,4 @@ const store = new Vuex.Store({
   },
 });
 
-export default store
+export default store;

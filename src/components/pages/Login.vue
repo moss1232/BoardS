@@ -58,9 +58,12 @@ export default {
         }
         console.log({ res });
         if (!this.error) {
-          window.localStorage.setItem('access-token', res.headers['access-token'])
-          window.localStorage.setItem('client', res.headers.client)
-          window.localStorage.setItem('uid', res.headers.uid)
+          window.localStorage.setItem(
+            "access-token",
+            res.headers["access-token"]
+          );
+          window.localStorage.setItem("client", res.headers.client);
+          window.localStorage.setItem("uid", res.headers.uid);
           this.redirectToMessage();
         }
         return res;
@@ -70,7 +73,7 @@ export default {
       }
     },
     redirectToMessage() {
-      this.$router.push({ name: 'TeamMessages', params: { team_id: 1 } });
+      this.$router.push({ name: "TeamMessages", params: { team_id: 1 } });
     },
   },
 };

@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-
   # Include default devise modules.
   has_one_attached :avatar
   devise :database_authenticatable,
-         :registerable,
+           :registerable,
          :recoverable,
          :rememberable,
          :validatable
@@ -14,10 +13,6 @@ class User < ApplicationRecord
   has_many :user_team_relationships, dependent: :destroy
   has_many :teams, through: :user_team_relationships
 
-
   validates :name, presence: true
   validates :name, length: { maximum: 30 }
-
-
-
 end

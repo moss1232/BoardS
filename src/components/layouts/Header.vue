@@ -10,8 +10,12 @@
             :to="{ name: 'TeamMessages', params: { team_id: team.id } }"
           >
             <v-list-item-avatar>
-              <img v-if = "team.team_avatar_url" alt="Avatar" :src="team.team_avatar_url" />
-              <img v-else src='../../../public/images/default.png'>
+              <img
+                v-if="team.team_avatar_url"
+                alt="Avatar"
+                :src="team.team_avatar_url"
+              />
+              <img v-else src="../../../public/images/default.png" />
             </v-list-item-avatar>
 
             <v-list-item-title>{{ team.name }}</v-list-item-title>
@@ -25,10 +29,20 @@
       <v-avatar></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab :to="{ name: 'TeamMessages', params: { team_id: $route.params['team_id'] } }">
+        <v-tab
+          :to="{
+            name: 'TeamMessages',
+            params: { team_id: $route.params['team_id'] },
+          }"
+        >
           message
         </v-tab>
-        <v-tab :to="{ name: 'TeamCalendars', params: { team_id: $route.params['team_id'] } }">
+        <v-tab
+          :to="{
+            name: 'TeamCalendars',
+            params: { team_id: $route.params['team_id'] },
+          }"
+        >
           calendar
         </v-tab>
       </v-tabs>

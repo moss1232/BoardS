@@ -1,9 +1,8 @@
 class Api::EventsController < ApplicationController
-
   def index
     render json: Team.find(1).events.all
   end
-  
+
   def show
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:id])
@@ -44,4 +43,3 @@ class Api::EventsController < ApplicationController
       .permit(:name, :team_id, :start, :end, :timed, :description, :color)
   end
 end
-

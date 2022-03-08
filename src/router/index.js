@@ -67,7 +67,7 @@ const routes = [
               default: () => import("../components/pages/Calendar.vue"),
             },
           },
-        ]
+        ],
       },
     ],
   },

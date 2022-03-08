@@ -9,15 +9,13 @@ const state = {
 };
 
 const getters = {
-  teams: (state) =>
-    state.teams.map((team) => serializeTeam(team)),
+  teams: (state) => state.teams.map((team) => serializeTeam(team)),
   team: (state) => serializeTeam(state.team),
 };
 
 const mutations = {
   setTeams: (state, teams) => (state.teams = teams),
-  appendTeam: (state, team) =>
-    (state.teams = [...state.teams, team]),
+  appendTeam: (state, team) => (state.teams = [...state.teams, team]),
   setTeam: (state, team) => (state.team = team),
   setEditMode: (state, bool) => (state.isEditMode = bool),
 };

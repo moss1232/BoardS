@@ -1,5 +1,5 @@
 import axios from "axios";
-  import { serializeEvent } from "../../functions/serializers";
+import { serializeEvent } from "../../functions/serializers";
 
 const apiUrl = "http://127.0.0.1:3000/api/teams";
 
@@ -42,13 +42,17 @@ const actions = {
     commit("setEvents", response.data);
   },
   async createEvent({ commit }, event) {
-    const response = await axios.post(`${apiUrl}/${event.team_id}/events`, event, {
-      headers: {
-        uid: window.localStorage.getItem("uid"),
-        "access-token": window.localStorage.getItem("access-token"),
-        client: window.localStorage.getItem("client"),
-      },
-    });
+    const response = await axios.post(
+      `${apiUrl}/${event.team_id}/events`,
+      event,
+      {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+      }
+    );
     commit("appendEvent", response.data);
   },
   async deleteEvent({ commit }, id) {
@@ -80,9 +84,8 @@ const actions = {
   },
 };
 
-
 export default {
-  namespaced: true, 
+  namespaced: true,
   state,
   getters,
   mutations,

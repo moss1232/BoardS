@@ -3,16 +3,14 @@ class Api::MessagesController < ApplicationController
   def index
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:team_id])
-    render json: current_team.messages.all, methods:[:message_files_url]
-    # :message_user_avatar,
+    render json: current_team.messages.all, methods: [:message_user_avatar]
   end
 
   def show
-    # teams = current_user.teams.all
     current_message = Message.find_by(id: params[:id])
-    render json: current_message, methods: [:message_user_avatar]
+    render json: current_message, methods: [:message_user_avatar, :message_files_url]
   end
-  
+
   def create
     message = current_user.messages.new(message_params)
     if message.save
@@ -22,17 +20,10 @@ class Api::MessagesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   message = current_user.messages.find_by(id: params[:id])
-  #   message.destroy!
-  #   render json: message
-  # end
 
   private
 
   def message_params
     params.permit(:title, :content, :team_id, :files)
   end
-
-
 end

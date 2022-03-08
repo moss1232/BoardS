@@ -11,6 +11,6 @@
 
 <script>
 export default {
-  props: ['icon', 'color'],
+  props: ["icon", "color"],
 };
 </script>

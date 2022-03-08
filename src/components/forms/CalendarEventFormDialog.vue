@@ -115,7 +115,7 @@ export default {
         end: `${this.endDate} ${this.endTime || ""}`,
         description: this.description,
         timed: !this.allDay,
-        team_id: this.$route.params.team_id
+        team_id: this.$route.params.team_id,
       };
       if (params.id) {
         this.updateEvent(params);

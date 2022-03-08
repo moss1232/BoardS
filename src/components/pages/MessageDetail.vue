@@ -14,8 +14,10 @@
           <v-card-text class="text-h6">
             {{ message.content }}
           </v-card-text>
-
-
+          <img
+            v-if="message.message_files_url"
+            :src="message.message_files_url"
+          />
         </v-card>
       </v-col>
     </v-row>
@@ -28,8 +30,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     ...mapGetters("messages", ["message"]),
@@ -39,8 +40,11 @@ export default {
   },
   created() {
     // store.dispatch('fetchDetailMessages', { team_id: this.$route.params.team_id, id: this.$route.params.id })
-    this.fetchDetailMessages({team_id: this.$route.params.team_id, message_id: this.$route.params.message_id})
-    console.log(this.message)
+    this.fetchDetailMessages({
+      team_id: this.$route.params.team_id,
+      message_id: this.$route.params.message_id,
+    });
+    console.log(this.message);
   },
 };
 </script>

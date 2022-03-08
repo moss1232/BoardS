@@ -41,7 +41,7 @@
                   v-model="files"
                 ></v-file-input>
                   <!-- multiple -->
-                  <!-- @change="onChangeFileInput" -->
+                <!-- @change="onChangeFileInput" -->
               </v-col>
               <!-- </form> -->
             </v-row>
@@ -67,7 +67,6 @@ export default {
     title: null,
     content: null,
     files: null,
-    // fileData: null,
   }),
   methods: {
     ...mapActions("messages", ["createMessage"]),
@@ -77,14 +76,6 @@ export default {
       this.files = null;
       this.dialog = false;
     },
-    // submit() {
-    // const params = {
-    //   title: this.title,
-    //   content: this.content,
-    //   team_id: this.$route.params["team_id"],
-    //   files: this.files,
-    // };
-    // this.createMessage(params);
     async submit() {
       let params = new FormData();
       params.append("title", this.title);
@@ -97,6 +88,6 @@ export default {
       this.createMessage(params);
       this.closeDialog();
     },
-}
-}
+  },
+};
 </script>

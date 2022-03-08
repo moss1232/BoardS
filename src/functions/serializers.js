@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 
-export
-  const serializeEvent = (event) => {
+export const serializeEvent = (event) => {
   if (event === null) {
     return null;
   }
@@ -21,8 +20,7 @@ export
   };
 };
 
-export
-const serializeMessage = (message) => {
+export const serializeMessage = (message) => {
   if (message === null) {
     return null;
   }

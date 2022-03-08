@@ -5,7 +5,6 @@
         <v-card>
           <v-slide-y-transition class="py-0" group tag="v-list">
             <template v-for="(task, i) in tasks">
-
               <v-list-item :key="`${i}-${task.text}`">
                 <v-list-item-action>
                   <v-checkbox
