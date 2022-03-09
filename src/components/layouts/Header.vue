@@ -3,22 +3,33 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-list>
         <v-list-item-group mandatory color="indigo">
-          <v-list-item
-            v-for="team in teams"
-            :key="team.name"
-            link
-            :to="{ name: 'TeamMessages', params: { team_id: team.id } }"
-          >
-            <v-list-item-avatar>
-              <img
-                v-if="team.team_avatar_url"
-                alt="Avatar"
-                :src="team.team_avatar_url"
-              />
-              <img v-else src="../../../public/images/default.png" />
-            </v-list-item-avatar>
+          <v-list-group :value="false" prepend-icon="mdi-account-multiple">
+            <template v-slot:activator>
+              <v-list-item-title>Teams</v-list-item-title>
+            </template>
+            <v-list-item
+              v-for="team in teams"
+              :key="team.name"
+              link
+              :to="{ name: 'TeamMessages', params: { team_id: team.id } }"
+            >
+              <v-list-item-avatar size="24">
+                <img
+                  v-if="team.team_avatar_url"
+                  alt="Avatar"
+                  :src="team.team_avatar_url"
+                />
+                <img v-else src="../../../public/images/default.png" />
+              </v-list-item-avatar>
 
-            <v-list-item-title>{{ team.name }}</v-list-item-title>
+              <v-list-item-title>{{ team.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
+          <v-list-item link :to="{ name: 'Setting' }">
+            <v-list-item-icon>
+              <v-icon> mdi-cog-outline </v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Settings</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -27,30 +38,26 @@
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-avatar></v-avatar>
-
-      <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab
-          :to="{
-            name: 'TeamMessages',
-            params: { team_id: $route.params['team_id'] },
-          }"
-        >
-          <!-- <v-icon>mdi-message</v-icon> -->
-
-          message
-        </v-tab>
-        <v-tab
-          :to="{
-            name: 'TeamCalendars',
-            params: { team_id: $route.params['team_id'] },
-          }"
-        >
-          calendar
-        </v-tab>
-      </v-tabs>
-      <v-btn icon :to="{ name: 'Setting' }">
-        <v-icon>mdi-cog</v-icon>
-      </v-btn>
+      <template v-if="$route.params.team_id">
+        <v-tabs centered class="ml-n9" color="grey darken-1">
+          <v-tab
+            :to="{
+              name: 'TeamMessages',
+              params: { team_id: $route.params['team_id'] },
+            }"
+          >
+            message
+          </v-tab>
+          <v-tab
+            :to="{
+              name: 'TeamCalendars',
+              params: { team_id: $route.params['team_id'] },
+            }"
+          >
+            calendar
+          </v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
   </div>
 </template>
