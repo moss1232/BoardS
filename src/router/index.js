@@ -5,6 +5,14 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "",
+    name: "Home",
+    components: {
+      header: () => import("../components/layouts/Header.vue"),
+      // default: () => import("../components/pages/Login.vue"),
+    },
+  },
+  {
     path: "/login",
     name: "Login",
     components: {
@@ -16,6 +24,14 @@ const routes = [
     name: "Signup",
     components: {
       default: () => import("../components/pages/Signup.vue"),
+    },
+  },
+  {
+    path: "/setting",
+    name: "Setting",
+    components: {
+      header: () => import("../components/layouts/Header.vue"),
+      default: () => import("../components/pages/Setting.vue"),
     },
   },
   {

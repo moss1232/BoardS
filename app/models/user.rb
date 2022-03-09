@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    include Rails.application.routes.url_helpers
+
   # Include default devise modules.
   has_one_attached :avatar
   devise :database_authenticatable,
@@ -15,4 +17,14 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :name, length: { maximum: 30 }
+
+  def current_user_avatar
+    user.avatar.attached? ? url_for(user.avatar) : nil
+  end
+
+  def profile_avatar
+    avatar.attached? ? url_for(user.avatar) : nil
+  end
+
+
 end

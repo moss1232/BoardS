@@ -102,6 +102,14 @@ user.avatar.attach(
   identify: false
 )
 
+message = Message.find(1)
+message.files.attach(
+  io: File.open('public/images/doctor.png'),
+  filename: 'doctor.png',
+  content_type: 'image/png',
+  identify: false
+)
+
 # if user.avatar.attached?
 #   p("a")
 # else

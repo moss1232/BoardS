@@ -1,6 +1,8 @@
 class Api::MessagesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
+    team = Team.find(1)
+    # render json: team.messages.all, methods: [:message_user_avatar]
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:team_id])
     render json: current_team.messages.all, methods: [:message_user_avatar]
@@ -8,6 +10,7 @@ class Api::MessagesController < ApplicationController
 
   def show
     current_message = Message.find_by(id: params[:id])
+    # render json: current_message, methods: [:message_user_avatar, :message_files_url]
     render json: current_message, methods: [:message_user_avatar, :message_files_url]
   end
 

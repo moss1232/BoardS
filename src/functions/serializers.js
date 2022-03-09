@@ -47,3 +47,18 @@ export const serializeTeam = (team) => {
     name,
   };
 };
+
+export const serializeUser = (user) => {
+  if (user === null) {
+    return null;
+  }
+  const name = user.name;
+  const email = user.email;
+  const password = user.password;
+  return {
+    ...user,
+    name,
+    email,
+    password
+  };
+};

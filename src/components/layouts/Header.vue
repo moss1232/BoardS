@@ -35,6 +35,8 @@
             params: { team_id: $route.params['team_id'] },
           }"
         >
+          <!-- <v-icon>mdi-message</v-icon> -->
+
           message
         </v-tab>
         <v-tab
@@ -46,13 +48,14 @@
           calendar
         </v-tab>
       </v-tabs>
-      <v-btn @click="logout">logout</v-btn>
+      <v-btn icon :to="{ name: 'Setting' }">
+        <v-icon>mdi-cog</v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -64,27 +67,27 @@ export default {
     ...mapGetters("teams", ["teams"]),
   },
   methods: {
-    async logout() {
-      try {
-        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
-          headers: {
-            uid: window.localStorage.getItem("uid"),
-            "access-token": window.localStorage.getItem("access-token"),
-            client: window.localStorage.getItem("client"),
-          },
-        });
+    // async logout() {
+    //   try {
+    //     const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+    //       headers: {
+    //         uid: window.localStorage.getItem("uid"),
+    //         "access-token": window.localStorage.getItem("access-token"),
+    //         client: window.localStorage.getItem("client"),
+    //       },
+    //     });
 
-        console.log("ログアウトしました");
-        window.localStorage.removeItem("access-token");
-        window.localStorage.removeItem("client");
-        window.localStorage.removeItem("uid");
-        this.$router.push({ name: "Login" });
+    //     console.log("ログアウトしました");
+    //     window.localStorage.removeItem("access-token");
+    //     window.localStorage.removeItem("client");
+    //     window.localStorage.removeItem("uid");
+    //     this.$router.push({ name: "Login" });
 
-        return res;
-      } catch (error) {
-        console.log({ error });
-      }
-    },
+    //     return res;
+    //   } catch (error) {
+    //     console.log({ error });
+    //   }
+    // },
     ...mapActions("teams", ["fetchTeams"]),
   },
 
