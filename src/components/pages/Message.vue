@@ -21,6 +21,7 @@
                     :src="message.message_user_avatar"
                   />
                   <img v-else src="../../../public/images/default.png" />
+
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title class="hidden-xs-only" sm="5" md="3"

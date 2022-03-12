@@ -3,29 +3,44 @@
     <v-row>
       <v-container class="px-10">
         <v-list-item-content class="justify-center">
-          <div class="mx-auto mt-10 text-center">
+          <!-- <div class="mx-auto mt-10 text-center">
             <v-avatar color="brown" size="100" class="my-6">
               <img src="../../../public/images/default.png" />
             </v-avatar>
+          </div> -->
+          <div class="preview">
+            <img
+              width="100"
+              height="100"
+              id="image_preview"
+              src="../../../public/images/default.png"
+            />
           </div>
           <div class="btn-contain">
             <label class="upload-img-btn">
               画像を変更
-              <input type="file" name="image" style="display: none" />
+              <input
+                type="file"
+                name="image"
+                style="display: none"
+                id="input"
+              />
             </label>
           </div>
 
-          <v-card-text class="mb-n2" dense>名前{{name}}</v-card-text>
-          <v-text-field outlined  dense v-model="name"></v-text-field>
+          <v-card-text class="mb-n2" dense>名前</v-card-text>
+          <v-text-field outlined dense v-model="name"></v-text-field>
           <v-card-text class="my-n2"> メールアドレス</v-card-text>
-          <v-text-field outlined dense></v-text-field>
-          <v-card-text class="mb-n2"> パスワードの変更</v-card-text>
-          <v-text-field outlined  dense></v-text-field>
-          <div  class="btn-contain">
-          <v-btn @click="logout"> 保存 </v-btn>
+
+          <v-text-field outlined dense v-model="email"></v-text-field>
+
+          <!-- <v-card-text class="mb-n2"> パスワード</v-card-text>
+          <v-text-field outlined dense></v-text-field> -->
+          <div class="btn-contain">
+            <v-btn @click="logout"> 保存 </v-btn>
           </div>
-          <div  class="btn-contain">
-          <v-btn @click="logout"> ログアウト </v-btn>
+          <div class="btn-contain">
+            <v-btn @click="logout"> ログアウト </v-btn>
           </div>
         </v-list-item-content>
       </v-container>
@@ -42,9 +57,21 @@ export default {
     email: "",
     password: "",
   }),
-  computed: {
-  },
+  computed: {},
   methods: {
+    handleFiles() {
+      const img = document.querySelector("#image_preview");
+      const selectedFile = document.getElementById("input").files[0];
+      console.log(selectedFile);
+      const reader = new FileReader();
+      reader.onload = (function (aImg) {
+        return function (e) {
+          aImg.src = e.target.result;
+        };
+      })(img);
+      reader.readAsDataURL(selectedFile);
+    },
+
     async logout() {
       try {
         const res = await axios.delete("http://localhost:3000/auth/sign_out", {
@@ -66,24 +93,29 @@ export default {
         console.log({ error });
       }
     },
-        async fetchCurrentUser() {
-      const res = await axios.get(
-        "http://127.0.0.1:3000/api/users",
-        {
-          headers: {
-            uid: window.localStorage.getItem("uid"),
-            "access-token": window.localStorage.getItem("access-token"),
-            client: window.localStorage.getItem("client"),
-          },
-        }
-      );
-      console.log(res)
+    async fetchCurrentUser() {
+      const res = await axios.get("http://127.0.0.1:3000/api/users", {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+      });
+      console.log(res);
       this.name = res.data.name;
       this.email = res.data.email;
     },
   },
   created() {
     this.fetchCurrentUser();
+  },
+  mounted() {
+    const inputElement = document.getElementById("input");
+    inputElement.addEventListener("change", this.handleFiles, false);
+  },
+  beforeDestroy: function () {
+    const inputElement = document.getElementById("input");
+    inputElement.removeEventListener("change", this.handleFiles, false);
   },
 };
 </script>
@@ -111,5 +143,13 @@ export default {
 
 .btn-contain {
   text-align: center;
+}
+
+.preview {
+  text-align: center;
+}
+
+#image_preview {
+  border-radius: 50%;
 }
 </style>
