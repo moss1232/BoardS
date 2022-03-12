@@ -8,16 +8,16 @@
               <img src="../../../public/images/default.png" />
             </v-avatar>
             <span>
-              {{ message.title }}
+              {{ title }}
             </span>
           </v-card-title>
           <v-card-text class="text-h6">
-            {{ message.content }}
+            <!-- {{ message.content }} -->
           </v-card-text>
-          <img
+          <!-- <img
             v-if="message.message_files_url"
             :src="message.message_files_url"
-          />
+          /> -->
         </v-card>
       </v-col>
     </v-row>
@@ -25,26 +25,35 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-// import { mapGetters } from "vuex";
+import axios from "axios";
 
 export default {
   data() {
-    return {};
+    return {
+      title: "",
+      content: "",
+    };
   },
-  computed: {
-    ...mapGetters("messages", ["message"]),
-  },
+
   methods: {
-    ...mapActions("messages", ["fetchDetailMessages"]),
+    async fetchDetailMessage() {
+      const res = await axios.get(
+        `http://127.0.0.1:3000/api/teams/${this.$route.params.team_id}/messages/${this.$route.params.message_id}`,
+        {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+        }
+      );
+      this.title = res.data.title;
+      this.content = res.data.content;
+    },
   },
+
   created() {
-    // store.dispatch('fetchDetailMessages', { team_id: this.$route.params.team_id, id: this.$route.params.id })
-    this.fetchDetailMessages({
-      team_id: this.$route.params.team_id,
-      message_id: this.$route.params.message_id,
-    });
-    console.log(this.message);
+    this.fetchDetailMessage();
   },
 };
 </script>

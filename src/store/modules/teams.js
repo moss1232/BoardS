@@ -16,8 +16,6 @@ const getters = {
 const mutations = {
   setTeams: (state, teams) => (state.teams = teams),
   appendTeam: (state, team) => (state.teams = [...state.teams, team]),
-  setTeam: (state, team) => (state.team = team),
-  setEditMode: (state, bool) => (state.isEditMode = bool),
 };
 
 const actions = {
@@ -40,9 +38,6 @@ const actions = {
       },
     });
     commit("appendTeam", response.data);
-  },
-  setTeam({ commit }, team) {
-    commit("setTeam", team);
   },
 };
 

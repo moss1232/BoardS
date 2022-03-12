@@ -90,7 +90,7 @@ export default {
       }
     },
     redirectToMessage() {
-      this.$router.push({ name: "TeamMessages", params: { team_id: 1 } });
+      this.$router.push({ name: "Home" });
     },
   },
 };

@@ -41,9 +41,7 @@
                   v-model="files"
                 ></v-file-input>
                   <!-- multiple -->
-                <!-- @change="onChangeFileInput" -->
               </v-col>
-              <!-- </form> -->
             </v-row>
           </v-container>
         </v-card-text>

@@ -35,6 +35,37 @@ const routes = [
     },
   },
   {
+    path: "/teamsetting",
+    name: "TeamSetting",
+    components: {
+      header: () => import("../components/layouts/Header.vue"),
+      default: () => import("../components/pages/Home.vue"),
+    },
+    children: [
+      {
+        path: "create",
+        name: "TeamCreate",
+        components: {
+          default: () => import("../components/pages/TeamCreateForm.vue"),
+        },
+      },
+      {
+        path: "search",
+        name: "TeamSearch",
+        components: {
+          default: () => import("../components/pages/TeamSearchForm.vue"),
+        },
+      },
+      {
+        path: "leave",
+        name: "TeamLeave",
+        components: {
+          default: () => import("../components/pages/TeamLeaveForm.vue"),
+        },
+      },
+    ],
+  },
+  {
     path: "/:team_id",
     components: {
       default: () => import("../components/pages/Home.vue"),
@@ -44,7 +75,7 @@ const routes = [
       {
         path: "Message",
         components: {
-          default: () => import("../components/pages/Homea.vue"),
+          default: () => import("../components/pages/Home.vue"),
         },
         children: [
           {
@@ -66,7 +97,7 @@ const routes = [
       {
         path: "Calendar",
         components: {
-          default: () => import("../components/pages/Homea.vue"),
+          default: () => import("../components/pages/Home.vue"),
         },
         children: [
           {

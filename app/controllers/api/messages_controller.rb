@@ -10,7 +10,6 @@ class Api::MessagesController < ApplicationController
 
   def show
     current_message = Message.find_by(id: params[:id])
-    # render json: current_message, methods: [:message_user_avatar, :message_files_url]
     render json: current_message, methods: [:message_user_avatar, :message_files_url]
   end
 

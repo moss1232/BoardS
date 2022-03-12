@@ -18,8 +18,6 @@ const mutations = {
   setMessages: (state, messages) => (state.messages = messages),
   appendMessage: (state, message) =>
     (state.messages = [...state.messages, message]),
-  setMessage: (state, message) => (state.message = message),
-  setEditMode: (state, bool) => (state.isEditMode = bool),
 };
 
 const actions = {
@@ -34,19 +32,6 @@ const actions = {
     });
     commit("setMessages", response.data);
   },
-  async fetchDetailMessages({ commit }, { team_id, message_id }) {
-    const response = await axios.get(
-      `${apiUrl}/${team_id}/messages/${message_id}`,
-      {
-        headers: {
-          uid: window.localStorage.getItem("uid"),
-          "access-token": window.localStorage.getItem("access-token"),
-          client: window.localStorage.getItem("client"),
-        },
-      }
-    );
-    commit("setMessage", response.data);
-  },
   async createMessage({ commit }, message) {
     const response = await axios.post(
       `${apiUrl}/${message.get("team_id")}/messages`,
@@ -60,9 +45,6 @@ const actions = {
       }
     );
     commit("appendMessage", response.data);
-  },
-  setMessage({ commit }, message) {
-    commit("setMessage", message);
   },
 };
 
