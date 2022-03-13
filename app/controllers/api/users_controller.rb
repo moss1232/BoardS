@@ -5,8 +5,16 @@ class Api::UsersController < ApplicationController
         render json: current_user, methods: [:profile_avatar]
     end
 
-    # private
-    # def user_params
-    #     .permit(:name, :email, :password)
-    # end
+    def update
+    if current_user.update(user_params)
+      render json: current_user
+    else
+      render json: current_user.errors, status: 422
+    end
+  end
+
+    private
+    def user_params
+        params.permit(:name, :email)
+    end
 end

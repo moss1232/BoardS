@@ -4,11 +4,13 @@
       <v-card-text>
         <v-form @submit.prevent="login">
           <v-text-field
+          autocomplete="off"
             prepend-icon="mdi-email"
             label="メールアドレス"
             v-model="email"
           />
           <v-text-field
+          autocomplete="off"
             v-bind:type="showPassword ? 'text' : 'password'"
             @click:append="showPassword = !showPassword"
             prepend-icon="mdi-lock"

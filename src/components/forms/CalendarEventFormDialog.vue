@@ -98,7 +98,7 @@ export default {
       "setEvent",
       "setEditMode",
       "createEvent",
-      "updateEvent",
+      "Event",
     ]),
     closeDialog() {
       this.setEditMode(false);

@@ -32,11 +32,11 @@
                 </v-list-item-content>
               </template>
               <v-list-item
-              dense
+                dense
                 v-for="([icon, title, link], i) in team_settings"
                 :key="i"
                 link
-                :to= "{name: link}"
+                :to="{ name: link }"
               >
                 <v-list-item-icon>
                   <v-icon v-text="icon"></v-icon>
@@ -58,6 +58,9 @@
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-avatar></v-avatar>
+      <v-btn icon fab right fixed @click="logout">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
       <template v-if="$route.params.team_id">
         <v-tabs centered class="ml-n9" color="grey darken-1">
           <v-tab
@@ -84,6 +87,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import axios from "axios";
 
 export default {
   data: () => ({
@@ -100,6 +104,27 @@ export default {
   },
   methods: {
     ...mapActions("teams", ["fetchTeams"]),
+    async logout() {
+      try {
+        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+        });
+
+        console.log("ログアウトしました");
+        window.localStorage.removeItem("access-token");
+        window.localStorage.removeItem("client");
+        window.localStorage.removeItem("uid");
+        this.$router.push({ name: "Login" });
+
+        return res;
+      } catch (error) {
+        console.log({ error });
+      }
+    },
   },
 
   created() {
