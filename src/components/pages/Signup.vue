@@ -50,6 +50,7 @@
 <script>
 import axios from "axios";
 
+
 export default {
   data() {
     return {
@@ -61,6 +62,7 @@ export default {
       error: null,
     };
   },
+
   methods: {
     async signUp() {
       this.error = null;

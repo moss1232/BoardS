@@ -32,7 +32,7 @@
             v-model="password"
           />
           <div class="btn-contain">
-            <v-btn @click="createTeam" class="info"> 保存 </v-btn>
+            <v-btn @click="submit" :disabled="isInvalid" class="info"> 保存 </v-btn>
             <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
               {{ snackbar_text }}
             </v-snackbar>
@@ -44,22 +44,38 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { mapActions } from "vuex";
+import { validationMixin } from "vuelidate";
+import { required } from "vuelidate/lib/validators";
 
 export default {
+  mixins: [validationMixin],
+  validations: {
+    name: { required },
+    password: { required },
+  },
+
   data: () => ({
     showPassword: false,
     name: "",
     password: "",
     file: "",
-    error: "",
+    error: null,
     snackbar: false,
     snackbar_text: "",
     color: "",
     timeout: 2000,
   }),
-  computed: {},
+  computed: {
+    isInvalid() {
+      return this.$v.$invalid || this.isInvalidDatetime;
+    },
+  },
+
   methods: {
+    ...mapActions("teams", ["fetchTeams", "createTeam"]),
+
     handleFiles() {
       const img = document.querySelector("#image_preview");
       const selectedFile = document.getElementById("inputFile").files[0];
@@ -73,53 +89,31 @@ export default {
       reader.readAsDataURL(selectedFile);
       this.file = selectedFile;
     },
-    // async fetchUser() {
-    //   const res = await axios.get("http://127.0.0.1:3000/api/users", {
-    //     headers: {
-    //       uid: window.localStorage.getItem("uid"),
-    //       "access-token": window.localStorage.getItem("access-token"),
-    //       client: window.localStorage.getItem("client"),
-    //     },
-    //   });
-    //   this.name = res.data.name;
-    //   this.file = res.data.profile_avatar;
-    // },
-    async createTeam() {
-      try {
-        this.error = null;
-        const params = new FormData();
-        params.append("name", this.name);
-        params.append("password", this.password);
-        params.append("file", this.file);
-        const res = await axios.post(
-          "http://127.0.0.1:3000/api/teams",
-          params,
-          {
-            headers: {
-              uid: window.localStorage.getItem("uid"),
-              "access-token": window.localStorage.getItem("access-token"),
-              client: window.localStorage.getItem("client"),
-            },
-          }
-        );
-        console.log(res);
-
-        if (!this.error) {
+    async submit() {
+      const params = new FormData();
+      params.append("name", this.name);
+      params.append("password", this.password);
+      params.append("file", this.file);
+      this.createTeam(params)
+      .then(response => {
           this.snackbar_text = "保存しました";
           this.color = "blue";
           this.snackbar = true;
+          console.log(response);
+        },
+        error => {
+          this.snackbar_text = "入力内容に誤りがあります";
+          this.color = "red";
+          this.snackbar = true;
+          console.log(error);
         }
-      } catch (error) {
-        console.log({ error });
-        this.snackbar_text = "入力内容に誤りがあります";
-        this.color = "red";
-        this.snackbar = true;
-      }
+      );
     },
   },
-  // created() {
-  //   this.fetchUser();
-  // },
+
+  created() {
+    this.fetchTeams();
+  },
   mounted() {
     const inputFile = document.getElementById("inputFile");
     inputFile.addEventListener("change", this.handleFiles);
