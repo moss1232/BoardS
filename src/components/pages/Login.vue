@@ -55,9 +55,6 @@ export default {
           email: this.email,
           password: this.password,
         });
-        if (!res) {
-          throw new Error("メールアドレスかパスワードが違います");
-        }
         console.log({ res });
         if (!this.error) {
           window.localStorage.setItem(

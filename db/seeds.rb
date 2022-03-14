@@ -110,8 +110,3 @@ message.files.attach(
   identify: false
 )
 
-# if user.avatar.attached?
-#   p("a")
-# else
-#   p("b")
-# end

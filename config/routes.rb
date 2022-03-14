@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: ['index', 'update']
-    resources :teams do
+    resources :teams, only: ['index', 'create'] do
       resources :messages, only: %w[index show destroy create]
       resources :events, only: %w[index show create destroy]
     end

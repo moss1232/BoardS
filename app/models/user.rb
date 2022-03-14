@@ -23,8 +23,12 @@ class User < ApplicationRecord
   end
 
   def profile_avatar
-    avatar.attached? ? url_for(user.avatar) : nil
+    self.avatar.attached? ? url_for(self.avatar) : nil
   end
 
-
+def default_avatar
+  if !self.avatar.attached?
+        self.image.attach(io: File.open('/public/images/default.png'), filename: 'default.png', content_type: 'image/png')
+    end
+end
 end

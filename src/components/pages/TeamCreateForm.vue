@@ -1,61 +1,162 @@
 <template>
-  <v-row justify="center">
-    <v-card class="mx-auto my-12" max-width="600">
-      <v-card-text>
-        <v-container>
-          <v-row>
-            <v-col cols="12">
-              <div class="mx-auto my-10 text-center">
-                <v-btn icon height="100">
-                  <v-avatar color="brown" size="100" class="my-6">
-                    <img src="../../../public/images/default.png" />
-                  </v-avatar>
-                </v-btn>
-              </div>
-              <v-text-field label="チーム名" required v-model="title">
-              </v-text-field>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="submit">
-          <v-icon>mdi-send</v-icon>
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-row>
+  <v-card class="mx-auto mt-12" max-width="300">
+    <v-row>
+      <v-container class="px-10">
+        <v-list-item-content class="justify-center">
+          <!-- <img src="../../../public/images/default.png" /> -->
+          <div class="preview mb-2">
+            <img width="100" height="100" id="image_preview" :src="file" />
+          </div>
+          <div class="btn-contain mb-4">
+            <label class="upload-img-btn">
+              変更
+              <input
+                type="file"
+                style="display: none"
+                id="inputFile"
+                accept="image/*"
+              />
+            </label>
+          </div>
+          <v-text-field
+            prepend-icon="mdi-account-multiple"
+            label="チーム名"
+            v-model="name"
+          />
+          <v-text-field
+            v-bind:type="showPassword ? 'text' : 'password'"
+            @click:append="showPassword = !showPassword"
+            prepend-icon="mdi-lock"
+            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            label="パスワード"
+            v-model="password"
+          />
+          <div class="btn-contain">
+            <v-btn @click="createTeam" class="info"> 保存 </v-btn>
+            <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
+              {{ snackbar_text }}
+            </v-snackbar>
+          </div>
+        </v-list-item-content>
+      </v-container>
+    </v-row>
+  </v-card>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import axios from "axios";
 
 export default {
   data: () => ({
-    dialog: false,
-    title: null,
-    content: null,
-    files: null,
+    showPassword: false,
+    name: "",
+    password: "",
+    file: "",
+    error: "",
+    snackbar: false,
+    snackbar_text: "",
+    color: "",
+    timeout: 2000,
   }),
+  computed: {},
   methods: {
-    ...mapActions("messages", ["createMessage"]),
-    closeDialog() {
-      this.title = null;
-      this.content = null;
-      this.files = null;
+    handleFiles() {
+      const img = document.querySelector("#image_preview");
+      const selectedFile = document.getElementById("inputFile").files[0];
+      console.log(selectedFile);
+      const reader = new FileReader();
+      reader.onload = (function (aImg) {
+        return function (e) {
+          aImg.src = e.target.result;
+        };
+      })(img);
+      reader.readAsDataURL(selectedFile);
+      this.file = selectedFile;
     },
-    async submit() {
-      let params = new FormData();
-      params.append("title", this.title);
-      params.append("content", this.content);
-      params.append("team_id", this.$route.params.team_id);
-      if (this.files !== null) {
-        params.append("files", this.files);
+    // async fetchUser() {
+    //   const res = await axios.get("http://127.0.0.1:3000/api/users", {
+    //     headers: {
+    //       uid: window.localStorage.getItem("uid"),
+    //       "access-token": window.localStorage.getItem("access-token"),
+    //       client: window.localStorage.getItem("client"),
+    //     },
+    //   });
+    //   this.name = res.data.name;
+    //   this.file = res.data.profile_avatar;
+    // },
+    async createTeam() {
+      try {
+        this.error = null;
+        const params = new FormData();
+        params.append("name", this.name);
+        params.append("password", this.password);
+        params.append("file", this.file);
+        const res = await axios.post(
+          "http://127.0.0.1:3000/api/teams",
+          params,
+          {
+            headers: {
+              uid: window.localStorage.getItem("uid"),
+              "access-token": window.localStorage.getItem("access-token"),
+              client: window.localStorage.getItem("client"),
+            },
+          }
+        );
+        console.log(res);
+
+        if (!this.error) {
+          this.snackbar_text = "保存しました";
+          this.color = "blue";
+          this.snackbar = true;
+        }
+      } catch (error) {
+        console.log({ error });
+        this.snackbar_text = "入力内容に誤りがあります";
+        this.color = "red";
+        this.snackbar = true;
       }
-      this.createMessage(params);
-      this.closeDialog();
     },
+  },
+  // created() {
+  //   this.fetchUser();
+  // },
+  mounted() {
+    const inputFile = document.getElementById("inputFile");
+    inputFile.addEventListener("change", this.handleFiles);
   },
 };
 </script>
+
+<style scoped>
+.upload-img-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  color: #241c15;
+  background-color: #efeeea;
+  transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+  padding: 0 18px;
+}
+.upload-img-btn:hover {
+  color: #241c15;
+  background-color: #d9d7cd;
+}
+
+.btn-contain {
+  text-align: center;
+}
+
+.preview {
+  text-align: center;
+}
+
+#image_preview {
+  border-radius: 50%;
+}
+</style>

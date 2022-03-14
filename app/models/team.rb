@@ -12,6 +12,6 @@ class Team < ApplicationRecord
   validates :password, presence: true
 
   def team_avatar_url
-    avatar.attached? ? url_for(avatar) : nil
+    self.avatar.attached? ? url_for(self.avatar) : nil
   end
 end

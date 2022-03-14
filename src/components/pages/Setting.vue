@@ -3,39 +3,38 @@
     <v-row>
       <v-container class="px-10">
         <v-list-item-content class="justify-center">
-          <!-- <div class="mx-auto mt-10 text-center">
-            <v-avatar color="brown" size="100" class="my-6">
-              <img src="../../../public/images/default.png" />
-            </v-avatar>
-          </div> -->
-          <div class="preview">
+          <!-- <img src="../../../public/images/default.png" /> -->
+          <div class="preview mb-2">
             <img
               width="100"
               height="100"
               id="image_preview"
-              src="../../../public/images/default.png"
+              :src="file"
             />
           </div>
-          <div class="btn-contain">
+          <div class="btn-contain mb-4">
             <label class="upload-img-btn">
               変更
               <input
                 type="file"
-                name="image"
                 style="display: none"
-                id="input"
+                id="inputFile"
+                accept="image/*"
               />
             </label>
           </div>
 
-          <v-card-text class="mb-n2" dense>名前</v-card-text>
-          <v-text-field outlined dense v-model="name"></v-text-field>
-          <v-card-text class="my-n2"> メールアドレス</v-card-text>
-
-          <v-text-field outlined dense v-model="email"></v-text-field>
+          <v-text-field
+            prepend-icon="mdi-account-circle"
+            label="ユーザ名"
+            v-model="name"
+          />
 
           <div class="btn-contain">
-            <v-btn @click="submit"> 保存 </v-btn>
+            <v-btn @click="updateUser" class="info"> 保存 </v-btn>
+            <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
+              {{ snackbar_text }}
+            </v-snackbar>
           </div>
         </v-list-item-content>
       </v-container>
@@ -49,17 +48,20 @@ import axios from "axios";
 export default {
   data: () => ({
     name: "",
-    email: "",
-    password: "",
     user_id: "",
+    file: "",
     error: "",
+    snackbar: false,
+    snackbar_text: "",
+    color: "",
+    timeout: 2000,
   }),
   computed: {},
   methods: {
     handleFiles() {
       const img = document.querySelector("#image_preview");
-      const selectedFile = document.getElementById("input").files[0];
-      console.log(selectedFile);
+      const selectedFile = document.getElementById("inputFile").files[0];
+      console.log(selectedFile)
       const reader = new FileReader();
       reader.onload = (function (aImg) {
         return function (e) {
@@ -67,26 +69,29 @@ export default {
         };
       })(img);
       reader.readAsDataURL(selectedFile);
+      this.file = selectedFile
     },
     async fetchUser() {
-      const res = await axios.get("http://127.0.0.1:3000/api/users/", {
+      const res = await axios.get("http://127.0.0.1:3000/api/users", {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
           client: window.localStorage.getItem("client"),
         },
       });
-      console.log(res);
       this.name = res.data.name;
-      this.email = res.data.email;
+      this.file = res.data.profile_avatar;
       this.user_id = res.data.id;
     },
-    async updateUser(user) {
+    async updateUser() {
       try {
         this.error = null;
+        const params = new FormData();
+        params.append("name", this.name);
+        params.append("file", this.file);
         const res = await axios.put(
           `http://127.0.0.1:3000/api/users/${this.user_id}`,
-          user,
+          params,
           {
             headers: {
               uid: window.localStorage.getItem("uid"),
@@ -95,33 +100,28 @@ export default {
             },
           }
         );
-        if (!res) {
-          throw new Error("メールアドレスかパスワードが違います");
-        }
+        console.log(res);
+
         if (!this.error) {
           window.localStorage.setItem("uid", res.headers.uid);
+          this.snackbar_text = "保存しました";
+          this.color = "blue";
+          this.snackbar = true;
         }
       } catch (error) {
         console.log({ error });
-        this.error = "メールアドレスかパスワードが違います";
+        this.snackbar_text = "入力内容に誤りがあります";
+        this.color = "red";
+        this.snackbar = true;
       }
-    },
-    submit() {
-      const params = {
-        name: this.name,
-        email: this.email,
-      };
-      this.updateUser(params);
     },
   },
   created() {
     this.fetchUser();
   },
   mounted() {
-    window.addEventListener("change", this.handleFiles);
-  },
-  beforeDestroy() {
-    window.removeEventListener("change", this.handleFiles);
+    const inputFile = document.getElementById("inputFile");
+    inputFile.addEventListener("change", this.handleFiles);
   },
 };
 </script>
