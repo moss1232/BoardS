@@ -55,25 +55,36 @@ const actions = {
     );
     commit("appendEvent", response.data);
   },
-  async deleteEvent({ commit }, id) {
-    const response = await axios.delete(`${apiUrl}/events/${id}`, {
-      headers: {
-        uid: window.localStorage.getItem("uid"),
-        "access-token": window.localStorage.getItem("access-token"),
-        client: window.localStorage.getItem("client"),
-      },
-    });
+  async deleteEvent({ commit }, params) {
+    const response = await axios.delete(
+      `${apiUrl}/${params.team_id}/events/${params.id}`,
+      {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+        params: {
+          team_id: params.team_id,
+          id: params.id,
+        },
+      }
+    );
     commit("removeEvent", response.data);
     commit("resetEvent");
   },
-  async updateEvent({ commit }, event) {
-    const response = await axios.put(`${apiUrl}/events/${event.id}`, event, {
-      headers: {
-        uid: window.localStorage.getItem("uid"),
-        "access-token": window.localStorage.getItem("access-token"),
-        client: window.localStorage.getItem("client"),
-      },
-    });
+  async updateEvent({ commit }, params) {
+    const response = await axios.put(
+      `${apiUrl}/${params.team_id}/events/${params.id}`,
+      params,
+      {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+      }
+    );
     commit("updateEvent", response.data);
   },
   setEvent({ commit }, event) {

@@ -98,6 +98,7 @@ export default {
       "setEvent",
       "setEditMode",
       "createEvent",
+      "updateEvent",
       "Event",
     ]),
     closeDialog() {
