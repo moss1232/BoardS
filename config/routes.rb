@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :search
       post :join
+      delete :leave
     end      
     resources :messages, only: %w[index show destroy create]
       resources :events, only: %w[index show create destroy]

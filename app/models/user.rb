@@ -35,6 +35,9 @@ end
 def join_team(team)
   teams << team
 end
-  
+
+def leave_team(team)
+  user_team_relationships.find_by(team_id: team.id).destroy
+end
 
 end

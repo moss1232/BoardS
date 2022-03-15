@@ -16,6 +16,8 @@ const getters = {
 const mutations = {
   setTeams: (state, teams) => (state.teams = teams),
   appendTeam: (state, team) => (state.teams = [...state.teams, team]),
+  removeTeam: (state, team) =>
+    (state.teams = state.teams.filter((e) => e.id !== team.id)),
 };
 
 const actions = {
@@ -72,6 +74,34 @@ const actions = {
           res.data = response.data;
           resolve(response);
           commit("appendTeam", res.data);
+        })
+        .catch((error) => {
+          res.data = error;
+          reject(error);
+        });
+    });
+  },
+
+  async leaveTeam({ commit }, params) {
+    const res = {
+      data: "",
+    };
+    await new Promise((resolve, reject) => {
+      axios
+        .delete(`${apiUrl}/teams/leave`, {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+          params: {
+            name: params,
+          },
+        })
+        .then((response) => {
+          res.data = response.data;
+          resolve(response);
+          commit("removeTeam", response.data);
         })
         .catch((error) => {
           res.data = error;

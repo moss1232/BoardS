@@ -6,11 +6,6 @@ class Api::TeamsController < ApplicationController
   end
 
   
-  def destroy
-    team = current_user.teams.find_by(name: params[:name])
-    team.destroy!
-    render json: team
-  end
   
   def create
     team = current_user.teams.new(team_params)
@@ -20,20 +15,26 @@ class Api::TeamsController < ApplicationController
       render json: team.errors, status: 422
     end
   end
-
+  
   def search
-  team = Team.find_by(name: params[:name])
-  render json: team, methods: [:team_avatar_url]
+    team = Team.find_by(name: params[:name])
+    render json: team, methods: [:team_avatar_url]
   end
-
+  
   def join
-  team = Team.find_by(name: params[:name])
-  current_user.join_team(team)
-  render json: team, methods: [:team_avatar_url]
+    team = Team.find_by(name: params[:name])
+    current_user.join_team(team)
+    render json: team, methods: [:team_avatar_url]
+  end
+  
+  def leave
+    team = current_user.teams.find_by(name: params[:name])
+    current_user.leave_team(team)
+    render json: team
   end
 
-    private
-
+  private
+  
   def team_params
     params.permit(:name, :avatar, :password).merge(user_ids: [current_user.id])
   end

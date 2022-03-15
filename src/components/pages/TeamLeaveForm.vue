@@ -13,12 +13,16 @@
 
         <v-list-item-title>{{ team.name }}</v-list-item-title>
         <v-list-item-icon>
-          <v-btn icon>
+          <v-btn icon @click="submit(team.name)">
             <v-icon> mdi-trash-can-outline </v-icon>
           </v-btn>
         </v-list-item-icon>
       </v-list-item>
     </v-list>
+                <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
+              {{ snackbar_text }}
+            </v-snackbar>
+
   </v-card>
 </template>
 
@@ -27,16 +31,46 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
-    drawer: null,
+        file: null,
+    showPassword: false,
+    dialog: false,
+    password: "",
+    name: "",
+    avatar: "",
+    snackbar: false,
+    snackbar_text: "",
+    color: "",
+    timeout: 2000,
+
   }),
   computed: {
     ...mapGetters("teams", ["teams"]),
   },
   methods: {
-    ...mapActions("teams", ["fetchTeams"]),
+    ...mapActions("teams", ["fetchTeams", "leaveTeam"]),
+    test(a) {
+      console.log(a);
+    },
+
+    async submit(teamname) {
+      this.leaveTeam(teamname).then(
+        (response) => {
+          this.snackbar_text = "削除しました";
+          this.color = "blue";
+          this.snackbar = true;
+          console.log(response);
+        },
+        (error) => {
+          this.snackbar_text = "削除に失敗しました";
+          this.color = "red";
+          this.snackbar = true;
+          console.log(error);
+        }
+      );
+    },
   },
   created() {
-    this.fetchUser();
+    this.fetchTeams();
   },
 };
 </script>
