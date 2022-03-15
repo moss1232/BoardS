@@ -30,7 +30,6 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    # 指定したidのイベントデータを削除する
     event = current_user.events.find_by(id: params[:id])
     event.destroy!
     render json: event

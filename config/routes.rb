@@ -7,8 +7,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: ['index', 'update']
-    resources :teams, only: ['index', 'create'] do
-      resources :messages, only: %w[index show destroy create]
+    resources :teams, only: ['index', 'create', 'destroy'] do
+    collection do
+      get :search
+      post :join
+    end      
+    resources :messages, only: %w[index show destroy create]
       resources :events, only: %w[index show create destroy]
     end
   end

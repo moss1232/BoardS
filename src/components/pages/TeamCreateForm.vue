@@ -61,7 +61,6 @@ export default {
     name: "",
     password: "",
     file: "",
-    error: null,
     snackbar: false,
     snackbar_text: "",
     color: "",

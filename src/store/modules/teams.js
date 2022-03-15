@@ -43,29 +43,41 @@ const actions = {
             client: window.localStorage.getItem("client"),
           },
         })
-        .then(response => {
-          res.data = response.data
+        .then((response) => {
+          res.data = response.data;
           resolve(response);
           commit("appendTeam", res.data);
-        }).catch(error => {
-          res.data = error
+        })
+        .catch((error) => {
+          res.data = error;
           reject(error);
-        }).finally(() => {
         });
-    }
-    );
+    });
+  },
 
-    // async createTeam({ commit }, team) {
-    //   const res = await axios
-    //     .post(`${apiUrl}/teams`, team, {
-    //       headers: {
-    //         uid: window.localStorage.getItem("uid"),
-    //         "access-token": window.localStorage.getItem("access-token"),
-    //         client: window.localStorage.getItem("client"),
-    //       },
-    //     })
-    //   commit("appendTeam", res.data);
-    // }
+  async JoinTeam({ commit }, params) {
+    const res = {
+      data: "",
+    };
+    await new Promise((resolve, reject) => {
+      axios
+        .post(`${apiUrl}/teams/join`, params, {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+        })
+        .then((response) => {
+          res.data = response.data;
+          resolve(response);
+          commit("appendTeam", res.data);
+        })
+        .catch((error) => {
+          res.data = error;
+          reject(error);
+        });
+    });
   },
 };
 

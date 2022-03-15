@@ -17,7 +17,44 @@
             v-model="password"
           />
           <div class="btn-contain">
-            <v-btn @click="submit" :disabled="isInvalid" class="info"> 検索 </v-btn>
+            <v-btn :disabled="isInvalid" class="info" @click="searchTeam">
+              <!-- @click="dialog = true" -->
+              検索
+            </v-btn>
+            <v-dialog
+              v-model="dialog"
+              max-width="600px"
+              persistent
+              @click:outside="closeDialog"
+            >
+              <!-- <template v-slot:activator="{ on, attrs }"> -->
+              <!-- v-bind="attrs"
+                  v-on="on" -->
+              <!-- </template> -->
+              <v-card>
+                <img width="100" height="100" id="image_preview" :src="file" />
+
+                <v-card-title class="justify-center">
+                  {{ name }}
+                </v-card-title>
+                <v-card-title class="justify-center">
+                  このチームに参加しますか？
+                </v-card-title>
+                  <v-card-actions class="justify-center">
+                    <v-btn icon>
+                      <v-icon color="green" @click="JoinTeamTransaction"
+                        >mdi-check-circle-outline</v-icon
+                      >
+                    </v-btn>
+                    <v-btn icon>
+                      <v-icon color="red" @click="closeDialog"
+                        >mdi-close-box-outline</v-icon
+                      >
+                    </v-btn>
+                  </v-card-actions>
+              </v-card>
+            </v-dialog>
+
             <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
               {{ snackbar_text }}
             </v-snackbar>
@@ -29,8 +66,10 @@
 </template>
 
 <script>
+import axios from "axios";
 import { validationMixin } from "vuelidate";
 import { required } from "vuelidate/lib/validators";
+import { mapActions } from "vuex";
 
 export default {
   mixins: [validationMixin],
@@ -40,9 +79,12 @@ export default {
   },
 
   data: () => ({
+    file: null,
     showPassword: false,
-    name: "",
-    password: "",
+    dialog: false,
+    password: "bbbbbb",
+    name: "team3",
+    avatar: "",
     snackbar: false,
     snackbar_text: "",
     color: "",
@@ -55,10 +97,77 @@ export default {
   },
 
   methods: {
+    ...mapActions("teams", ["JoinTeam"]),
+
+    closeDialog() {
+      this.dialog = false;
+    },
+
+    async searchTeam() {
+      const res = await axios.get(`http://127.0.0.1:3000/api/teams/search`, {
+        headers: {
+          uid: window.localStorage.getItem("uid"),
+          "access-token": window.localStorage.getItem("access-token"),
+          client: window.localStorage.getItem("client"),
+        },
+        params: {
+          name: this.name,
+          password: this.password,
+        },
+      });
+      console.log(res);
+      if (res.data === null) {
+        this.snackbar_text = "入力内容に誤りがあります";
+        this.color = "red";
+        this.snackbar = true;
+      } else if (res.data !== null) {
+        this.name = res.data.name;
+        this.avatar = res.data.team_avatar_url;
+        this.dialog = true;
+      }
+    },
+    JoinTeamTransaction() {
+      const params = new FormData();
+      params.append("name", this.name);
+      this.JoinTeam(params).then(response => {
+        this.closeDialog()
+          this.snackbar_text = "チームに参加しました";
+          this.color = "blue";
+          this.snackbar = true;
+          console.log(response);
+        },
+        error => {
+          this.snackbar_text = "チームに参加できませんでした";
+          this.color = "red";
+          this.snackbar = true;
+          console.log(error);
+        }
+      );
+
+    },
   },
 
-  created() {
-  },
+  //     async submit() {
+  //   const params = new FormData();
+  //   params.append("name", this.name);
+  //   params.append("password", this.password);
+  //   params.append("file", this.file);
+  //   this.createTeam(params)
+  //   .then(response => {
+  //       this.snackbar_text = "保存しました";
+  //       this.color = "blue";
+  //       this.snackbar = true;
+  //       console.log(response);
+  //     },
+  //     error => {
+  //       this.snackbar_text = "入力内容に誤りがあります";
+  //       this.color = "red";
+  //       this.snackbar = true;
+  //       console.log(error);
+  //     }
+  //   );
+  // },
+  created() {},
 };
 </script>
 

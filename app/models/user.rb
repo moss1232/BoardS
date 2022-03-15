@@ -31,4 +31,10 @@ def default_avatar
         self.image.attach(io: File.open('/public/images/default.png'), filename: 'default.png', content_type: 'image/png')
     end
 end
+
+def join_team(team)
+  teams << team
+end
+  
+
 end

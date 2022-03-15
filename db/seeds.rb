@@ -19,6 +19,8 @@ User.create!(
 
 Team.create(name: 'team1', password: 'aaaaaa', user_ids: [1, 2])
 Team.create(name: 'team2', password: 'bbbbbb', user_ids: [1, 2])
+Team.create(name: 'team3', password: 'bbbbbb', user_ids: [2])
+Team.create(name: 'team4', password: 'bbbbbb', user_ids: [2,3])
 
 puts('teamの作成が完了しました')
 

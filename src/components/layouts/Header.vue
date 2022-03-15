@@ -94,7 +94,7 @@ export default {
     drawer: null,
     team_settings: [
       ["mdi-plus-circle-outline", "チームを作成", "TeamCreate"],
-      ["mdi-magnify", "チームを見つける", "TeamSearch"],
+      ["mdi-magnify", "チームに参加", "TeamSearch"],
       ["mdi-trash-can-outline", "チームを抜ける", "TeamLeave"],
     ],
   }),

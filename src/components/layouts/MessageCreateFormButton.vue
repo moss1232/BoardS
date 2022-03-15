@@ -40,7 +40,6 @@
                   type="file"
                   v-model="files"
                 ></v-file-input>
-                  <!-- multiple -->
               </v-col>
             </v-row>
           </v-container>
