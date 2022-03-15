@@ -4,12 +4,14 @@ export const serializeEvent = (event) => {
   if (event === null) {
     return null;
   }
-  const team_id = event.team_id;
+  const title = event.title;
+  const content = event.content;
   const start = new Date(event.start);
   const end = new Date(event.end);
   return {
     ...event,
-    team_id,
+    title,
+    content,
     start,
     end,
     startDate: format(start, "yyyy/MM/dd"),

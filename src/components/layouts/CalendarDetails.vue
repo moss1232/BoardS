@@ -8,7 +8,7 @@
       <p>description: {{ event.description }}</p>
     </div>
 
-    <button type="submit" @click="fetchEvents()">fetchEvents</button>
+    <button type="submit" @click="fetchEvents($route.params.team_id)">fetchEvents</button>
   </div>
 </template>
 

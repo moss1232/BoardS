@@ -36,7 +36,7 @@
               <v-col cols="12" sm="6">
                 <div class="text-center">
                   <v-btn class="info" type="submit">新規登録</v-btn>
-                  <!-- <v-btn text>アカウントをお持ちの方はこちら</v-btn> -->
+                  <v-btn text to="/login">ログインはこちら</v-btn>
                 </div>
               </v-col>
             </v-row>

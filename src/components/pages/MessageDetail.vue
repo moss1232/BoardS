@@ -12,12 +12,12 @@
             </span>
           </v-card-title>
           <v-card-text class="text-h6">
-            <!-- {{ message.content }} -->
+            {{ content }}
           </v-card-text>
-          <!-- <img
-            v-if="message.message_files_url"
-            :src="message.message_files_url"
-          /> -->
+          <img
+            v-if= files
+            :src="files"
+          />
         </v-card>
       </v-col>
     </v-row>
@@ -32,6 +32,8 @@ export default {
     return {
       title: "",
       content: "",
+      files: null,
+      avatar: null,
     };
   },
 
@@ -49,6 +51,8 @@ export default {
       );
       this.title = res.data.title;
       this.content = res.data.content;
+      this.files = res.data.message_files_url;
+      this.avatar = res.data.message_user_avatar;
     },
   },
 

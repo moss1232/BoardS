@@ -25,7 +25,7 @@
         ref="calendar"
         :events="events"
         v-model="value"
-        @change="fetchEvents($route.params.id)"
+        @change="fetchEvents($route.params.team_id)"
         locale="ja-jp"
         :day-format="(timestamp) => new Date(timestamp.date).getDate()"
         :month-format="
@@ -82,7 +82,7 @@ export default {
   },
   created() {
     this.$watch(
-      () => this.$route.params.id,
+      () => this.$route.params.team_id,
       (newVal) => {
         this.fetchEvents(newVal);
       }

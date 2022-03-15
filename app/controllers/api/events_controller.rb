@@ -1,7 +1,9 @@
 class Api::EventsController < ApplicationController
     before_action :authenticate_user!
+    
   def index
-    render json: Team.find(1).events.all
+    current_team = Team.find_by(id: params[:team_id])
+    render json: current_team.events.all
   end
 
   def show
@@ -11,7 +13,6 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    # @user = current_user
     event = current_user.events.new(event_params)
     if event.save
       render json: event

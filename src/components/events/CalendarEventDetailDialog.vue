@@ -47,7 +47,7 @@ export default {
       this.setEvent(null);
     },
     del() {
-      this.deleteEvent(this.event.id);
+      this.deleteEvent({team_id: this.$route.params.team_id, id: this.event.id});
     },
     edit() {
       this.setEditMode(true);

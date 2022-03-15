@@ -15,13 +15,7 @@
                 }"
               >
                 <v-list-item-avatar>
-                  <img
-                    v-if="message.message_user_avatar"
-                    alt="Avatar"
-                    :src="message.message_user_avatar"
-                  />
-                  <img v-else src="../../../public/images/default.png" />
-
+                  <img alt="Avatar" :src="message.message_user_avatar" />
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title class="hidden-xs-only" sm="5" md="3"
