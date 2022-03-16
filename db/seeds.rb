@@ -1,102 +1,10 @@
-User.create!(
-  name: 'a',
-  email: 'a@me.com',
+# ユーザーを作成
+user = User.create!(
+  name: 'Main',
+  email: 'a@gmail.com',
   password: 'aaaaaa',
   password_confirmation: 'aaaaaa'
 )
-User.create!(
-  name: 'b',
-  email: 'b@me.com',
-  password: 'bbbbbb',
-  password_confirmation: 'bbbbbb'
-)
-User.create!(
-  name: 'c',
-  email: 'c@me.com',
-  password: 'cccccc',
-  password_confirmation: 'cccccc'
-)
-
-Team.create(name: 'team1', password: 'aaaaaa', user_ids: [1, 2])
-Team.create(name: 'team2', password: 'bbbbbb', user_ids: [1, 2])
-Team.create(name: 'team3', password: 'bbbbbb', user_ids: [2])
-Team.create(name: 'team4', password: 'bbbbbb', user_ids: [2,3])
-
-puts('teamの作成が完了しました')
-
-Message.create!(
-  title: '予定1',
-  content: 'content1',
-  user_id: User.first.id,
-  team_id: Team.first.id
-)
-Message.create!(
-  title: '予定2',
-  content: 'content1',
-  user_id: User.first.id,
-  team_id: Team.first.id
-)
-Message.create!(
-  title: '予定3',
-  content: 'content1',
-  user_id: User.second.id,
-  team_id: Team.first.id
-)
-Message.create!(
-  title: '予定4',
-  content: 'content1',
-  user_id: User.second.id,
-  team_id: Team.second.id
-)
-Message.create!(
-  title: '予定5',
-  content: 'content1',
-  user_id: User.second.id,
-  team_id: Team.second.id
-)
-
-puts 'messageの作成が完了しました'
-
-Event.create!(
-  name: '予定1',
-  start: '2021-07-14 10:00:00',
-  end: '2021-07-14 11:00:00',
-  user_id: User.first.id,
-  team_id: Team.first.id
-)
-Event.create!(
-  name: '予定2',
-  start: '2021-07-14 10:00:00',
-  end: '2021-07-14 11:00:00',
-  user_id: User.first.id,
-  team_id: Team.first.id
-)
-Event.create!(
-  name: '予定3',
-  start: '2021-07-14 10:00:00',
-  end: '2021-07-14 11:00:00',
-  user_id: User.first.id,
-  team_id: Team.first.id
-)
-Event.create!(
-  name: '予定4',
-  start: '2021-07-14 10:00:00',
-  end: '2021-07-14 11:00:00',
-  user_id: User.first.id,
-  team_id: Team.second.id
-)
-
-puts('eventの作成が完了しました')
-
-team = Team.find(2)
-team.avatar.attach(
-  io: File.open('public/images/universe.png'),
-  filename: 'universe.png',
-  content_type: 'image/png',
-  identify: false
-)
-
-user = User.find(2)
 user.avatar.attach(
   io: File.open('public/images/doctor.png'),
   filename: 'doctor.png',
@@ -104,11 +12,106 @@ user.avatar.attach(
   identify: false
 )
 
-message = Message.find(1)
-message.files.attach(
-  io: File.open('public/images/doctor.png'),
-  filename: 'doctor.png',
+
+subuser1 = User.create!(
+  name: 'Sub1',
+  email: 'b@gmail.com',
+  password: 'bbbbbb',
+  password_confirmation: 'bbbbbb'
+)
+subuser1.avatar.attach(
+  io: File.open('public/images/man1.png'),
+  filename: 'man1.png',
   content_type: 'image/png',
   identify: false
 )
+
+subuser2 = User.create!(
+  name: 'Sub2',
+  email: 'c@gmail.com',
+  password: 'cccccc',
+  password_confirmation: 'cccccc'
+)
+subuser2.avatar.attach(
+  io: File.open('public/images/woman1.png'),
+  filename: 'woman1.png',
+  content_type: 'image/png',
+  identify: false
+)
+
+5.times do |n|
+  name  = Faker::Name.unique.name
+  email = "example-#{n+1}@gmail.com"
+  password = "password"
+  user = User.create!(
+    name:  name,
+    email: email,
+    password:              password,
+    password_confirmation: password
+  )
+  user.avatar.attach(
+    io: File.open('public/images/default.png'),
+    filename: 'default.png',
+    content_type: 'image/png',
+    identify: false
+  )
+end
+
+p("ユーザーを作成しました")
+
+Team.create(name: 'Main', password: 'Main', user_ids: [1, 2, 3, 4, 5, 6])
+ids = (1..8).to_a
+
+5.times do |n|
+  name  = "team-#{n+1}"
+  password = "password"
+  Team.create!(
+    name:  name,
+    password: password,
+    user_ids: ids.sample(5)
+  )
+end
+team = Team.find(1)
+team.avatar.attach(
+  io: File.open('public/images/universe.png'),
+  filename: 'universe.png',
+  content_type: 'image/png',
+  identify: false
+)
+p("チームを作成しました")
+
+30.times do |n|
+  Message.create!(
+    title: "タイトル-#{n+1}",
+    content: "コンテンツ",
+    user_id: rand(1..8) ,
+    team_id: rand(1..6) 
+  )
+end
+
+message = Message.find(1)
+message.files.attach(
+  io: File.open('public/images/bascketball.png'),
+  filename: 'bascketball.png',
+  content_type: 'image/png',
+  identify: false
+)
+
+p("メッセージを作成しました")
+
+month = rand(1..5)
+day = rand(1..28)
+30.times do |n|
+  Event.create!(
+      name: "タイトル-#{n+1}",
+      start: "2022-0#{month}-#{day} 10:00:00",
+      end: "2022-0#{month}-#{day} 11:00:00",
+    user_id: rand(1..8) ,
+    team_id: rand(1..6) 
+  )
+end
+p("イベントを作成しました")
+
+
+
 

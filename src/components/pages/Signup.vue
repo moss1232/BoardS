@@ -19,7 +19,7 @@
             @click:append="showPassword = !showPassword"
             prepend-icon="mdi-lock"
             v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            label="パスワード"
+            label="パスワード(6文字以上)"
             v-model="password"
           />
           <v-text-field

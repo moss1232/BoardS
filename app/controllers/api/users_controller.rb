@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
-      before_action :authenticate_user!
+  before_action :authenticate_user!
 
-    def index
-        render json: current_user, methods: [:profile_avatar]
-    end
+  def index
+    render json: current_user, methods: [:profile_avatar]
+  end
 
-    def update
+  def update
     if current_user.update(user_params)
       render json: current_user
     else
@@ -13,8 +13,9 @@ class Api::UsersController < ApplicationController
     end
   end
 
-    private
-    def user_params
-        params.permit(:name, :avatar)
-    end
+  private
+
+  def user_params
+    params.permit(:name, :avatar)
+  end
 end

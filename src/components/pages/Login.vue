@@ -43,7 +43,6 @@ export default {
     return {
       showPassword: false,
       email: "",
-      password: "",
       error: null,
     };
   },

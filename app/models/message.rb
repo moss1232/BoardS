@@ -1,7 +1,8 @@
 class Message < ApplicationRecord
   include Rails.application.routes.url_helpers
 
-  has_many_attached :files 
+  has_many_attached :files
+
   # do |attachable|
   #   attachable.variant :thumb, resize_to_limit: [50, 50]
   # end
@@ -17,10 +18,10 @@ class Message < ApplicationRecord
   end
 
   def message_files_url
-    if files.attached? then
+    if files.attached?
       url_for(files[0].variant(resize_to_limit: [500, 500]))
-      else
-        nil
+    else
+      nil
     end
-      end
   end
+end
