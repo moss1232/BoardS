@@ -21,10 +21,8 @@
                 />
                 <img v-else src="../../../public/images/default.png" />
               </v-list-item-avatar>
-
               <v-list-item-title>{{ team.name }}</v-list-item-title>
             </v-list-item>
-
             <v-list-group :value="false" sub-group>
               <template v-slot:activator>
                 <v-list-item-content>
@@ -58,8 +56,11 @@
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-avatar></v-avatar>
-      <v-btn icon fab right fixed @click="logout">
+      <v-btn icon fab right fixed @click="logout" v-if="log_in">
         <v-icon>mdi-logout</v-icon>
+      </v-btn>
+      <v-btn icon fab right fixed @click="redirectToLogin" v-else color="red">
+        <v-icon>mdi-login</v-icon>
       </v-btn>
       <template v-if="$route.params.team_id">
         <v-tabs centered class="ml-n9" color="grey darken-1">
@@ -91,6 +92,7 @@ import axios from "axios";
 
 export default {
   data: () => ({
+    log_in: null,
     drawer: null,
     team_settings: [
       ["mdi-plus-circle-outline", "チームを作成", "TeamCreate"],
@@ -125,11 +127,23 @@ export default {
         console.log({ error });
       }
     },
+    redirectToLogin() {
+      this.$router.push({ name: "Login" });
+    },
+    tokenTest() {
+      const tokens = [
+        window.localStorage.getItem("uid"),
+        window.localStorage.getItem("access-token"),
+        window.localStorage.getItem("client"),
+      ];
+      const tokenCheck = (arg) => !!arg == true;
+      this.log_in = tokens.every(tokenCheck);
+    },
   },
 
   created() {
     this.fetchTeams();
-    console.log(this.teams);
+    this.tokenTest();
   },
 };
 </script>

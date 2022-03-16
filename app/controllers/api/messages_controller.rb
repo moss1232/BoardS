@@ -1,5 +1,6 @@
 class Api::MessagesController < ApplicationController
-  before_action :authenticate_user!
+      before_action :authenticate_user!
+
   def index
     team = Team.find(1)
     # render json: team.messages.all, methods: [:message_user_avatar]

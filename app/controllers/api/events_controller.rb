@@ -1,5 +1,5 @@
 class Api::EventsController < ApplicationController
-    before_action :authenticate_user!
+      before_action :authenticate_user!
     
   def index
     current_team = Team.find_by(id: params[:team_id])

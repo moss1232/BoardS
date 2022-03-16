@@ -23,7 +23,7 @@
                   </v-list-item-title>
 
                   <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
-                    {{ message.content }}
+                    {{ message.content }}{{ token }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -43,6 +43,11 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   components: { MessageCreateFormButton },
 
+  data() {
+    return {
+      token: null,
+    };
+  },
   computed: {
     ...mapGetters("messages", ["messages"]),
   },
@@ -58,6 +63,7 @@ export default {
         this.fetchMessages(newVal);
       }
     );
+    this.token = window.localStorage.getItem("access-token")
   },
 };
 </script>

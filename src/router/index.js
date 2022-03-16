@@ -9,7 +9,8 @@ const routes = [
     name: "Home",
     components: {
       header: () => import("../components/layouts/Header.vue"),
-      // default: () => import("../components/pages/Login.vue"),
+      // default: () => import("../components/pages/Login.
+      meta: { requiresAuth: true },
     },
   },
   {
@@ -33,6 +34,7 @@ const routes = [
       header: () => import("../components/layouts/Header.vue"),
       default: () => import("../components/pages/Setting.vue"),
     },
+    meta: { requiresAuth: true },
   },
   {
     path: "/teamsetting",
@@ -41,6 +43,7 @@ const routes = [
       header: () => import("../components/layouts/Header.vue"),
       default: () => import("../components/pages/Home.vue"),
     },
+    meta: { requiresAuth: true },
     children: [
       {
         path: "create",
@@ -48,6 +51,7 @@ const routes = [
         components: {
           default: () => import("../components/pages/TeamCreateForm.vue"),
         },
+        meta: { requiresAuth: true },
       },
       {
         path: "search",
@@ -55,6 +59,7 @@ const routes = [
         components: {
           default: () => import("../components/pages/TeamSearchForm.vue"),
         },
+        meta: { requiresAuth: true },
       },
       {
         path: "leave",
@@ -62,6 +67,7 @@ const routes = [
         components: {
           default: () => import("../components/pages/TeamLeaveForm.vue"),
         },
+        meta: { requiresAuth: true },
       },
     ],
   },
@@ -84,6 +90,7 @@ const routes = [
             components: {
               default: () => import("../components/pages/Message.vue"),
             },
+            meta: { requiresAuth: true },
           },
           {
             path: ":message_id",
@@ -91,6 +98,7 @@ const routes = [
             components: {
               default: () => import("../components/pages/MessageDetail.vue"),
             },
+            meta: { requiresAuth: true },
           },
         ],
       },
@@ -106,6 +114,7 @@ const routes = [
             components: {
               default: () => import("../components/pages/Calendar.vue"),
             },
+            meta: { requiresAuth: true },
           },
           {
             path: ":event_id",
@@ -113,6 +122,7 @@ const routes = [
             components: {
               default: () => import("../components/pages/Calendar.vue"),
             },
+            meta: { requiresAuth: true },
           },
         ],
       },
@@ -126,4 +136,19 @@ const router = new VueRouter({
   routes,
 });
 
-export default router;
+router.beforeEach((to, from, next) => {
+  const token = [
+    window.localStorage.getItem("uid"),
+    window.localStorage.getItem("access-token"),
+    window.localStorage.getItem("client"),
+  ];
+  const tokenTest = (arg) => !!arg == true;
+  if (to.meta.requiresAuth && !token.every(tokenTest)) {
+    next({ name: "Login" });
+  } else {
+    next();
+  }
+});
+  
+  export default router;
+  
