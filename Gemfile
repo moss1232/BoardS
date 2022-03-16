@@ -30,6 +30,7 @@ gem 'devise_token_auth', '~> 1.2'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'prettier'
 gem 'faker', '~> 2.20'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3', '~> 1.4'
@@ -38,6 +39,7 @@ end
 
 group :development do
   gem 'listen', '~> 3.3'
+gem 'rename', '~> 1.0', '>= 1.0.8'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
