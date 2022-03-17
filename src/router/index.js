@@ -6,10 +6,16 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "",
+    name: "Top",
+    components: {
+      header: () => import("../components/pages/Top.vue"),
+    },
+  },
+  {
+    path: "/home",
     name: "Home",
     components: {
       header: () => import("../components/layouts/Header.vue"),
-      // default: () => import("../components/pages/Login.
       meta: { requiresAuth: true },
     },
   },
