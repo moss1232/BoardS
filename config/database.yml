@@ -23,6 +23,6 @@ test:
 production:
   <<: *default
   database: BoardS_production
-  username: tomohiro
-  password: <%= ENV['Mohiro1996'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
