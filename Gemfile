@@ -20,6 +20,7 @@ gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+# gem 'mysql2'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
@@ -31,8 +32,11 @@ gem 'faker', '~> 2.20'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+<<<<<<< HEAD
 gem 'puma', '~> 5.0'
   gem 'sqlite3', '~> 1.4'
+=======
+>>>>>>> 93bed72d7cf1fc1a92c97f7c869fdc16fb484206
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
@@ -45,9 +49,13 @@ gem 'rename', '~> 1.0', '>= 1.0.8'
 end
 
 group :production do
+<<<<<<< HEAD
 gem 'mysql2'
   # gem 'pg', '1.1.4'
-  gem 'unicorn', '~> 6.1'
+gem 'unicorn', '~> 6.1'
+=======
+
+>>>>>>> 93bed72d7cf1fc1a92c97f7c869fdc16fb484206
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
