@@ -13,7 +13,6 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'mysql2'
 # Use Active Storage variant
 # gem 'vips', '~> 8.6', '>= 8.6.3.1'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
@@ -33,7 +32,7 @@ gem 'faker', '~> 2.20'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'puma', '~> 5.0'
-  # gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
@@ -46,6 +45,7 @@ gem 'rename', '~> 1.0', '>= 1.0.8'
 end
 
 group :production do
+gem 'mysql2'
   # gem 'pg', '1.1.4'
   gem 'unicorn', '~> 6.1'
 end
