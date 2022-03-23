@@ -28,33 +28,24 @@
 #   socket: /var/lib/mysql/mysql.sock
 
 # setting mysql
-development:
+default: &default
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: db/mysql_development
   pool: 5
   username: root
   password: Mohiro1996
   host: localhost
   timeout: 5000
+
+development:
+  <<: *default
+  database: db/mysql_development
 
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *default
   database: db/mysql_test
-  pool: 5
-  username: root
-  password: Mohiro1996
-  host: localhost
-  timeout: 5000
 
-  production:
-  adapter: mysql2
-  encoding: utf8
+production:
+  <<: *default
   database: db/mysql_production
-  pool: 5
-  username: root
-  password: Mohiro1996
-  host: localhost
