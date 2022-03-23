@@ -29,6 +29,7 @@ gem 'devise_token_auth', '~> 1.2'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'prettier'
 gem 'faker', '~> 2.20'
+gem 'mysql2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,7 +47,6 @@ gem 'rename', '~> 1.0', '>= 1.0.8'
 end
 
 group :production do
-gem 'mysql2'
   # gem 'pg', '1.1.4'
 gem 'unicorn', '~> 6.1'
 end
