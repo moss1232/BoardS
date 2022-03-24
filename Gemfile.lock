@@ -169,6 +169,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     thor (1.2.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -202,6 +203,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.4)
   rename (~> 1.0, >= 1.0.8)
   spring
+  sqlite3 (~> 1.4)
   tzinfo-data
   unicorn (~> 6.1)
 
