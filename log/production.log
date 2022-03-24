@@ -1,0 +1,6 @@
+I, [2022-03-24T22:35:40.720614 #27203]  INFO -- : Migrating to DeviseTokenAuthCreateUsers (20220124215607)
+I, [2022-03-24T22:35:40.831368 #27203]  INFO -- : Migrating to CreateMessages (20220126110428)
+I, [2022-03-24T22:35:40.884286 #27203]  INFO -- : Migrating to CreateEvents (20220204110024)
+I, [2022-03-24T22:35:40.932657 #27203]  INFO -- : Migrating to CreateTeams (20220214111725)
+I, [2022-03-24T22:35:40.994206 #27203]  INFO -- : Migrating to CreateUserTeamRelationships (20220215001308)
+I, [2022-03-24T22:35:41.047418 #27203]  INFO -- : Migrating to CreateActiveStorageTables (20220216042521)

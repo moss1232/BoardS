@@ -34,7 +34,7 @@ default: &default
   reconnect: false
   pool: 5
   username: root
-  password: Mohiro1996
+  password: <%= ENV["DATABASE_PASS"] %>
   host: localhost
   timeout: 5000
 
