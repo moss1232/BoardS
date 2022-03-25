@@ -4,9 +4,10 @@ Rails.application.routes.draw do
                               controllers: {
                                 registrations: 'auth/registrations'
                               }
-
-  namespace :api do
-    resources :users, only: ['index', 'update']
+                              
+                              
+                              namespace :api do
+                                resources :users, only: ['index', 'update']
     resources :teams, only: ['index', 'create', 'destroy'] do
     collection do
       get :search
