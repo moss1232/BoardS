@@ -5,7 +5,8 @@
         <v-list-item-content class="justify-center">
           <!-- <img src="../../../public/images/default.png" /> -->
           <div class="preview mb-2">
-            <img width="100" height="100" id="image_preview" :src="file" />
+            <img v-if="file" width="100" height="100" id="image_preview" :src="file" />
+            <img v-else width="100" height="100" id="image_preview" src="../../../public/images/default.png" />
           </div>
           <div class="btn-contain mb-4">
             <label class="upload-img-btn">
@@ -60,7 +61,7 @@ export default {
     showPassword: false,
     name: "",
     password: "",
-    file: "",
+    file: null,
     snackbar: false,
     snackbar_text: "",
     color: "",

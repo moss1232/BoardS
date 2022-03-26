@@ -17,6 +17,7 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # gem 'vips', '~> 8.6', '>= 8.6.3.1'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', '~> 1.2', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

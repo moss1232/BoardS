@@ -13,16 +13,20 @@ class Api::TeamsController < ApplicationController
       render json: team.errors, status: 422
     end
   end
-
+  
   def search
     team = Team.find_by(name: params[:name])
     render json: team, methods: [:team_avatar_url]
   end
-
+  
   def join
     team = Team.find_by(name: params[:name])
-    current_user.join_team(team)
-    render json: team, methods: [:team_avatar_url]
+    if current_user.teams.exists?(id: team.id)
+      render json: team.errors, status: 422
+    else
+      current_user.join_team(team)
+      render json: team, methods: [:team_avatar_url]
+    end
   end
 
   def leave

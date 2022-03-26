@@ -16,7 +16,7 @@
             label="パスワード"
             v-model="password"
           />
-          <div class="btn-contain">
+          <div class="center">
             <v-btn :disabled="isInvalid" class="info" @click="searchTeam">
               検索
             </v-btn>
@@ -26,8 +26,9 @@
               persistent
               @click:outside="closeDialog"
             >
-              <v-card>
-                <img width="100" height="100" id="image_preview" :src="file" />
+              <v-card class="center pt-4">
+                <img v-if="avatar" width="100" height="100" id="image_preview" :src="file" />
+                <img v-else width="100" height="100" id="image_preview" src="../../../public/images/default.png" />
 
                 <v-card-title class="justify-center">
                   {{ name }}
@@ -77,9 +78,9 @@ export default {
     file: null,
     showPassword: false,
     dialog: false,
-    password: "bbbbbb",
-    name: "team3",
-    avatar: "",
+    password: "password",
+    name: "team-3",
+    avatar: null,
     snackbar: false,
     snackbar_text: "",
     color: "",
@@ -142,28 +143,6 @@ export default {
       );
     },
   },
-
-  //     async submit() {
-  //   const params = new FormData();
-  //   params.append("name", this.name);
-  //   params.append("password", this.password);
-  //   params.append("file", this.file);
-  //   this.createTeam(params)
-  //   .then(response => {
-  //       this.snackbar_text = "保存しました";
-  //       this.color = "blue";
-  //       this.snackbar = true;
-  //       console.log(response);
-  //     },
-  //     error => {
-  //       this.snackbar_text = "入力内容に誤りがあります";
-  //       this.color = "red";
-  //       this.snackbar = true;
-  //       console.log(error);
-  //     }
-  //   );
-  // },
-  created() {},
 };
 </script>
 
@@ -188,13 +167,10 @@ export default {
   background-color: #d9d7cd;
 }
 
-.btn-contain {
+.center {
   text-align: center;
 }
 
-.preview {
-  text-align: center;
-}
 
 #image_preview {
   border-radius: 50%;

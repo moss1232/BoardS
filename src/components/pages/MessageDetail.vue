@@ -5,7 +5,8 @@
         <v-card>
           <v-card-title class="text-h5">
             <v-avatar class="mr-6">
-              <img src="../../../public/images/default.png" />
+                                <img v-if="avatar" alt="Avatar" :src="avatar" />
+                                <img v-else alt="Avatar" src="../../../public/images/default.png" />
             </v-avatar>
             <span>
               {{ title }}

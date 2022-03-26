@@ -14,7 +14,7 @@
         </v-row>
         <v-row class="justify-center">
           <span> </span>
-          <v-btn class="info"> 始める </v-btn>
+          <v-btn class="info" @click="redirectToLogin"> 始める </v-btn>
         </v-row>
       </v-container>
     </v-sheet>
