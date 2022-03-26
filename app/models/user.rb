@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :user_team_relationships, dependent: :destroy
   has_many :teams, through: :user_team_relationships
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def current_user_avatar
     user.avatar.attached? ? url_for(user.avatar) : nil

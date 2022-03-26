@@ -1,8 +1,8 @@
 class CreateTeams < ActiveRecord::Migration[6.1]
   def change
     create_table :teams do |t|
-      t.string :name, presence: true
-      t.string :password, presence: true
+      t.string :name, null: false
+      t.string :password, null: false
 
       t.timestamps
     end

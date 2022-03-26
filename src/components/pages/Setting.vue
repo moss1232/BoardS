@@ -3,14 +3,8 @@
     <v-row>
       <v-container class="px-10">
         <v-list-item-content class="justify-center">
-          <!-- <img src="../../../public/images/default.png" /> -->
           <div class="preview mb-2">
-            <img
-              width="100"
-              height="100"
-              id="image_preview"
-              :src="file"
-            />
+            <img width="100" height="100" id="image_preview" :src="file" />
           </div>
           <div class="btn-contain mb-4">
             <label class="upload-img-btn">
@@ -23,13 +17,11 @@
               />
             </label>
           </div>
-
           <v-text-field
             prepend-icon="mdi-account-circle"
             label="ユーザ名"
             v-model="name"
           />
-
           <div class="btn-contain">
             <v-btn @click="updateUser" class="info"> 保存 </v-btn>
             <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
@@ -61,7 +53,7 @@ export default {
     handleFiles() {
       const img = document.querySelector("#image_preview");
       const selectedFile = document.getElementById("inputFile").files[0];
-      console.log(selectedFile)
+      console.log(selectedFile);
       const reader = new FileReader();
       reader.onload = (function (aImg) {
         return function (e) {
@@ -69,7 +61,7 @@ export default {
         };
       })(img);
       reader.readAsDataURL(selectedFile);
-      this.file = selectedFile
+      this.file = selectedFile;
     },
     async fetchUser() {
       const res = await axios.get("http://127.0.0.1:3000/api/users", {
@@ -88,7 +80,7 @@ export default {
         this.error = null;
         const params = new FormData();
         params.append("name", this.name);
-        params.append("file", this.file);
+        params.append("avatar", this.file);
         const res = await axios.put(
           `http://127.0.0.1:3000/api/users/${this.user_id}`,
           params,

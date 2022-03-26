@@ -23,7 +23,7 @@
                   </v-list-item-title>
 
                   <v-list-item-subtitle class="text-no-wrap" cols="5" sm="3">
-                    {{ message.content }}{{ token }}
+                    {{ message.content }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>

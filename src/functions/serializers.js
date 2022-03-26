@@ -30,12 +30,14 @@ export const serializeMessage = (message) => {
   const content = message.content;
   const team_id = message.team_id;
   const files = message.files;
+  const user_avatar = message.message_user_avatar;
   return {
     ...message,
     title,
     content,
     team_id,
     files,
+    user_avatar,
   };
 };
 
@@ -44,8 +46,10 @@ export const serializeTeam = (team) => {
     return null;
   }
   const name = team.name;
+  const avatar = team.team_avatar_url;
   return {
     ...team,
     name,
+    avatar,
   };
 };

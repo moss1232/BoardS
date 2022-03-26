@@ -7,8 +7,12 @@ class Api::TeamsController < ApplicationController
 
   def create
     team = current_user.teams.new(team_params)
+    unless params[:avatar]
+      team.set_defaul_avatar
+    end
+
     if team.save
-      render json: team
+      render json: team, methods: [:team_avatar_url]
     else
       render json: team.errors, status: 422
     end

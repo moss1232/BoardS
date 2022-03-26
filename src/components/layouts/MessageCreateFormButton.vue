@@ -16,7 +16,6 @@
         <v-card-text>
           <v-container>
             <v-row>
-              <!-- <form> -->
               <v-col cols="12" sm="6" md="4">
                 <v-text-field label="タイトル" required v-model="title">
                 </v-text-field>
@@ -46,7 +45,12 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="submit">
+          <v-btn
+            :disabled="isInvalid"
+            color="blue darken-1"
+            text
+            @click="submit"
+          >
             <v-icon>mdi-send</v-icon>
           </v-btn>
         </v-card-actions>
@@ -57,14 +61,26 @@
 
 <script>
 import { mapActions } from "vuex";
+import { validationMixin } from "vuelidate";
+import { required } from "vuelidate/lib/validators";
 
 export default {
+  mixins: [validationMixin],
   data: () => ({
     dialog: false,
     title: null,
     content: null,
     files: null,
   }),
+  validations: {
+    title: { required },
+    content: { required },
+  },
+  computed: {
+    isInvalid() {
+      return this.$v.$invalid;
+    },
+  },
   methods: {
     ...mapActions("messages", ["createMessage"]),
     closeDialog() {
@@ -78,7 +94,6 @@ export default {
       params.append("title", this.title);
       params.append("content", this.content);
       params.append("team_id", this.$route.params.team_id);
-      // params.append("uid", window.localStorage.getItem("uid"));
       if (this.files !== null) {
         params.append("files", this.files);
       }

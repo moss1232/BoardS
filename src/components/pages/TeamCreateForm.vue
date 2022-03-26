@@ -52,10 +52,6 @@ import { required } from "vuelidate/lib/validators";
 
 export default {
   mixins: [validationMixin],
-  validations: {
-    name: { required },
-    password: { required },
-  },
 
   data: () => ({
     showPassword: false,
@@ -67,9 +63,13 @@ export default {
     color: "",
     timeout: 2000,
   }),
+    validations: {
+      name: { required },
+      password: { required },
+    },
   computed: {
     isInvalid() {
-      return this.$v.$invalid || this.isInvalidDatetime;
+      return this.$v.$invalid;
     },
   },
 
@@ -93,7 +93,9 @@ export default {
       const params = new FormData();
       params.append("name", this.name);
       params.append("password", this.password);
-      params.append("file", this.file);
+      if (this.file != null){
+        params.append("avatar", this.file);
+      }
       this.createTeam(params)
       .then(response => {
           this.snackbar_text = "保存しました";

@@ -14,4 +14,13 @@ class Team < ApplicationRecord
   def team_avatar_url
     self.avatar.attached? ? url_for(self.avatar) : nil
   end
+
+  def set_defaul_avatar
+    self.avatar.attach(
+    io: File.open('public/images/default.png'),
+    filename: 'default.png',
+    content_type: 'image/png',
+    identify: false
+    )
+  end
 end

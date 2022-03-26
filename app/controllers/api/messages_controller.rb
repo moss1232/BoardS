@@ -4,7 +4,7 @@ class Api::MessagesController < ApplicationController
   def index
     team = Team.find(1)
 
-    # render json: team.messages.all, methods: [:message_user_avatar]
+    # render json: team.messagwes.all, methods: [:message_user_avatar]
     teams = current_user.teams.all
     current_team = teams.find_by(id: params[:team_id])
     render json: current_team.messages.all, methods: [:message_user_avatar]
@@ -19,7 +19,7 @@ class Api::MessagesController < ApplicationController
   def create
     message = current_user.messages.new(message_params)
     if message.save
-      render json: message
+      render json: message, methods: [:message_user_avatar]
     else
       render json: message.errors, status: 422
     end

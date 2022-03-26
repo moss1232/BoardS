@@ -23,7 +23,6 @@ const mutations = {
 const actions = {
   async fetchMessages({ commit }, team_id) {
     const response = await axios.get(`${apiUrl}/${team_id}/messages`, {
-      // `${apiUrl}/team/messages`,{
       headers: {
         uid: window.localStorage.getItem("uid"),
         "access-token": window.localStorage.getItem("access-token"),

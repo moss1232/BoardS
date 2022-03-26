@@ -69,26 +69,26 @@ import { mapActions } from "vuex";
 
 export default {
   mixins: [validationMixin],
-  validations: {
-    name: { required },
-    password: { required },
-  },
 
   data: () => ({
     file: null,
     showPassword: false,
     dialog: false,
-    password: "password",
-    name: "team-3",
+    password: null,
+    name: null,
     avatar: null,
     snackbar: false,
     snackbar_text: "",
     color: "",
     timeout: 2000,
   }),
+    validations: {
+      name: { required },
+      password: { required },
+    },
   computed: {
     isInvalid() {
-      return this.$v.$invalid || this.isInvalidDatetime;
+      return this.$v.$invalid;
     },
   },
 
@@ -135,7 +135,7 @@ export default {
           console.log(response);
         },
         (error) => {
-          this.snackbar_text = "チームに参加できませんでした";
+          this.snackbar_text = "参加済のチームです";
           this.color = "red";
           this.snackbar = true;
           console.log(error);

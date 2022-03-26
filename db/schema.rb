@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2022_02_16_042521) do
   end
 
   create_table "events", charset: "utf8mb3", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "team_id"
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
     t.string "name", limit: 100, null: false
     t.datetime "start", null: false
     t.datetime "end", null: false
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2022_02_16_042521) do
   end
 
   create_table "messages", charset: "utf8mb3", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "team_id"
-    t.string "title"
-    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
+    t.string "title", null: false
+    t.string "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_messages_on_team_id"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2022_02_16_042521) do
   end
 
   create_table "teams", charset: "utf8mb3", force: :cascade do |t|
-    t.string "name"
-    t.string "password"
+    t.string "name", null: false
+    t.string "password", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_teams_on_name", unique: true
