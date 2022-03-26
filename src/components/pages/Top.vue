@@ -22,8 +22,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    redirectToLogin() {
+      this.$router.push({ name: "Login" });
+    },
+  }
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
    
