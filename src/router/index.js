@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "",
     name: "Top",
     components: {
       header: () => import("../components/pages/TopHeader.vue"),
