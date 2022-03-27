@@ -8,7 +8,8 @@ const routes = [
     path: "",
     name: "Top",
     components: {
-      header: () => import("../components/pages/Top.vue"),
+      header: () => import("../components/pages/TopHeader.vue"),
+      default: () => import("../components/pages/Top.vue"),
     },
   },
   {
