@@ -4,13 +4,13 @@
       <v-card-text>
         <v-form @submit.prevent="login">
           <v-text-field
-          autocomplete="off"
+            autocomplete="off"
             prepend-icon="mdi-email"
             label="メールアドレス"
             v-model="email"
           />
           <v-text-field
-          autocomplete="off"
+            autocomplete="off"
             v-bind:type="showPassword ? 'text' : 'password'"
             @click:append="showPassword = !showPassword"
             prepend-icon="mdi-lock"
@@ -23,8 +23,9 @@
             <v-row justify="center">
               <v-col cols="12" sm="6">
                 <div class="text-center">
-                  <v-btn class="info" type="submit">ログイン</v-btn>
+                  <v-btn class="info">ログイン</v-btn>
                   <v-btn text to="/signup">新規登録はこちら</v-btn>
+                  <v-btn outlined @click="guestLogin">ゲストログイン</v-btn>
                 </div>
               </v-col>
             </v-row>
@@ -70,6 +71,11 @@ export default {
         console.log({ error });
         this.error = "メールアドレスかパスワードが違います";
       }
+    },
+    guestLogin() {
+      this.email = "a@gmail.com";
+      this.password = "aaaaaa";
+      this.login();
     },
     redirectToMessage() {
       this.$router.push({ name: "Home" });

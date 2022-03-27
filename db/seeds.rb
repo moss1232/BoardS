@@ -59,8 +59,9 @@ end
 p("ユーザーを作成しました")
 
 Team.create(name: 'Main', password: 'Main', user_ids: [1, 2, 3, 4, 5, 6])
-ids = (1..8).to_a
+Team.create(name: 'test', password: 'password', user_ids: [2, 3])
 
+ids = (1..8).to_a
 5.times do |n|
   name  = "team-#{n+1}"
   password = "password"
