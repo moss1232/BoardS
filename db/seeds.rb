@@ -38,7 +38,7 @@ subuser2.avatar.attach(
   identify: false
 )
 
-5.times do |n|
+3.times do |n|
   name  = Faker::Name.unique.name
   email = "example-#{n+1}@gmail.com"
   password = "password"
