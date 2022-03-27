@@ -17,10 +17,10 @@ class Team < ApplicationRecord
 
   def set_defaul_avatar
     self.avatar.attach(
-    io: File.open('public/images/default.png'),
-    filename: 'default.png',
-    content_type: 'image/png',
-    identify: false
+      io: File.open('public/images/default.png'),
+      filename: 'default.png',
+      content_type: 'image/png',
+      identify: false
     )
   end
 end
