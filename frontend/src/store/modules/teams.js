@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeTeam } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:3000/api";
+const apiUrl = "http://127.0.0.1:8000/api";
 
 const state = {
   teams: [],

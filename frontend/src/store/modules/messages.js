@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeMessage } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:3000/api/teams";
+const apiUrl = "http://127.0.0.1:8000/api/teams";
 
 const state = {
   messages: [],
@@ -31,7 +31,7 @@ const actions = {
     });
     commit("setMessages", response.data);
   },
-  
+
   async createMessage({ commit }, message) {
     const response = await axios.post(
       `${apiUrl}/${message.get("team_id")}/messages`,

@@ -1,5 +1,3 @@
-
-
 <script>
 import { mapActions } from "vuex";
 
@@ -25,7 +23,7 @@ export default {
     //   };
     //   await new Promise((resolve, reject) => {
     //     axios
-    //       .post("http://127.0.0.1:3000/api/teams", team, {
+    //       .post("http://127.0.0.1:8000/api/teams", team, {
     //         headers: {
     //           uid: window.localStorage.getItem("uid"),
     //           "access-token": window.localStorage.getItem("access-token"),

@@ -5,8 +5,12 @@
         <v-card>
           <v-card-title class="text-h5">
             <v-avatar class="mr-6">
-                                <img v-if="avatar" alt="Avatar" :src="avatar" />
-                                <img v-else alt="Avatar" src="../../../public/images/default.png" />
+              <img v-if="avatar" alt="Avatar" :src="avatar" />
+              <img
+                v-else
+                alt="Avatar"
+                src="../../../public/images/default.png"
+              />
             </v-avatar>
             <span>
               {{ title }}
@@ -15,10 +19,7 @@
           <v-card-text class="text-h6">
             {{ content }}
           </v-card-text>
-          <img
-            v-if= files
-            :src="files"
-          />
+          <img v-if="files" :src="files" />
         </v-card>
       </v-col>
     </v-row>
@@ -41,7 +42,7 @@ export default {
   methods: {
     async fetchDetailMessage() {
       const res = await axios.get(
-        `http://127.0.0.1:3000/api/teams/${this.$route.params.team_id}/messages/${this.$route.params.message_id}`,
+        `http://127.0.0.1:8000/api/teams/${this.$route.params.team_id}/messages/${this.$route.params.message_id}`,
         {
           headers: {
             uid: window.localStorage.getItem("uid"),

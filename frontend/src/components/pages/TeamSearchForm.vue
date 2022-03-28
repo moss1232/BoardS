@@ -27,8 +27,20 @@
               @click:outside="closeDialog"
             >
               <v-card class="center pt-4">
-                <img v-if="avatar" width="100" height="100" id="image_preview" :src="file" />
-                <img v-else width="100" height="100" id="image_preview" src="../../../public/images/default.png" />
+                <img
+                  v-if="avatar"
+                  width="100"
+                  height="100"
+                  id="image_preview"
+                  :src="file"
+                />
+                <img
+                  v-else
+                  width="100"
+                  height="100"
+                  id="image_preview"
+                  src="../../../public/images/default.png"
+                />
 
                 <v-card-title class="justify-center">
                   {{ name }}
@@ -82,10 +94,10 @@ export default {
     color: "",
     timeout: 2000,
   }),
-    validations: {
-      name: { required },
-      password: { required },
-    },
+  validations: {
+    name: { required },
+    password: { required },
+  },
   computed: {
     isInvalid() {
       return this.$v.$invalid;
@@ -100,7 +112,7 @@ export default {
     },
 
     async searchTeam() {
-      const res = await axios.get(`http://127.0.0.1:3000/api/teams/search`, {
+      const res = await axios.get(`http://127.0.0.1:8000/api/teams/search`, {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
@@ -125,7 +137,7 @@ export default {
     JoinTeamTransaction() {
       const params = new FormData();
       params.append("name", this.name);
-      console.log(params)
+      console.log(params);
       this.JoinTeam(params).then(
         (response) => {
           this.closeDialog();
@@ -170,7 +182,6 @@ export default {
 .center {
   text-align: center;
 }
-
 
 #image_preview {
   border-radius: 50%;

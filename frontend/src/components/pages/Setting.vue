@@ -64,7 +64,7 @@ export default {
       this.file = selectedFile;
     },
     async fetchUser() {
-      const res = await axios.get("http://127.0.0.1:3000/api/users", {
+      const res = await axios.get("http://127.0.0.1:8000/api/users", {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
@@ -82,7 +82,7 @@ export default {
         params.append("name", this.name);
         params.append("avatar", this.file);
         const res = await axios.put(
-          `http://127.0.0.1:3000/api/users/${this.user_id}`,
+          `http://127.0.0.1:8000/api/users/${this.user_id}`,
           params,
           {
             headers: {

@@ -108,7 +108,7 @@ export default {
     ...mapActions("teams", ["fetchTeams"]),
     async logout() {
       try {
-        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+        const res = await axios.delete("http://localhost:8000/auth/sign_out", {
           headers: {
             uid: window.localStorage.getItem("uid"),
             "access-token": window.localStorage.getItem("access-token"),
