@@ -1,2 +1,2 @@
 frontend heroku push command
-heroku static:deploy
+git push heroku master
