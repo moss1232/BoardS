@@ -112,17 +112,20 @@ export default {
     },
 
     async searchTeam() {
-      const res = await axios.get(`http://127.0.0.1:8000/api/teams/search`, {
-        headers: {
-          uid: window.localStorage.getItem("uid"),
-          "access-token": window.localStorage.getItem("access-token"),
-          client: window.localStorage.getItem("client"),
-        },
-        params: {
-          name: this.name,
-          password: this.password,
-        },
-      });
+      const res = await axios.get(
+        `https://board-rails-backend.herokuapp.com/api/teams/search`,
+        {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+          params: {
+            name: this.name,
+            password: this.password,
+          },
+        }
+      );
       console.log(res);
       if (res.data === null) {
         this.snackbar_text = "入力内容に誤りがあります";

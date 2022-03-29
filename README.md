@@ -3,7 +3,8 @@
   <img src="https://user-images.githubusercontent.com/86171064/160265284-5206e80c-158d-4841-a4fd-0478c44fdc31.png" />
 </p>
 
-url:
+url:https://board-vue-frontend.herokuapp.com/
+url:https://board-rails-backend.herokuapp.com/
 
 <!-- ![gif](https://github.com/kotabrog/ft_mini_ls/blob/main/image/ft_mini_ls.gif) -->
 

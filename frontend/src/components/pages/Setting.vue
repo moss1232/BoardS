@@ -64,13 +64,16 @@ export default {
       this.file = selectedFile;
     },
     async fetchUser() {
-      const res = await axios.get("http://127.0.0.1:8000/api/users", {
-        headers: {
-          uid: window.localStorage.getItem("uid"),
-          "access-token": window.localStorage.getItem("access-token"),
-          client: window.localStorage.getItem("client"),
-        },
-      });
+      const res = await axios.get(
+        "https://board-rails-backend.herokuapp.com/api/users",
+        {
+          headers: {
+            uid: window.localStorage.getItem("uid"),
+            "access-token": window.localStorage.getItem("access-token"),
+            client: window.localStorage.getItem("client"),
+          },
+        }
+      );
       this.name = res.data.name;
       this.file = res.data.profile_avatar;
       this.user_id = res.data.id;
@@ -82,7 +85,7 @@ export default {
         params.append("name", this.name);
         params.append("avatar", this.file);
         const res = await axios.put(
-          `http://127.0.0.1:8000/api/users/${this.user_id}`,
+          `https://board-rails-backend.herokuapp.com/api/users/${this.user_id}`,
           params,
           {
             headers: {

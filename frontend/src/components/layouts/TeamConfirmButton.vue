@@ -23,7 +23,7 @@ export default {
     //   };
     //   await new Promise((resolve, reject) => {
     //     axios
-    //       .post("http://127.0.0.1:8000/api/teams", team, {
+    //       .post("https://board-rails-backend.herokuapp.com/api/teams", team, {
     //         headers: {
     //           uid: window.localStorage.getItem("uid"),
     //           "access-token": window.localStorage.getItem("access-token"),

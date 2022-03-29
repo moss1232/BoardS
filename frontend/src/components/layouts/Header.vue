@@ -108,13 +108,16 @@ export default {
     ...mapActions("teams", ["fetchTeams"]),
     async logout() {
       try {
-        const res = await axios.delete("http://localhost:8000/auth/sign_out", {
-          headers: {
-            uid: window.localStorage.getItem("uid"),
-            "access-token": window.localStorage.getItem("access-token"),
-            client: window.localStorage.getItem("client"),
-          },
-        });
+        const res = await axios.delete(
+          "https://board-rails-backend.herokuapp.com/auth/sign_out",
+          {
+            headers: {
+              uid: window.localStorage.getItem("uid"),
+              "access-token": window.localStorage.getItem("access-token"),
+              client: window.localStorage.getItem("client"),
+            },
+          }
+        );
 
         console.log("ログアウトしました");
         window.localStorage.removeItem("access-token");

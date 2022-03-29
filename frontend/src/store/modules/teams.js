@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeTeam } from "../../functions/serializers";
 
-const apiUrl = "http://127.0.0.1:8000/api";
+const apiUrl = "https://board-rails-backend.herokuapp.com/api";
 
 const state = {
   teams: [],

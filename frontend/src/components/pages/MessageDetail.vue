@@ -42,7 +42,7 @@ export default {
   methods: {
     async fetchDetailMessage() {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/teams/${this.$route.params.team_id}/messages/${this.$route.params.message_id}`,
+        `https://board-rails-backend.herokuapp.com/api/teams/${this.$route.params.team_id}/messages/${this.$route.params.message_id}`,
         {
           headers: {
             uid: window.localStorage.getItem("uid"),

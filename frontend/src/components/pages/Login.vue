@@ -52,10 +52,13 @@ export default {
     async login() {
       try {
         this.error = null;
-        const res = await axios.post("http://localhost:8000/auth/sign_in", {
-          email: this.email,
-          password: this.password,
-        });
+        const res = await axios.post(
+          "https://board-rails-backend.herokuapp.com/auth/sign_in",
+          {
+            email: this.email,
+            password: this.password,
+          }
+        );
         console.log({ res });
         if (!this.error) {
           window.localStorage.setItem(

@@ -49,3 +49,4 @@ test:
 production:
   <<: *default
   database: db/mysql_production
+  use_metadata_table: false
