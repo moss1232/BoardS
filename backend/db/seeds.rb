@@ -59,62 +59,62 @@ end
 p("ユーザーを作成しました")
 p(User.all)
 
-Team.create(name: 'Main', password: 'Main', user_ids: [1, 2, 3, 4, 5])
-Team.create(name: 'test', password: 'password', user_ids: [2, 3])
+# Team.create(name: 'Main', password: 'Main', user_ids: [1, 2, 3, 4, 5])
+# Team.create(name: 'test', password: 'password', user_ids: [2, 3])
 
-ids = (1..6).to_a
-4.times do |n|
-  name  = "team-#{n+1}"
-  password = "password"
-  Team.create!(
-    name:  name,
-    password: password,
-    user_ids: ids.sample(4)
-  )
-end
-team = Team.find(1)
-team.avatar.attach(
-  io: File.open('public/images/universe.png'),
-  filename: 'universe.png',
-  content_type: 'image/png',
-  identify: false
-)
-p("チームを作成しました")
+# ids = (1..6).to_a
+# 4.times do |n|
+#   name  = "team-#{n+1}"
+#   password = "password"
+#   Team.create!(
+#     name:  name,
+#     password: password,
+#     user_ids: ids.sample(4)
+#   )
+# end
+# team = Team.find(1)
+# team.avatar.attach(
+#   io: File.open('public/images/universe.png'),
+#   filename: 'universe.png',
+#   content_type: 'image/png',
+#   identify: false
+# )
+# p("チームを作成しました")
 
-30.times do |n|
-  Message.create!(
-    title: "タイトル-#{n+1}",
-    content: "コンテンツ",
-    user_id: rand(1..6) ,
-    team_id: rand(1..6) 
-  )
-end
+# 30.times do |n|
+#   Message.create!(
+#     title: "タイトル-#{n+1}",
+#     content: "コンテンツ",
+#     user_id: rand(1..6) ,
+#     team_id: rand(1..6) 
+#   )
+# end
 
-message = Message.find(1)
-message.files.attach(
-  io: File.open('public/images/bascketball.png'),
-  filename: 'bascketball.png',
-  content_type: 'image/png',
-  identify: false
-)
+# message = Message.find(1)
+# message.files.attach(
+#   io: File.open('public/images/bascketball.png'),
+#   filename: 'bascketball.png',
+#   content_type: 'image/png',
+#   identify: false
+# )
 
-p("メッセージを作成しました")
+# p("メッセージを作成しました")
 
-month = rand(3..5)
-day = rand(1..28)
-team_id = rand(1..6)
-team = Team.find(team_id)
-user_id = team.user_ids.sample
-50.times do |n|
-  Event.create!(
-      name: "タイトル-#{n+1}",
-      start: "2022-0#{month}-#{day} 10:00:00",
-      end: "2022-0#{month}-#{day} 11:00:00",
-    user_id: user_id ,
-    team_id: team_id 
-  )
-end
-p("イベントを作成しました")
+# month = rand(3..5)
+# day = rand(1..28)
+# team_id = rand(1..6)
+# team = Team.find(team_id)
+# user_id = team.user_ids.sample
+# 50.times do |n|
+#   Event.create!(
+#       name: "タイトル-#{n+1}",
+#       start: "2022-0#{month}-#{day} 10:00:00",
+#       end: "2022-0#{month}-#{day} 11:00:00",
+#     user_id: user_id ,
+#     team_id: team_id 
+#   )
+# end
+# p("イベントを作成しました")
 
 
 
