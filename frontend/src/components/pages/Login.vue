@@ -53,7 +53,7 @@ export default {
       try {
         this.error = null;
         const res = await axios.post(
-          "https://board-rails-backend.herokuapp.com/auth/sign_in",
+          `${process.env.VUE_APP_API_URL}/auth/sign_in`,
           {
             email: this.email,
             password: this.password,

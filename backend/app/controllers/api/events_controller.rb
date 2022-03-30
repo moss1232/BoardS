@@ -1,5 +1,5 @@
 class Api::EventsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_api_user!
 
   def index
     current_team = Team.find_by(id: params[:team_id])
@@ -7,13 +7,13 @@ class Api::EventsController < ApplicationController
   end
 
   def show
-    teams = current_user.teams.all
+    teams = current_api_user.teams.all
     current_team = teams.find_by(id: params[:id])
     render json: current_team.events.all
   end
 
   def create
-    event = current_user.events.new(event_params)
+    event = current_api_user.events.new(event_params)
     if event.save
       render json: event
     else
@@ -22,7 +22,7 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    event = current_user.events.find_by(id: params[:id])
+    event = current_api_user.events.find_by(id: params[:id])
     if event.update(event_params)
       render json: event
     else
@@ -31,7 +31,7 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    event = current_user.events.find_by(id: params[:id])
+    event = current_api_user.events.find_by(id: params[:id])
     event.destroy!
     render json: event
   end

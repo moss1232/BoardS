@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'http://localhost:8080', 'http://172.29.30.158:8080', 'https://board-vue-frontend.herokuapp.com'
     resource '*',
              headers: :any,
              expose: %w[access-token expiry token-type uid client],

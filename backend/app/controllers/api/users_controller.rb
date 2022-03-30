@@ -1,15 +1,15 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_api_user!
 
   def index
-    render json: current_user, methods: [:profile_avatar]
+    render json: current_api_user, methods: [:profile_avatar]
   end
 
   def update
-    if current_user.update(user_params)
-      render json: current_user
+    if current_api_user.update(user_params)
+      render json: current_api_user
     else
-      render json: current_user.errors, status: 422
+      render json: current_api_user.errors, status: 422
     end
   end
 

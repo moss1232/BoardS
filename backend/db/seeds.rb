@@ -101,11 +101,11 @@ message.files.attach(
 
 p("メッセージを作成しました")
 
-month = rand(3..5)
-day = rand(1..28)
-team = Team.find_by(id: @team_ids.sample)
-user_id = team.user_ids.sample
 50.times do |n|
+  month = rand(3..5)
+  day = rand(1..28)
+  team = Team.find_by(id: @team_ids.sample)
+  user_id = team.user_ids.sample
   Event.create!(
       name: "タイトル-#{n+1}",
       start: "2022-0#{month}-#{day} 10:00:00",

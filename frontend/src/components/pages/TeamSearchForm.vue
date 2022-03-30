@@ -113,7 +113,7 @@ export default {
 
     async searchTeam() {
       const res = await axios.get(
-        `https://board-rails-backend.herokuapp.com/api/teams/search`,
+        `${process.env.VUE_APP_API_URL}/teams/search`,
         {
           headers: {
             uid: window.localStorage.getItem("uid"),

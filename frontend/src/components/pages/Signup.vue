@@ -66,15 +66,12 @@ export default {
     async signUp() {
       this.error = null;
       try {
-        const res = await axios.post(
-          "https://board-rails-backend.herokuapp.com/auth",
-          {
-            name: this.name,
-            email: this.email,
-            password: this.password,
-            password_confirmation: this.passwordConfirmation,
-          }
-        );
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth`, {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.passwordConfirmation,
+        });
         if (!res) {
           throw new Error("アカウントを登録できませんでした");
         }

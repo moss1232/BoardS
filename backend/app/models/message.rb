@@ -5,7 +5,7 @@ class Message < ApplicationRecord
 
   # do |attachable|
   #   attachable.variant :thumb, resize_to_limit: [50, 50]
-  # end
+  # endU
 
   belongs_to :user
   belongs_to :team
