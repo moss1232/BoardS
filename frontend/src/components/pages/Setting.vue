@@ -41,6 +41,7 @@ export default {
   data: () => ({
     name: "",
     user_id: "",
+    prefile: "",
     file: "",
     error: "",
     snackbar: false,
@@ -64,7 +65,7 @@ export default {
       this.file = selectedFile;
     },
     async fetchUser() {
-      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users`, {
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/api/users`, {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
@@ -73,6 +74,7 @@ export default {
       });
       this.name = res.data.name;
       this.file = res.data.profile_avatar;
+      this.prefile = res.data.profile_avatar;
       this.user_id = res.data.id;
     },
     async updateUser() {
@@ -80,9 +82,11 @@ export default {
         this.error = null;
         const params = new FormData();
         params.append("name", this.name);
-        params.append("avatar", this.file);
+        if(this.file != this.prefile){
+          params.append("avatar", this.file);
+        }
         const res = await axios.put(
-          `${process.env.VUE_APP_API_URL}/users/${this.user_id}`,
+          `${process.env.VUE_APP_API_URL}/api/users/${this.user_id}`,
           params,
           {
             headers: {

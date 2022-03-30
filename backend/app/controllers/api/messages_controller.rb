@@ -1,9 +1,9 @@
 class Api::MessagesController < ApplicationController
-  before_action :authenticate_api_user!
+  before_action :authenticate_user!
 
   def index
     team = Team.find_by(id: params[:team_id])
-    teams = current_api_user.teams.all
+    teams = current_user.teams.all
     current_team = teams.find_by(id: params[:team_id])
     render json: current_team.messages.all, methods: [:message_user_avatar]
   end
@@ -15,7 +15,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
-    message = current_api_user.messages.new(message_params)
+    message = current_user.messages.new(message_params)
     if message.save
       render json: message, methods: [:message_user_avatar]
     else

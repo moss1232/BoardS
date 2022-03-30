@@ -1,7 +1,7 @@
 import axios from "axios";
 import { serializeTeam } from "../../functions/serializers";
 
-const apiUrl = process.env.VUE_APP_API_URL;
+const apiUrl = `${process.env.VUE_APP_API_URL}/api`;
 
 const state = {
   teams: [],

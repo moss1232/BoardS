@@ -109,4 +109,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  # devise link to
+    Rails.application.routes.default_url_options[:host] = 'board-rails-backend.herokuapp.com'
 end

@@ -44,3 +44,197 @@ I, [2022-03-29T11:39:59.422962 #27414]  INFO -- : [ActiveJob] Enqueued ActiveSto
 I, [2022-03-29T11:39:59.457489 #27414]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [d97cac50-81fb-4815-b22c-61811b54dd54] Performing ActiveStorage::AnalyzeJob (Job ID: d97cac50-81fb-4815-b22c-61811b54dd54) from Async(default) enqueued at 2022-03-29T02:39:59Z with arguments: #<GlobalID:0x0000560d29470bf8 @uri=#<URI::GID gid://board-s/ActiveStorage::Blob/8>>
 I, [2022-03-29T11:39:59.529102 #27414]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [d97cac50-81fb-4815-b22c-61811b54dd54] [36m  S3 Storage (71.0ms) [0m[34mDownloaded file from key: 5t97v87elwsbdmdidhmk2oepqxey[0m
 I, [2022-03-29T11:39:59.547582 #27414]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [d97cac50-81fb-4815-b22c-61811b54dd54] Performed ActiveStorage::AnalyzeJob (Job ID: d97cac50-81fb-4815-b22c-61811b54dd54) from Async(default) in 89.75ms
+I, [2022-03-30T17:58:55.922542 #26725]  INFO -- : [72698def-796e-4b32-a9c9-4d04162f10ae] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 17:58:55 +0900
+I, [2022-03-30T17:58:55.927675 #26725]  INFO -- : [72698def-796e-4b32-a9c9-4d04162f10ae] Processing by DeviseTokenAuth::SessionsController#create as HTML
+I, [2022-03-30T17:58:55.927732 #26725]  INFO -- : [72698def-796e-4b32-a9c9-4d04162f10ae]   Parameters: {"email"=>"a@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]"}}
+I, [2022-03-30T17:58:56.163347 #26725]  INFO -- : [72698def-796e-4b32-a9c9-4d04162f10ae] Completed 200 OK in 235ms (Views: 0.5ms | ActiveRecord: 11.7ms | Allocations: 12082)
+I, [2022-03-30T17:58:56.181128 #26725]  INFO -- : [02858a1f-07e2-452a-a0c1-b5451359f6b0] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 17:58:56 +0900
+I, [2022-03-30T17:58:56.184175 #26725]  INFO -- : [02858a1f-07e2-452a-a0c1-b5451359f6b0] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T17:58:56.260027 #26725]  INFO -- : [02858a1f-07e2-452a-a0c1-b5451359f6b0] Completed 500 Internal Server Error in 76ms (ActiveRecord: 11.5ms | Allocations: 13418)
+F, [2022-03-30T17:58:56.260584 #26725] FATAL -- : [02858a1f-07e2-452a-a0c1-b5451359f6b0]   
+[02858a1f-07e2-452a-a0c1-b5451359f6b0] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+[02858a1f-07e2-452a-a0c1-b5451359f6b0]   
+[02858a1f-07e2-452a-a0c1-b5451359f6b0] app/models/team.rb:15:in `team_avatar_url'
+[02858a1f-07e2-452a-a0c1-b5451359f6b0] app/controllers/api/teams_controller.rb:5:in `index'
+I, [2022-03-30T17:59:09.335857 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef114ce272] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 17:59:09 +0900
+I, [2022-03-30T17:59:09.338263 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef114ce272] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T17:59:09.342361 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef114ce272] Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms | Allocations: 1554)
+F, [2022-03-30T17:59:09.342763 #26725] FATAL -- : [c672d07d-6e18-4664-a772-8aef114ce272]   
+[c672d07d-6e18-4664-a772-8aef114ce272] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+[c672d07d-6e18-4664-a772-8aef114ce272]   
+[c672d07d-6e18-4664-a772-8aef114ce272] app/models/team.rb:15:in `team_avatar_url'
+[c672d07d-6e18-4664-a772-8aef114ce272] app/controllers/api/teams_controller.rb:5:in `index'
+I, [2022-03-30T18:13:49.243757 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 18:13:49 +0900
+I, [2022-03-30T18:13:49.248925 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d] Processing by DeviseTokenAuth::SessionsController#create as HTML
+I, [2022-03-30T18:13:49.249012 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d]   Parameters: {"email"=>"a@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]"}}
+I, [2022-03-30T18:13:49.492635 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d] Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 10.9ms | Allocations: 12178)
+I, [2022-03-30T18:13:49.504356 #29820]  INFO -- : [7f90088b-e442-4d08-86b1-6788ad202ab2] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:13:49 +0900
+I, [2022-03-30T18:13:49.507106 #29820]  INFO -- : [7f90088b-e442-4d08-86b1-6788ad202ab2] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:13:49.583194 #29820]  INFO -- : [7f90088b-e442-4d08-86b1-6788ad202ab2] Completed 500 Internal Server Error in 76ms (ActiveRecord: 7.9ms | Allocations: 13423)
+F, [2022-03-30T18:13:49.583904 #29820] FATAL -- : [7f90088b-e442-4d08-86b1-6788ad202ab2]   
+[7f90088b-e442-4d08-86b1-6788ad202ab2] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+[7f90088b-e442-4d08-86b1-6788ad202ab2]   
+[7f90088b-e442-4d08-86b1-6788ad202ab2] app/models/team.rb:15:in `team_avatar_url'
+[7f90088b-e442-4d08-86b1-6788ad202ab2] app/controllers/api/teams_controller.rb:5:in `index'
+I, [2022-03-30T18:30:14.843834 #436]  INFO -- : [c6355790-65bb-40a9-9428-c4893adf36af] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:30:14 +0900
+I, [2022-03-30T18:30:14.875033 #436]  INFO -- : [c6355790-65bb-40a9-9428-c4893adf36af] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+I, [2022-03-30T18:30:14.952200 #436]  INFO -- : [c6355790-65bb-40a9-9428-c4893adf36af] Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 13.9ms | Allocations: 15971)
+I, [2022-03-30T18:30:16.453533 #436]  INFO -- : [3efce90d-8d6f-489a-8f2e-7f52c2022f19] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 18:30:16 +0900
+I, [2022-03-30T18:30:16.456333 #436]  INFO -- : [3efce90d-8d6f-489a-8f2e-7f52c2022f19] Processing by DeviseTokenAuth::SessionsController#create as HTML
+I, [2022-03-30T18:30:16.456401 #436]  INFO -- : [3efce90d-8d6f-489a-8f2e-7f52c2022f19]   Parameters: {"email"=>"a@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]"}}
+I, [2022-03-30T18:30:16.677365 #436]  INFO -- : [3efce90d-8d6f-489a-8f2e-7f52c2022f19] Completed 200 OK in 221ms (Views: 0.1ms | ActiveRecord: 7.0ms | Allocations: 3106)
+I, [2022-03-30T18:30:16.689539 #436]  INFO -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:30:16 +0900
+I, [2022-03-30T18:30:16.693047 #436]  INFO -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:30:16.886509 #436]  INFO -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] Completed 500 Internal Server Error in 193ms (ActiveRecord: 7.8ms | Allocations: 207517)
+F, [2022-03-30T18:30:16.886981 #436] FATAL -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1]   
+[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1]   
+[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] app/models/team.rb:15:in `team_avatar_url'
+[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] app/controllers/api/teams_controller.rb:5:in `index'
+I, [2022-03-30T18:30:22.111912 #436]  INFO -- : [0371f427-ef99-4a5e-b25e-262b9e2d774e] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:30:22 +0900
+I, [2022-03-30T18:30:22.114507 #436]  INFO -- : [0371f427-ef99-4a5e-b25e-262b9e2d774e] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+I, [2022-03-30T18:30:22.137662 #436]  INFO -- : [0371f427-ef99-4a5e-b25e-262b9e2d774e] Completed 200 OK in 23ms (Views: 4.5ms | ActiveRecord: 9.0ms | Allocations: 1483)
+I, [2022-03-30T18:31:26.916053 #783]  INFO -- : [f383967f-6994-4f6e-8015-5656d65173be] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 18:31:26 +0900
+I, [2022-03-30T18:31:26.921046 #783]  INFO -- : [f383967f-6994-4f6e-8015-5656d65173be] Processing by DeviseTokenAuth::SessionsController#create as HTML
+I, [2022-03-30T18:31:26.921102 #783]  INFO -- : [f383967f-6994-4f6e-8015-5656d65173be]   Parameters: {"email"=>"a@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]"}}
+I, [2022-03-30T18:31:27.168058 #783]  INFO -- : [f383967f-6994-4f6e-8015-5656d65173be] Completed 200 OK in 247ms (Views: 0.4ms | ActiveRecord: 13.4ms | Allocations: 12178)
+I, [2022-03-30T18:31:27.185249 #783]  INFO -- : [29959f36-97d4-43ab-9efb-b0cb5497c610] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:31:27 +0900
+I, [2022-03-30T18:31:27.187631 #783]  INFO -- : [29959f36-97d4-43ab-9efb-b0cb5497c610] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:31:27.262078 #783]  INFO -- : [29959f36-97d4-43ab-9efb-b0cb5497c610] Completed 500 Internal Server Error in 74ms (ActiveRecord: 8.5ms | Allocations: 13423)
+F, [2022-03-30T18:31:27.262889 #783] FATAL -- : [29959f36-97d4-43ab-9efb-b0cb5497c610]   
+[29959f36-97d4-43ab-9efb-b0cb5497c610] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+[29959f36-97d4-43ab-9efb-b0cb5497c610]   
+[29959f36-97d4-43ab-9efb-b0cb5497c610] app/models/team.rb:15:in `team_avatar_url'
+[29959f36-97d4-43ab-9efb-b0cb5497c610] app/controllers/api/teams_controller.rb:5:in `index'
+I, [2022-03-30T18:34:26.868362 #1543]  INFO -- : [3658f4e9-a4ce-401d-a139-29922175bf04] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:34:26 +0900
+I, [2022-03-30T18:34:26.872904 #1543]  INFO -- : [3658f4e9-a4ce-401d-a139-29922175bf04] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+I, [2022-03-30T18:34:26.945740 #1543]  INFO -- : [3658f4e9-a4ce-401d-a139-29922175bf04] Completed 200 OK in 73ms (Views: 0.3ms | ActiveRecord: 10.4ms | Allocations: 11143)
+I, [2022-03-30T18:34:28.901172 #1543]  INFO -- : [918a7663-ef4e-4bd7-81b1-3bffe507ed33] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 18:34:28 +0900
+I, [2022-03-30T18:34:28.904117 #1543]  INFO -- : [918a7663-ef4e-4bd7-81b1-3bffe507ed33] Processing by DeviseTokenAuth::SessionsController#create as HTML
+I, [2022-03-30T18:34:28.904189 #1543]  INFO -- : [918a7663-ef4e-4bd7-81b1-3bffe507ed33]   Parameters: {"email"=>"a@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]"}}
+I, [2022-03-30T18:34:29.133622 #1543]  INFO -- : [918a7663-ef4e-4bd7-81b1-3bffe507ed33] Completed 200 OK in 229ms (Views: 0.2ms | ActiveRecord: 10.5ms | Allocations: 3086)
+I, [2022-03-30T18:34:29.139692 #1543]  INFO -- : [1f83ed6d-ba02-4414-b128-2c2c06eb9a07] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:34:29 +0900
+I, [2022-03-30T18:34:29.142787 #1543]  INFO -- : [1f83ed6d-ba02-4414-b128-2c2c06eb9a07] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:34:29.217139 #1543]  INFO -- : [1f83ed6d-ba02-4414-b128-2c2c06eb9a07] Completed 200 OK in 74ms (Views: 15.7ms | ActiveRecord: 8.9ms | Allocations: 14381)
+I, [2022-03-30T18:34:37.233576 #1545]  INFO -- : [3b6317d5-57cb-4795-8dcf-ab64097f1706] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--68a8f5f10a3b98bccf1974db865a38dcb9c7a76c/universe.png" for 127.0.0.1 at 2022-03-30 18:34:37 +0900
+I, [2022-03-30T18:34:37.238717 #1545]  INFO -- : [3b6317d5-57cb-4795-8dcf-ab64097f1706] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:37.238782 #1545]  INFO -- : [3b6317d5-57cb-4795-8dcf-ab64097f1706]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--68a8f5f10a3b98bccf1974db865a38dcb9c7a76c", "filename"=>"universe"}
+I, [2022-03-30T18:34:37.260603 #1545]  INFO -- : [3b6317d5-57cb-4795-8dcf-ab64097f1706] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/30yqc8cko497b0cytkb9xtu5kyy0?response-content-disposition=inline%3B%20filename%3D%22universe.png%22%3B%20filename%2A%3DUTF-8%27%27universe.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093437Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5d3d4c60fd3c8ddb90a7dcca8ddf961e13eab3eea8aeb90168fa1715c72b4925
+I, [2022-03-30T18:34:37.260865 #1545]  INFO -- : [3b6317d5-57cb-4795-8dcf-ab64097f1706] Completed 302 Found in 22ms (ActiveRecord: 3.6ms | Allocations: 10077)
+I, [2022-03-30T18:34:41.256436 #1543]  INFO -- : [bbadf721-a6f8-4dd2-bee7-e5aa59c355a7] Started GET "/api/teams/1/messages" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.258685 #1543]  INFO -- : [bbadf721-a6f8-4dd2-bee7-e5aa59c355a7] Processing by Api::MessagesController#index as HTML
+I, [2022-03-30T18:34:41.258743 #1543]  INFO -- : [bbadf721-a6f8-4dd2-bee7-e5aa59c355a7]   Parameters: {"team_id"=>"1"}
+I, [2022-03-30T18:34:41.291231 #1543]  INFO -- : [bbadf721-a6f8-4dd2-bee7-e5aa59c355a7] Completed 200 OK in 32ms (Views: 20.8ms | ActiveRecord: 8.1ms | Allocations: 15731)
+I, [2022-03-30T18:34:41.304632 #1545]  INFO -- : [9f8bcae7-cb09-4db1-9e1d-c290bebf4213] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d5c67913e13d7c3ce2e058d4422a6bf677d0dfc5/woman1.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.307248 #1545]  INFO -- : [3c55345c-80e9-4218-ba37-7dd019094976] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01dcf0cb965e9eb35677802cd77116fafa48a6bd/doctor.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.334725 #1545]  INFO -- : [9f8bcae7-cb09-4db1-9e1d-c290bebf4213] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.334811 #1545]  INFO -- : [9f8bcae7-cb09-4db1-9e1d-c290bebf4213]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d5c67913e13d7c3ce2e058d4422a6bf677d0dfc5", "filename"=>"woman1"}
+I, [2022-03-30T18:34:41.337049 #1545]  INFO -- : [9f8bcae7-cb09-4db1-9e1d-c290bebf4213] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/karjlht8a7ywnzgyahb5ljzrjli4?response-content-disposition=inline%3B%20filename%3D%22woman1.png%22%3B%20filename%2A%3DUTF-8%27%27woman1.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6ba4ecfcae22c33ea081c61eeba7a3fe13f61f6cbfb95ae8119d6e20daffba2a
+I, [2022-03-30T18:34:41.337231 #1545]  INFO -- : [9f8bcae7-cb09-4db1-9e1d-c290bebf4213] Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1687)
+I, [2022-03-30T18:34:41.338321 #1545]  INFO -- : [3c55345c-80e9-4218-ba37-7dd019094976] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.338368 #1545]  INFO -- : [3c55345c-80e9-4218-ba37-7dd019094976]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01dcf0cb965e9eb35677802cd77116fafa48a6bd", "filename"=>"doctor"}
+I, [2022-03-30T18:34:41.340489 #1545]  INFO -- : [3c55345c-80e9-4218-ba37-7dd019094976] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/7zvx9en1j90s2wbhr2h7vwl1etr3?response-content-disposition=inline%3B%20filename%3D%22doctor.png%22%3B%20filename%2A%3DUTF-8%27%27doctor.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=276eb6c1bd70e4715c66ec91c48da4fa66a822cc497c9116db0824ccab415e79
+I, [2022-03-30T18:34:41.340664 #1545]  INFO -- : [3c55345c-80e9-4218-ba37-7dd019094976] Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 1739)
+I, [2022-03-30T18:34:41.341601 #1545]  INFO -- : [ae97cbdc-190c-4517-a6ca-fa5b378af93b] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--122076cb23fa7d0c820f39fca29cfc551d0f8a08/default.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.346934 #1545]  INFO -- : [caca89a5-a77d-497d-92bb-e41debb0a947] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b0cfe6660656c7b219479c03ebb89867007663f6/man1.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.372069 #1545]  INFO -- : [ae97cbdc-190c-4517-a6ca-fa5b378af93b] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.372206 #1545]  INFO -- : [ae97cbdc-190c-4517-a6ca-fa5b378af93b]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--122076cb23fa7d0c820f39fca29cfc551d0f8a08", "filename"=>"default"}
+I, [2022-03-30T18:34:41.374449 #1545]  INFO -- : [ae97cbdc-190c-4517-a6ca-fa5b378af93b] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/gwdr6h89f8hfyztja1sow6y05zbw?response-content-disposition=inline%3B%20filename%3D%22default.png%22%3B%20filename%2A%3DUTF-8%27%27default.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=31cce9a521e9c31138f25abc2821b23d0c5fcac582059c52e08ae8f0f99d5cf5
+I, [2022-03-30T18:34:41.374580 #1545]  INFO -- : [ae97cbdc-190c-4517-a6ca-fa5b378af93b] Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 1638)
+I, [2022-03-30T18:34:41.377349 #1545]  INFO -- : [caca89a5-a77d-497d-92bb-e41debb0a947] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.378377 #1545]  INFO -- : [caca89a5-a77d-497d-92bb-e41debb0a947]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b0cfe6660656c7b219479c03ebb89867007663f6", "filename"=>"man1"}
+I, [2022-03-30T18:34:41.379914 #1545]  INFO -- : [f77d5cb0-d533-4538-a76c-79c0f23d37ff] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--232edf76ec50b8e04f28a5f6cb448376f1f2873b/default.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.381355 #1545]  INFO -- : [caca89a5-a77d-497d-92bb-e41debb0a947] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/lu618ftyfc9uz7eksc4nmqurebcy?response-content-disposition=inline%3B%20filename%3D%22man1.png%22%3B%20filename%2A%3DUTF-8%27%27man1.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b9caf42ca7ead8be1e6335bf26decbb67f4c7e05be8b506b90d6d660413c9b5d
+I, [2022-03-30T18:34:41.381493 #1545]  INFO -- : [caca89a5-a77d-497d-92bb-e41debb0a947] Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1791)
+I, [2022-03-30T18:34:41.387206 #1545]  INFO -- : [88a6665a-3400-4399-90ec-e1d105efcacd] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--77e562ff95194fb9b94b7e6db92a1f39d5c91346/default.png" for 127.0.0.1 at 2022-03-30 18:34:41 +0900
+I, [2022-03-30T18:34:41.404315 #1545]  INFO -- : [f77d5cb0-d533-4538-a76c-79c0f23d37ff] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.404401 #1545]  INFO -- : [f77d5cb0-d533-4538-a76c-79c0f23d37ff]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--232edf76ec50b8e04f28a5f6cb448376f1f2873b", "filename"=>"default"}
+I, [2022-03-30T18:34:41.406589 #1545]  INFO -- : [f77d5cb0-d533-4538-a76c-79c0f23d37ff] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/ew3se1i25sv5vktwbjriipgvwbx1?response-content-disposition=inline%3B%20filename%3D%22default.png%22%3B%20filename%2A%3DUTF-8%27%27default.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7d8432b59e56606656536b7795d52074bad37ea089bcfd321199481e1a5ac3e5
+I, [2022-03-30T18:34:41.406754 #1545]  INFO -- : [f77d5cb0-d533-4538-a76c-79c0f23d37ff] Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 1712)
+I, [2022-03-30T18:34:41.409129 #1545]  INFO -- : [88a6665a-3400-4399-90ec-e1d105efcacd] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:34:41.409262 #1545]  INFO -- : [88a6665a-3400-4399-90ec-e1d105efcacd]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--77e562ff95194fb9b94b7e6db92a1f39d5c91346", "filename"=>"default"}
+I, [2022-03-30T18:34:41.411413 #1545]  INFO -- : [88a6665a-3400-4399-90ec-e1d105efcacd] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/pqv2o1jemy4ij4zmzdw7h33sbh9x?response-content-disposition=inline%3B%20filename%3D%22default.png%22%3B%20filename%2A%3DUTF-8%27%27default.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093441Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=13e0a2c87d86f78c3f2272098ba896a5f4eac58aa7315a9213482fd6589d2d64
+I, [2022-03-30T18:34:41.411531 #1545]  INFO -- : [88a6665a-3400-4399-90ec-e1d105efcacd] Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1492)
+I, [2022-03-30T18:34:43.121278 #1543]  INFO -- : [aeafe348-a12b-415f-a220-bde2c41b5919] Started GET "/api/teams/1/messages/5" for 127.0.0.1 at 2022-03-30 18:34:43 +0900
+I, [2022-03-30T18:34:43.123464 #1543]  INFO -- : [aeafe348-a12b-415f-a220-bde2c41b5919] Processing by Api::MessagesController#show as HTML
+I, [2022-03-30T18:34:43.123535 #1543]  INFO -- : [aeafe348-a12b-415f-a220-bde2c41b5919]   Parameters: {"team_id"=>"1", "id"=>"5"}
+I, [2022-03-30T18:34:43.131260 #1543]  INFO -- : [aeafe348-a12b-415f-a220-bde2c41b5919] Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 2.2ms | Allocations: 2468)
+I, [2022-03-30T18:34:45.290815 #1543]  INFO -- : [55d1f36a-aad2-4ebb-9195-9ce497250704] Started GET "/api/teams/1/messages" for 127.0.0.1 at 2022-03-30 18:34:45 +0900
+I, [2022-03-30T18:34:45.293342 #1543]  INFO -- : [55d1f36a-aad2-4ebb-9195-9ce497250704] Processing by Api::MessagesController#index as HTML
+I, [2022-03-30T18:34:45.293442 #1543]  INFO -- : [55d1f36a-aad2-4ebb-9195-9ce497250704]   Parameters: {"team_id"=>"1"}
+I, [2022-03-30T18:34:45.321654 #1543]  INFO -- : [55d1f36a-aad2-4ebb-9195-9ce497250704] Completed 200 OK in 28ms (Views: 18.8ms | ActiveRecord: 6.4ms | Allocations: 11568)
+I, [2022-03-30T18:34:59.477967 #1543]  INFO -- : [0d6ac020-185a-4f7a-807e-badadb059143] Started POST "/api/teams/1/messages" for 127.0.0.1 at 2022-03-30 18:34:59 +0900
+I, [2022-03-30T18:34:59.504301 #1543]  INFO -- : [0d6ac020-185a-4f7a-807e-badadb059143] Processing by Api::MessagesController#create as HTML
+I, [2022-03-30T18:34:59.504410 #1543]  INFO -- : [0d6ac020-185a-4f7a-807e-badadb059143]   Parameters: {"title"=>"test", "content"=>"test", "team_id"=>"1", "files"=>#<ActionDispatch::Http::UploadedFile:0x000055676ea8c3e0 @tempfile=#<Tempfile:/tmp/RackMultipart20220330-1543-c8s154.pdf>, @original_filename="路線図.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"files\"; filename=\"\xE8\xB7\xAF\xE7\xB7\x9A\xE5\x9B\xB3.pdf\"\r\nContent-Type: application/pdf\r\n">}
+I, [2022-03-30T18:35:00.435600 #1543]  INFO -- : [0d6ac020-185a-4f7a-807e-badadb059143] [36m  S3 Storage (891.8ms) [0m[32mUploaded file to key: nx3t4ioq02fuyswuu08jiwjnkunb (checksum: ehPVcgcfg/VrBJBD+rejWA==)[0m
+I, [2022-03-30T18:35:00.444702 #1543]  INFO -- : [0d6ac020-185a-4f7a-807e-badadb059143] Completed 200 OK in 940ms (Views: 2.0ms | ActiveRecord: 15.1ms | Allocations: 11678)
+I, [2022-03-30T18:35:02.787523 #1543]  INFO -- : [de500a4c-b521-451c-b124-1aa3caea4154] Started GET "/api/teams/3/messages" for 127.0.0.1 at 2022-03-30 18:35:02 +0900
+I, [2022-03-30T18:35:02.789540 #1543]  INFO -- : [de500a4c-b521-451c-b124-1aa3caea4154] Processing by Api::MessagesController#index as HTML
+I, [2022-03-30T18:35:02.789604 #1543]  INFO -- : [de500a4c-b521-451c-b124-1aa3caea4154]   Parameters: {"team_id"=>"3"}
+I, [2022-03-30T18:35:02.802157 #1543]  INFO -- : [de500a4c-b521-451c-b124-1aa3caea4154] Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 3.3ms | Allocations: 4570)
+I, [2022-03-30T18:35:03.629403 #1543]  INFO -- : [359419e7-d636-4885-ba32-cbf900e5e4b1] Started GET "/api/teams/4/messages" for 127.0.0.1 at 2022-03-30 18:35:03 +0900
+I, [2022-03-30T18:35:03.632379 #1543]  INFO -- : [359419e7-d636-4885-ba32-cbf900e5e4b1] Processing by Api::MessagesController#index as HTML
+I, [2022-03-30T18:35:03.632453 #1543]  INFO -- : [359419e7-d636-4885-ba32-cbf900e5e4b1]   Parameters: {"team_id"=>"4"}
+I, [2022-03-30T18:35:03.649210 #1543]  INFO -- : [359419e7-d636-4885-ba32-cbf900e5e4b1] Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 3.0ms | Allocations: 10363)
+I, [2022-03-30T18:35:04.923556 #1543]  INFO -- : [0de02d28-27b4-4f21-9af6-be1e0fdfc24d] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:35:04 +0900
+I, [2022-03-30T18:35:04.925949 #1543]  INFO -- : [0de02d28-27b4-4f21-9af6-be1e0fdfc24d] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:35:04.931648 #1543]  INFO -- : [0de02d28-27b4-4f21-9af6-be1e0fdfc24d] Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.8ms | Allocations: 2663)
+I, [2022-03-30T18:35:12.314819 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1] Started POST "/api/teams" for 127.0.0.1 at 2022-03-30 18:35:12 +0900
+I, [2022-03-30T18:35:12.317006 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1] Processing by Api::TeamsController#create as HTML
+I, [2022-03-30T18:35:12.317057 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1]   Parameters: {"name"=>"aaa", "password"=>"[FILTERED]"}
+I, [2022-03-30T18:35:12.485040 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1] [36m  S3 Storage (147.7ms) [0m[32mUploaded file to key: yvh8kbjfvgart7jsaxbw0xsvhoj4 (checksum: Hf57lNkmDLQPUdDCJvRWWw==)[0m
+I, [2022-03-30T18:35:12.486082 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1] [ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b853ce29-32ba-4d30-b772-d63bc4ecb1f4) to Async(default) with arguments: #<GlobalID:0x00007f5b60021b20 @uri=#<URI::GID gid://board-s/ActiveStorage::Blob/10>>
+I, [2022-03-30T18:35:12.488174 #1543]  INFO -- : [382de630-8e4a-4313-a719-d9049428abd1] Completed 200 OK in 171ms (Views: 0.5ms | ActiveRecord: 8.8ms | Allocations: 12246)
+I, [2022-03-30T18:35:12.493034 #1543]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [b853ce29-32ba-4d30-b772-d63bc4ecb1f4] Performing ActiveStorage::AnalyzeJob (Job ID: b853ce29-32ba-4d30-b772-d63bc4ecb1f4) from Async(default) enqueued at 2022-03-30T09:35:12Z with arguments: #<GlobalID:0x00007f5b6009cbb8 @uri=#<URI::GID gid://board-s/ActiveStorage::Blob/10>>
+I, [2022-03-30T18:35:12.569834 #1543]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [b853ce29-32ba-4d30-b772-d63bc4ecb1f4] [36m  S3 Storage (75.9ms) [0m[34mDownloaded file from key: yvh8kbjfvgart7jsaxbw0xsvhoj4[0m
+I, [2022-03-30T18:35:12.596888 #1543]  INFO -- : [ActiveJob] [ActiveStorage::AnalyzeJob] [b853ce29-32ba-4d30-b772-d63bc4ecb1f4] Performed ActiveStorage::AnalyzeJob (Job ID: b853ce29-32ba-4d30-b772-d63bc4ecb1f4) from Async(default) in 103.64ms
+I, [2022-03-30T18:35:12.814397 #1543]  INFO -- : [fd875834-3703-4a40-b39b-3a73a6bad8b3] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f7d6499f81e61f5ea18dddf455487494ef9e7242/default.png" for 127.0.0.1 at 2022-03-30 18:35:12 +0900
+I, [2022-03-30T18:35:12.816564 #1543]  INFO -- : [fd875834-3703-4a40-b39b-3a73a6bad8b3] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+I, [2022-03-30T18:35:12.816617 #1543]  INFO -- : [fd875834-3703-4a40-b39b-3a73a6bad8b3]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f7d6499f81e61f5ea18dddf455487494ef9e7242", "filename"=>"default"}
+I, [2022-03-30T18:35:12.819705 #1543]  INFO -- : [fd875834-3703-4a40-b39b-3a73a6bad8b3] Redirected to https://boards-bucket1.s3.ap-northeast-1.amazonaws.com/yvh8kbjfvgart7jsaxbw0xsvhoj4?response-content-disposition=inline%3B%20filename%3D%22default.png%22%3B%20filename%2A%3DUTF-8%27%27default.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2GGGKUPXAJVNLYUH%2F20220330%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20220330T093512Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=81c7d8063e270659b639e7e95622fd7d366f02c980bb444c4b555b613ef9696f
+I, [2022-03-30T18:35:12.819824 #1543]  INFO -- : [fd875834-3703-4a40-b39b-3a73a6bad8b3] Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 2026)
+I, [2022-03-30T18:35:17.694297 #1543]  INFO -- : [a04b7240-fa30-4a45-8cde-10f75703cbb2] Started GET "/api/teams/search?name=test&password=[FILTERED]" for 127.0.0.1 at 2022-03-30 18:35:17 +0900
+I, [2022-03-30T18:35:17.696590 #1543]  INFO -- : [a04b7240-fa30-4a45-8cde-10f75703cbb2] Processing by Api::TeamsController#search as HTML
+I, [2022-03-30T18:35:17.696642 #1543]  INFO -- : [a04b7240-fa30-4a45-8cde-10f75703cbb2]   Parameters: {"name"=>"test", "password"=>"[FILTERED]"}
+I, [2022-03-30T18:35:17.699535 #1543]  INFO -- : [a04b7240-fa30-4a45-8cde-10f75703cbb2] Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1409)
+I, [2022-03-30T18:35:18.839547 #1543]  INFO -- : [fd2d6092-2cef-4c2b-a9a4-036882035f45] Started POST "/api/teams/join" for 127.0.0.1 at 2022-03-30 18:35:18 +0900
+I, [2022-03-30T18:35:18.841914 #1543]  INFO -- : [fd2d6092-2cef-4c2b-a9a4-036882035f45] Processing by Api::TeamsController#join as HTML
+I, [2022-03-30T18:35:18.841993 #1543]  INFO -- : [fd2d6092-2cef-4c2b-a9a4-036882035f45]   Parameters: {"name"=>"test"}
+I, [2022-03-30T18:35:18.855359 #1543]  INFO -- : [fd2d6092-2cef-4c2b-a9a4-036882035f45] Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 9.7ms | Allocations: 2237)
+I, [2022-03-30T18:35:21.193129 #1543]  INFO -- : [bbfe459f-b3f7-471a-b109-168ec8440be5] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 18:35:21 +0900
+I, [2022-03-30T18:35:21.195504 #1543]  INFO -- : [bbfe459f-b3f7-471a-b109-168ec8440be5] Processing by Api::TeamsController#index as HTML
+I, [2022-03-30T18:35:21.203675 #1543]  INFO -- : [bbfe459f-b3f7-471a-b109-168ec8440be5] Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 2.1ms | Allocations: 4037)
+I, [2022-03-30T18:35:23.069021 #1543]  INFO -- : [f2e6e0e9-0e45-45cb-a554-00a167c8b163] Started DELETE "/api/teams/leave?name=aaa" for 127.0.0.1 at 2022-03-30 18:35:23 +0900
+I, [2022-03-30T18:35:23.071267 #1543]  INFO -- : [f2e6e0e9-0e45-45cb-a554-00a167c8b163] Processing by Api::TeamsController#leave as HTML
+I, [2022-03-30T18:35:23.071325 #1543]  INFO -- : [f2e6e0e9-0e45-45cb-a554-00a167c8b163]   Parameters: {"name"=>"aaa"}
+I, [2022-03-30T18:35:23.082800 #1543]  INFO -- : [f2e6e0e9-0e45-45cb-a554-00a167c8b163] Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 1553)
+I, [2022-03-30T18:35:23.648344 #1543]  INFO -- : [ea94e796-7cc7-4b53-b89d-9e815d30007a] Started DELETE "/api/teams/leave?name=test" for 127.0.0.1 at 2022-03-30 18:35:23 +0900
+I, [2022-03-30T18:35:23.650589 #1543]  INFO -- : [ea94e796-7cc7-4b53-b89d-9e815d30007a] Processing by Api::TeamsController#leave as HTML
+I, [2022-03-30T18:35:23.650654 #1543]  INFO -- : [ea94e796-7cc7-4b53-b89d-9e815d30007a]   Parameters: {"name"=>"test"}
+I, [2022-03-30T18:35:23.660195 #1543]  INFO -- : [ea94e796-7cc7-4b53-b89d-9e815d30007a] Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.4ms | Allocations: 1395)
+I, [2022-03-30T18:35:26.291362 #1543]  INFO -- : [490eb3b9-c9d2-4897-ad56-0b90d48a5589] Started GET "/api/users" for 127.0.0.1 at 2022-03-30 18:35:26 +0900
+I, [2022-03-30T18:35:26.294267 #1543]  INFO -- : [490eb3b9-c9d2-4897-ad56-0b90d48a5589] Processing by Api::UsersController#index as HTML
+I, [2022-03-30T18:35:26.297727 #1543]  INFO -- : [490eb3b9-c9d2-4897-ad56-0b90d48a5589] Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.9ms | Allocations: 1513)
+I, [2022-03-30T18:35:29.127463 #1543]  INFO -- : [12b0d714-9a73-4932-9017-fb205c2c32ba] Started PUT "/api/users/1" for 127.0.0.1 at 2022-03-30 18:35:29 +0900
+I, [2022-03-30T18:35:29.129526 #1543]  INFO -- : [12b0d714-9a73-4932-9017-fb205c2c32ba] Processing by Api::UsersController#update as HTML
+I, [2022-03-30T18:35:29.129582 #1543]  INFO -- : [12b0d714-9a73-4932-9017-fb205c2c32ba]   Parameters: {"name"=>"Main", "id"=>"1"}
+I, [2022-03-30T18:35:29.132839 #1543]  INFO -- : [12b0d714-9a73-4932-9017-fb205c2c32ba] Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1426)
+I, [2022-03-30T18:35:34.615252 #1543]  INFO -- : [8a01922d-75df-4a73-b26b-549f372acf34] Started GET "/api/teams/3/messages" for 127.0.0.1 at 2022-03-30 18:35:34 +0900
+I, [2022-03-30T18:35:34.618117 #1543]  INFO -- : [8a01922d-75df-4a73-b26b-549f372acf34] Processing by Api::MessagesController#index as HTML
+I, [2022-03-30T18:35:34.618197 #1543]  INFO -- : [8a01922d-75df-4a73-b26b-549f372acf34]   Parameters: {"team_id"=>"3"}
+I, [2022-03-30T18:35:34.628142 #1543]  INFO -- : [8a01922d-75df-4a73-b26b-549f372acf34] Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 2.9ms | Allocations: 4486)
+I, [2022-03-30T18:36:41.193588 #1543]  INFO -- : [12bb8ff6-2748-4158-abb7-460e3881ab3d] Started GET "/api/teams/3/events" for 127.0.0.1 at 2022-03-30 18:36:41 +0900
+I, [2022-03-30T18:36:41.195509 #1543]  INFO -- : [12bb8ff6-2748-4158-abb7-460e3881ab3d] Processing by Api::EventsController#index as HTML
+I, [2022-03-30T18:36:41.195562 #1543]  INFO -- : [12bb8ff6-2748-4158-abb7-460e3881ab3d]   Parameters: {"team_id"=>"3"}
+I, [2022-03-30T18:36:41.200273 #1543]  INFO -- : [12bb8ff6-2748-4158-abb7-460e3881ab3d] Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 2029)
+I, [2022-03-30T18:36:44.749964 #1543]  INFO -- : [4a535426-3d18-42cb-ba67-8d58891418ca] Started POST "/api/teams/3/events" for 127.0.0.1 at 2022-03-30 18:36:44 +0900
+I, [2022-03-30T18:36:44.752374 #1543]  INFO -- : [4a535426-3d18-42cb-ba67-8d58891418ca] Processing by Api::EventsController#create as HTML
+I, [2022-03-30T18:36:44.752444 #1543]  INFO -- : [4a535426-3d18-42cb-ba67-8d58891418ca]   Parameters: {"name"=>"hj", "start"=>"2022/03/02 19:00", "end"=>"2022/03/02 20:00", "timed"=>true, "startDate"=>"2022/03/02", "startTime"=>"19:00", "endDate"=>"2022/03/02", "endTime"=>"20:00", "color"=>"#2196F3", "team_id"=>"3", "event"=>{"team_id"=>"3", "name"=>"hj", "start"=>"2022/03/02 19:00", "end"=>"2022/03/02 20:00", "timed"=>true, "color"=>"#2196F3"}}
+I, [2022-03-30T18:36:44.797989 #1543]  INFO -- : [4a535426-3d18-42cb-ba67-8d58891418ca] Completed 200 OK in 45ms (Views: 2.6ms | ActiveRecord: 11.2ms | Allocations: 6498)
+I, [2022-03-30T18:36:47.761126 #1543]  INFO -- : [599935c6-4c39-457e-8ccb-ae9a41e4a167] Started DELETE "/api/teams/3/events/51?team_id=3&id=51" for 127.0.0.1 at 2022-03-30 18:36:47 +0900
+I, [2022-03-30T18:36:47.768496 #1543]  INFO -- : [599935c6-4c39-457e-8ccb-ae9a41e4a167] Processing by Api::EventsController#destroy as HTML
+I, [2022-03-30T18:36:47.768557 #1543]  INFO -- : [599935c6-4c39-457e-8ccb-ae9a41e4a167]   Parameters: {"team_id"=>"3", "id"=>"51"}
+I, [2022-03-30T18:36:47.772486 #1543]  INFO -- : [599935c6-4c39-457e-8ccb-ae9a41e4a167] Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1032)
+I, [2022-03-30T18:36:50.827306 #1543]  INFO -- : [d9e4745a-5325-4bd4-be27-8b8366983cfa] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:36:50 +0900
+I, [2022-03-30T18:36:50.830449 #1543]  INFO -- : [d9e4745a-5325-4bd4-be27-8b8366983cfa] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
+I, [2022-03-30T18:36:50.843215 #1543]  INFO -- : [d9e4745a-5325-4bd4-be27-8b8366983cfa] Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 1210)
