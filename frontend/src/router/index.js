@@ -9,7 +9,7 @@ const routes = [
     path: "",
     name: "Top",
     components: {
-      header: () => import("../components/pages/TopHeader.vue"),
+      header: () => import("../components/layouts/TopHeader.vue"),
       default: () => import("../components/pages/Top.vue"),
     },
   },
@@ -57,7 +57,7 @@ const routes = [
         path: "create",
         name: "TeamCreate",
         components: {
-          default: () => import("../components/pages/TeamCreateForm.vue"),
+          default: () => import("../components/pages/TeamCreate.vue"),
         },
         meta: { requiresAuth: true },
       },
@@ -65,7 +65,7 @@ const routes = [
         path: "search",
         name: "TeamSearch",
         components: {
-          default: () => import("../components/pages/TeamSearchForm.vue"),
+          default: () => import("../components/pages/TeamSearch.vue"),
         },
         meta: { requiresAuth: true },
       },
@@ -73,7 +73,7 @@ const routes = [
         path: "leave",
         name: "TeamLeave",
         components: {
-          default: () => import("../components/pages/TeamLeaveForm.vue"),
+          default: () => import("../components/pages/TeamLeave.vue"),
         },
         meta: { requiresAuth: true },
       },

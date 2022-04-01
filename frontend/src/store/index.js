@@ -7,9 +7,6 @@ import teams from "./modules/teams";
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  state: {
-    message: "Hello Vuex",
-  },
   modules: {
     events,
     messages,

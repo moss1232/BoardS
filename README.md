@@ -5,13 +5,13 @@
 
 url:<https://board-vue-frontend.herokuapp.com>
 
-<!-- ![gif](https://github.com/kotabrog/ft_mini_ls/blob/main/image/ft_mini_ls.gif) -->
-
 ## 概要
 
 部活やサークルといった数十人規模のカジュアルなグループ内の情報共有サービス  
-<特徴>直感的な使いやすさ
 
+![boards](https://user-images.githubusercontent.com/86171064/161185716-b6579727-0ad4-4833-92bb-e6b5731928b5.gif)
+
+# 制作背景
 ## 既存サービスの問題
 
 情報共有サービスは有名なものとして Slack や Teams などがあげられるが、これらはサービス確定に伴い機能が追加され、慣れれば便利だが初見では使い方が直感的に分かりづらいという問題点がある。  
@@ -26,6 +26,7 @@ url:<https://board-vue-frontend.herokuapp.com>
 - 直感的に理解しやすい UI
 - リアクティブシステムの導入による UX 向上
 
+# 設計詳細
 ## 機能一覧
 
 - ログイン/ログアウト
@@ -41,8 +42,6 @@ url:<https://board-vue-frontend.herokuapp.com>
 - カレンダー
 - 画像投稿
 
-## 使用方法
-
 ## ER 図
 
 <p align="center">
@@ -57,7 +56,6 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## Author
 
-[twitter]()
 
 ## Licence
 

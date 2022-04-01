@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import MessageCreateFormButton from "../layouts/MessageCreateFormButton.vue";
+import MessageCreateFormButton from "../dialogs/MessageCreateForm.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
