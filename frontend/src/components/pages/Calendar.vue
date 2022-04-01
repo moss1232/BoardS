@@ -16,7 +16,8 @@
       <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-sheet>
 
-    <v-dialog :value="event !== null" @click:outside="closeDialog" width="600">
+    <v-dialog :value="event !== null" @click:outside="closeDialog" :width="$vuetify.breakpoint.xs ? 300 : 600"
+>
       <CalendarEventDetailDialog v-if="event !== null && !isEditMode" />
       <CalendarEventFormDialog v-if="event !== null && isEditMode" />
     </v-dialog>

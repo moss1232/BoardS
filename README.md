@@ -22,26 +22,28 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 本プロダクトでは数十人規模のグループがカジュアルに使えるよう、以下の点を重視し解決を図った
 
-- 機能の厳選
+- SPA化による UX 向上
 - 直感的に理解しやすい UI
-- リアクティブシステムの導入による UX 向上
 
 # 設計詳細
-## 機能一覧
+## 基本機能
 
 - ログイン/ログアウト
 - グループ作成、検索、削除
 - メッセージ投稿
-- カレンダー
 - 画像投稿
+- 共有カレンダー
+
+## 補助機能
+- レスポンシブデザイン
+- バリデーション
+  - フロントエンド：vuelidate
+  - バックエンド：devise_auth_token認証，Active Record
 
 ## 使用技術
 
-- HTML/CSS/Javascript/Vue.JS/Vuex/VueRouter/Vuetify
-- Ruby/Rails
-- カレンダー
-- 画像投稿
-
+- フロントエンド：HTML/CSS/Javascript/Vue.JS/Vuex/VueRouter/Vuetify
+- バックエンド：Ruby/Rails(APIモード)
 ## ER 図
 
 <p align="center">
@@ -50,9 +52,7 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## インフラ図
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/86171064/160265234-bae58ae4-090d-4c87-8f98-65f11403fd97.png" />
-</p>
+![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/161284440-6d34b9ff-0ebc-4155-a72b-878d83c4f787.png)
 
 ## Author
 

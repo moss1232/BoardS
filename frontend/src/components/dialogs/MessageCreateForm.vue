@@ -2,9 +2,9 @@
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
-      max-width="600px"
       persistent
       @click:outside="closeDialog"
+      :width="$vuetify.breakpoint.xs ? 300 : 600"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" v-bind="attrs" v-on="on" fab bottom right fixed>

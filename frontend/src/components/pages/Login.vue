@@ -23,8 +23,8 @@
             <v-row justify="center">
               <v-col cols="12" sm="6">
                 <div class="text-center">
-                  <v-btn class="info">ログイン</v-btn>
-                  <v-btn text to="/signup">新規登録はこちら</v-btn>
+                  <v-btn class="info">ログイン</v-btn><br>
+                  <v-btn text to="/signup">新規登録はこちら</v-btn><br>
                   <v-btn outlined @click="guestLogin">ゲストログイン</v-btn>
                 </div>
               </v-col>

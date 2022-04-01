@@ -55,22 +55,16 @@
 
     <v-app-bar app color="white" flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-avatar></v-avatar>
-      <v-btn icon fab right fixed @click="logout" v-if="log_in">
-        <v-icon>mdi-logout</v-icon>
-      </v-btn>
-      <v-btn icon fab right fixed @click="redirectToLogin" v-else color="red">
-        <v-icon>mdi-login</v-icon>
-      </v-btn>
       <template v-if="$route.params.team_id">
-        <v-tabs centered class="ml-n9" color="grey darken-1">
+        <v-tabs centered color="grey darken-1">
           <v-tab
             :to="{
               name: 'TeamMessages',
               params: { team_id: $route.params['team_id'] },
             }"
           >
-            message
+          <v-icon v-if="$vuetify.breakpoint.xs">mdi-message-text</v-icon>
+          <div v-else>message</div>
           </v-tab>
           <v-tab
             :to="{
@@ -78,10 +72,17 @@
               params: { team_id: $route.params['team_id'] },
             }"
           >
-            calendar
+          <v-icon v-if="$vuetify.breakpoint.xs">mdi-calendar</v-icon>
+          <div v-else>Calendar</div>
           </v-tab>
         </v-tabs>
       </template>
+  <v-btn icon fab right fixed @click="logout" v-if="log_in">
+    <v-icon>mdi-logout</v-icon>
+  </v-btn>
+      <v-btn icon fab right fixed @click="redirectToLogin" v-else color="red">
+        <v-icon>mdi-login</v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>

@@ -1,18 +1,43 @@
 <template>
-  <v-card class="pb-12">
+  <v-card class="pb-12"  
+>
     <v-card-actions class="d-flex justify-end pa-2">
       <v-btn icon @click="closeDialog">
         <v-icon size="20px">mdi-close</v-icon>
       </v-btn>
     </v-card-actions>
-    <v-card-text>
+    <v-card-text v-if="$vuetify.breakpoint.xs">
       <DialogSection icon="mdi-square" :color="event.color">
         <v-text-field v-model="name" label="タイトル"></v-text-field>
       </DialogSection>
       <DialogSection icon="mdi-clock-outline">
         <CalendarDateForm v-model="startDate" />
         <div v-show="!allDay">
-          <CalendarTimeForm v-model="startTime" />
+          <CalendarTimeForm v-model="startTime"  />
+        </div>
+      </DialogSection>
+      <DialogSection class="mt-n7">
+        <CalendarDateForm v-model="endDate" :isError="isInvalidDatetime" />
+        <div v-show="!allDay">
+          <CalendarTimeForm v-model="endTime" :isError="isInvalidDatetime" />
+        </div>
+      </DialogSection>
+      <DialogSection>
+        <CheckBox v-model="allDay" label="終日" class="ma-0 pa-0" />
+      </DialogSection>
+      <DialogSection icon="mdi-card-text-outline">
+        <CalendarTextForm v-model="description" />
+      </DialogSection>
+    </v-card-text>
+
+    <v-card-text v-else>
+      <DialogSection icon="mdi-square" :color="event.color">
+        <v-text-field v-model="name" label="タイトル"></v-text-field>
+      </DialogSection>
+      <DialogSection icon="mdi-clock-outline">
+        <CalendarDateForm v-model="startDate" />
+        <div v-show="!allDay">
+          <CalendarTimeForm v-model="startTime"  />
         </div>
         <span class="px-2">–</span>
         <CalendarDateForm v-model="endDate" :isError="isInvalidDatetime" />

@@ -19,7 +19,7 @@
           <v-card-text class="text-h6">
             {{ content }}
           </v-card-text>
-          <img v-if="files" :src="files" />
+          <img class="ml-4" v-if="files" :src="files" />
         </v-card>
       </v-col>
     </v-row>
