@@ -20,10 +20,10 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## 解決方法
 
-本プロダクトでは数十人規模のグループがカジュアルに使えるよう、以下の点を重視し解決を図った
+本プロダクトでは初見でも直感的に使用方法が分かるよう、以下の点を重視し解決を図った
 
+- シンプルで分かりやすい UI
 - SPA化による UX 向上
-- 直感的に理解しやすい UI
 
 # 設計詳細
 ## 基本機能
@@ -54,9 +54,6 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/161284440-6d34b9ff-0ebc-4155-a72b-878d83c4f787.png)
 
-## Author
+## 作者
 
 
-## Licence
-
-[MIT](https://github.com/kotabrog/ft_mini_ls/blob/main/LICENSE)
