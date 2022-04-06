@@ -37,7 +37,8 @@ backend/tmp/pids/*
 backend/tmp/storage/*
 backend/tmp/*.txt
 backend/storage/*
-backend/storage/*.
+backend/storage/*
+backend/.gitignore
 !.keep
 
 
@@ -62,5 +63,5 @@ master.key
 
 # Ignore node_modules
 node_modules/
-
+frontend/.gitignore
 # Ignore uploaded files in development
