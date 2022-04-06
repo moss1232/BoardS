@@ -39,6 +39,7 @@ backend/tmp/*.txt
 backend/storage/*
 backend/storage/*
 backend/.gitignore
+backend/config/master.key
 !.keep
 
 
