@@ -40,7 +40,6 @@ backend/storage/*
 backend/storage/*
 backend/.gitignore
 backend/config/master.key
-backend/config/credentials.yml.enc
 !.keep
 
 
