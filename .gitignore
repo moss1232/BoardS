@@ -18,9 +18,6 @@ pids
 node_modules/
 
 # Nuxt.js build / generate output
-dist
-
-
 
 .pnp.*
 *.rbc
