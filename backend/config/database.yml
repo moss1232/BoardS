@@ -40,13 +40,13 @@ default: &default
 
 development:
   <<: *default
-  database: db/mysql_development
+  database: app_development
 
 test:
   <<: *default
-  database: db/mysql_test
+  database: app_test
 
 production:
   <<: *default
-  database: db/mysql_production
+  database: app_production
   use_metadata_table: false
