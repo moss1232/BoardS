@@ -1,5 +1,9 @@
 # Build Backend Packages
 FROM ruby:3.0.3
+
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+
 WORKDIR /backend
 COPY ./ /backend
 RUN apt-get update -qq && \

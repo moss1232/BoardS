@@ -8,6 +8,7 @@ services:
       - ./backend/db/mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: Mohiro1996
+      TZ: Asia/Tokyo
     user: 1002:1002
 
   backend:
@@ -29,7 +30,7 @@ services:
     depends_on:
       - db
     ports:
-      - 3000:3000 # ポートフォワード
+      - 5000:3000 # ポートフォワード
     # networks:
     #   app_net:
     #     ipv4_address: '172.20.0.3'
@@ -41,7 +42,7 @@ services:
       - ./frontend:/app
     ports:
       - 3000:3000
-    command: "npm run dev"
+    command: "npm run serve"
 # networks:
 #   app_net:
 #     driver: bridge
