@@ -41,13 +41,13 @@ module BoardS
     # host
     # config.hosts << "product.com"
 
-#     config.middleware.insert_before 0, Rack::Cors do
-#   allow do
-#     origins "*"
-#     resource "*",
-#       headers: :any,
-#   end
-# end
+    #     config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #     origins "*"
+    #     resource "*",
+    #       headers: :any,
+    #   end
+    # end
 
     # config.session_store :cookie_store, key: '_interslice_session'
     # config.middleware.use ActionDispatch::Cookies # Required for all session management

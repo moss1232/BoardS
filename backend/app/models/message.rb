@@ -18,10 +18,6 @@ class Message < ApplicationRecord
   end
 
   def message_files_url
-    if files.attached?
-      url_for(files[0].variant(resize_to_limit: [200, 200]))
-    else
-      nil
-    end
+    url_for(files[0].variant(resize_to_limit: [200, 200])) if files.attached?
   end
 end
