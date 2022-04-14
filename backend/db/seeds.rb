@@ -45,12 +45,12 @@ subuser2.avatar.attach(
   email = "example-#{n + 1}@gmail.com"
   password = 'password'
   user =
-    User.create!(
-      name: name,
-      email: email,
-      password: password,
-      password_confirmation: password
-    )
+  User.create!(
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password
+  )
   user.avatar.attach(
     io: File.open('public/images/default.png'),
     filename: 'default.png',
@@ -59,14 +59,14 @@ subuser2.avatar.attach(
   )
 end
 
-@user_ids = User.pluck(:id)
-Team.create(name: 'Main', password: 'Main', user_ids: @user_ids.sample(4))
-Team.create(name: 'test', password: 'password', user_ids: [subuser1.id])
+user_ids = User.pluck(:id)
+Team.create(name: 'Main', password: 'Main', user_ids: user_ids.sample(4))
+Team.create(name: 'test', password: 'password', user_ids: user_ids.sample(4))
 
 4.times do |n|
   name = "team-#{n + 1}"
   password = 'password'
-  Team.create!(name: name, password: password, user_ids: @user_ids.sample(4))
+  Team.create!(name: name, password: password, user_ids: user_ids.sample(4))
 end
 
 team = Team.find_by(id: mainuser.id)
@@ -78,12 +78,11 @@ team.avatar.attach(
 )
 
 @team_ids = Team.pluck(:id)
-
 20.times do |n|
   Message.create!(
     title: "タイトル-#{n + 1}",
     content: 'コンテンツ',
-    user_id: @user_ids.sample,
+    user_id: user_ids.sample,
     team_id: @team_ids.sample
   )
 end

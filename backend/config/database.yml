@@ -17,14 +17,14 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: BoardS_production
+  database: db/mysql_production
   reconnect: false
   pool: 5
   username: <%= Rails.application.credentials.db[:username] %>
   host: <%= Rails.application.credentials.db[:host] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials.db[:password] %>
   timeout: 5000
-  socket: /var/lib/mysql/mysql.sock
+  use_metadata_table: false
 # docker-compose
 # default: &default
 #   adapter: mysql2
