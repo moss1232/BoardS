@@ -1,5 +1,5 @@
 class Api::MessagesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
     team = Team.find_by(id: params[:team_id])

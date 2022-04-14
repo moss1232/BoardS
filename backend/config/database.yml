@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: development.sqlite3
+  database: db/development.sqlite3
 
 
 test:
@@ -19,7 +19,7 @@ test:
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  database: test.sqlite3
+  database: db/test.sqlite3
 
 production:
   adapter: mysql2

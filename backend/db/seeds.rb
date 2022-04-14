@@ -82,7 +82,7 @@ p("チームを作成しました")
 
 @team_ids = Team.pluck(:id)
 
-30.times do |n|
+20.times do |n|
   Message.create!(
     title: "タイトル-#{n+1}",
     content: "コンテンツ",
@@ -101,7 +101,7 @@ message.files.attach(
 
 p("メッセージを作成しました")
 
-50.times do |n|
+30.times do |n|
   month = rand(3..5)
   day = rand(1..28)
   team = Team.find_by(id: @team_ids.sample)
