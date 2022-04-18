@@ -7,23 +7,17 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## 概要
 
-部活やサークルといった数十人規模のカジュアルなグループ内の情報共有サービス  
+メッセージ投稿や共有カレンダー機能を実装したの情報共有サービス  
 
 ![boards](https://user-images.githubusercontent.com/86171064/161185716-b6579727-0ad4-4833-92bb-e6b5731928b5.gif)
 
-# 制作背景
-## 既存サービスの問題
+## 制作背景
 
-情報共有サービスは有名なものとして Slack や Teams などがあげられるが、これらはサービス確定に伴い機能が追加され、慣れれば便利だが初見では使い方が直感的に分かりづらいという問題点がある。  
-これが顕著に表れる例として、以下のような状況が考えられる。  
-<例> サークルで簡単な情報共有をする際に、グループ全員に使い方を習得させるのが困難
+私は大学院で研究をしていたころ，数人のチームで同じテーマの研究を扱っていました．その時はメールを使って教授とやりとりをしており，過去のメールを探したり，日程調整を文字ベースでしたりと色々面倒な点があったため，このサービスを作りました．
 
-## 解決方法
+## 工夫した点
 
-本プロダクトでは初見でも直感的に使用方法が分かるよう、以下の点を重視し解決を図った
-
-- シンプルで分かりやすい UI
-- SPA化による UX 向上
+直感的に使い方が分かるような使用にしました．これは，既存の情報共有サービスの問題点として，登録に手間がかかったり，機能が多く使い方を覚えるのに時間がかかることがあるためです．技術的にはCSSフレームワークを多用した点，SPA化しスムーズに動作させる点等があげられます．
 
 # 設計詳細
 ## 基本機能
@@ -34,16 +28,14 @@ url:<https://board-vue-frontend.herokuapp.com>
 - 画像投稿
 - 共有カレンダー
 
-## 補助機能
-- レスポンシブデザイン
-- バリデーション
-  - フロントエンド：vuelidate
-  - バックエンド：devise_auth_token認証，Active Record
-
 ## 使用技術
 
-- フロントエンド：HTML/CSS/Javascript/Vue.JS/Vuex/VueRouter/Vuetify
+- フロントエンド：HTML/CSS/Javascript/Vue.JS/
+  - 拡張機能：Vuex/VueRouter/Vuetify/Vuelidate
 - バックエンド：Ruby/Rails(APIモード)
+  - テスト：Rspec
+  - gem：devise-auth-token/rubocop
+- インフラ：Heroku/AWS(S3)
 ## ER 図
 
 <p align="center">
@@ -55,5 +47,4 @@ url:<https://board-vue-frontend.herokuapp.com>
 ![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/161284440-6d34b9ff-0ebc-4155-a72b-878d83c4f787.png)
 
 ## 作者
-
-
+url:<https://profile-site3009.herokuapp.com/>
