@@ -1,22 +1,25 @@
-# module ObjectCreators
-#   def sign_in(user)
-#     post '/auth/sign_in/', params: user
-#     response.headers.slice('client', 'access-token', 'uid')
-#     p(response.headers)
-#   end
+module ObjectCreators
 
-#   def current_team_id
-#     @user = User.find_by(name: 'Main')
-#     team = @user.teams.first
-#     team.id
-#   end
+  def auth_tokens(user)
+    post '/auth/sign_in/', params: user
+ {"uid": response.header['uid'], "client": response.header['client'], "access-token": response.header['access-token'] }
+  end
 
-#   def main_user
-#     @user = { id: 1, name: 'Main', email: 'a@gmail.com', password: 'aaaaaa' }
-#     @user
-#   end
+  def team_id(user)
+    team = Team.find_by(name: user[:name])
+    team_id = team.id
+    return team_id
+  end
 
-#   def params_for_sign_in
-#     { name: 'Main', email: 'a@gmail.com', password: 'aaaaaa' }
-#   end
-# end
+  def user_id(user)
+    user = User.find_by(name: user[:name])
+    user_id = user.id
+    return user_id
+  end
+  
+  def main_user
+    @user = { id: 1, name: 'Main', email: 'a@gmail.com', password: 'aaaaaa' }
+    #     @user = User.find_by(name: "Main")
+    return @user
+  end
+end

@@ -3,8 +3,7 @@ module Api
     before_action :authenticate_user!
 
     def index
-      teams = current_user.teams.all
-      current_team = teams.find_by(id: params[:team_id])
+      current_team = Team.find_by(id: params[:team_id])
       render json: current_team.messages.all, methods: [:message_user_avatar]
     end
 
@@ -18,8 +17,8 @@ module Api
       message = current_user.messages.new(message_params)
       if message.save
         render json: message, methods: [:message_user_avatar]
-      else
-        render json: message.errors, status: :unprocessable_entity
+      # else
+      #   render json: message.errors, status: :unprocessable_entity
       end
     end
 

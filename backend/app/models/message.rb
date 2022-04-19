@@ -3,10 +3,6 @@ class Message < ApplicationRecord
 
   has_many_attached :files
 
-  # do |attachable|
-  #   attachable.variant :thumb, resize_to_limit: [50, 50]
-  # endU
-
   belongs_to :user
   belongs_to :team
 
