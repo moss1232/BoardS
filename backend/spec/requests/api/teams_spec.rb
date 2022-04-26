@@ -3,68 +3,78 @@ require 'rails_helper'
 RSpec.describe "teams", type: :request do
 
   let(:user) { main_user }
-  let(:team_params) {{name: "Main", password: "Main"}}
+  let(:team_params) {{name: "main", password: "main"}}
+  # let(:sub_team_params) {{name: "sub", password: "sub"}}
 
-  describe 'index' do
-    context "未ログイン" do
-      example 'HTTPステータス:401' do
+  describe 'check before_action :authenticate_user!' do
+    context "OK" do
+      context "ログイン済みユーザー" do
+        it 'HTTPステータス:200' do
+          get "/api/teams/", headers: auth_tokens(user)
+          expect(response).to have_http_status(200)
+        end
+      end
+    end
+    context "NG" do
+    context "未ログインユーザー" do
+      it 'HTTPステータス:401' do
         get "/api/teams/"
         expect(response).to have_http_status(401)
       end
-    end
-
-    context "ログイン済み" do
-      before do
-        get "/api/teams/", headers: auth_tokens(user)
       end
-      example 'HTTPステータス:200' do
+    end
+    
+  end
+  
+  describe 'index' do
+    context "OK" do
+      it 'HTTPステータス:200' do
+        get "/api/teams/", headers: auth_tokens(user)
         expect(response).to have_http_status(200)
       end
     end
   end
-
-# method:show
+  
   describe 'create' do
-    context "未ログイン" do
-      example 'HTTPステータス:401' do
-        post "/api/teams/", params: team_params
-        expect(response).to have_http_status(401)
+    context "OK" do
+      it 'HTTPステータス:200' do
+        post "/api/teams/", headers: auth_tokens(user), params: team_params
+        # post "/api/teams/", headers: auth_tokens(user), params: sub_team_params
+        expect(response).to have_http_status(200)
       end
     end
 
-    # context "ログイン済み" do
-    #   before do
-    #     post "/api/teams/", headers: auth_tokens(user), params: team_params
-    #   end
-    #   example '作成済みのチーム' do
-    #     expect(response).to have_http_status(404)
-    #   end
-    # end
+    context "NG" do
+      context '作成済みのチーム' do
+        it 'HTTPステータス:422' do
+          post "/api/teams/", headers: auth_tokens(user), params: team_params
+          post "/api/teams/", headers: auth_tokens(user), params: team_params
+        expect(response).to have_http_status(422)
+      end
+      end
+      end
   end
 
   describe 'search' do
-    context "未ログイン" do
-      example 'HTTPステータス:401' do
-        get "/api/teams/search", params: team_params
-        expect(response).to have_http_status(401)
-      end
-    end
-    context "ログイン済み" do
-      example 'HTTPステータス:401' do
+    context "OK" do
+      it 'HTTPステータス:200' do
         get "/api/teams/search", headers: auth_tokens(user), params: team_params
         expect(response).to have_http_status(200)
       end
     end
-
+    
+    context "NG" do
+      context '未登録のチーム' do
+        it 'HTTPステータス:422' do
+          get "/api/teams/search", headers: auth_tokens(user), params: team_params
+          # get "/api/teams/search", headers: auth_tokens(user), params: team_params
+        expect(response).to have_http_status(422)
+      end
+      end
+      end
   end
 
   describe 'join' do
-    context "未ログイン" do
-      example 'HTTPステータス:401' do
-        post "/api/teams/join", params: team_params
-        expect(response).to have_http_status(401)
-      end
-    end
 
     # context "ログイン済み" do
     #   example '参加済みのユーザー' do
@@ -75,18 +85,10 @@ RSpec.describe "teams", type: :request do
   end
 
   describe 'leave' do
-    context "未ログイン" do
-      example 'HTTPステータス:401' do
-        delete "/api/teams/leave", params: team_params
-        expect(response).to have_http_status(401)
-      end
-    end
 
-    context "ログイン済み" do
-      example 'HTTPステータス:200' do
+      it 'HTTPステータス:200' do
       delete "/api/teams/leave", headers: auth_tokens(user), params: team_params
         expect(response).to have_http_status(200)
       end
-    end
   end
 end
