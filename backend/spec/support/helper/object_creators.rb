@@ -19,7 +19,6 @@ module ObjectCreators
   
   def main_user
     @user = { id: 1, name: 'Main', email: 'a@gmail.com', password: 'aaaaaa' }
-    #     @user = User.find_by(name: "Main")
     return @user
   end
 end
