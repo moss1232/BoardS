@@ -3,5 +3,7 @@
 #     name {"title"}
 #     start {Date.new(2021, 1, 1)}
 #     end {Date.new(2021, 1, 2)}
+#     association :user
+#     association :team
 #   end
 # end
