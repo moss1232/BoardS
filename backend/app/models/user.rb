@@ -14,11 +14,7 @@ class User < ApplicationRecord
   has_many :user_team_relationships, dependent: :destroy
   has_many :teams, through: :user_team_relationships
 
-  def current_user_avatar
-    user.avatar.attached? ? url_for(user.avatar) : nil
-  end
-
-  def profile_avatar
+  def team_avatar
     avatar.attached? ? url_for(avatar) : nil
   end
 

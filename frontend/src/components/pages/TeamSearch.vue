@@ -133,7 +133,7 @@ export default {
         this.snackbar = true;
       } else if (res.data !== null) {
         this.name = res.data.name;
-        this.avatar = res.data.team_avatar_url;
+        this.avatar = res.data.team_avatar;
         this.dialog = true;
       }
     },

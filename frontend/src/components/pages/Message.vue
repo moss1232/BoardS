@@ -15,7 +15,7 @@
                 }"
               >
                 <v-list-item-avatar>
-                  <img alt="Avatar" :src="message.message_user_avatar" />
+                  <img alt="Avatar" :src="message.user_avatar" />
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title class="hidden-xs-only" sm="5" md="3"
@@ -63,7 +63,7 @@ export default {
         this.fetchMessages(newVal);
       }
     );
-    this.token = window.localStorage.getItem("access-token")
+    this.token = window.localStorage.getItem("access-token");
   },
 };
 </script>

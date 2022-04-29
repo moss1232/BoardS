@@ -19,12 +19,5 @@ end
       expect(message).to be_invalid
     end
   end
-  
-  describe 'インスタンスの検証' do
-      it '有効です'  do
-        
-      end
-  end
-  
 end
 

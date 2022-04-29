@@ -15,9 +15,9 @@
             >
               <v-list-item-avatar size="24">
                 <img
-                  v-if="team.team_avatar_url"
+                  v-if="team.team_avatar"
                   alt="Avatar"
-                  :src="team.team_avatar_url"
+                  :src="team.team_avatar"
                 />
                 <img v-else src="../../../public/images/default.png" />
               </v-list-item-avatar>
@@ -63,8 +63,8 @@
               params: { team_id: $route.params['team_id'] },
             }"
           >
-          <v-icon v-if="$vuetify.breakpoint.xs">mdi-message-text</v-icon>
-          <div v-else>message</div>
+            <v-icon v-if="$vuetify.breakpoint.xs">mdi-message-text</v-icon>
+            <div v-else>message</div>
           </v-tab>
           <v-tab
             :to="{
@@ -72,14 +72,14 @@
               params: { team_id: $route.params['team_id'] },
             }"
           >
-          <v-icon v-if="$vuetify.breakpoint.xs">mdi-calendar</v-icon>
-          <div v-else>Calendar</div>
+            <v-icon v-if="$vuetify.breakpoint.xs">mdi-calendar</v-icon>
+            <div v-else>Calendar</div>
           </v-tab>
         </v-tabs>
       </template>
-  <v-btn icon fab right fixed @click="logout" v-if="log_in">
-    <v-icon>mdi-logout</v-icon>
-  </v-btn>
+      <v-btn icon fab right fixed @click="logout" v-if="log_in">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
       <v-btn icon fab right fixed @click="redirectToLogin" v-else color="red">
         <v-icon>mdi-login</v-icon>
       </v-btn>

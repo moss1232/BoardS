@@ -73,8 +73,8 @@ export default {
         },
       });
       this.name = res.data.name;
-      this.file = res.data.profile_avatar;
-      this.prefile = res.data.profile_avatar;
+      this.file = res.data.team_avatar;
+      this.prefile = res.data.team_avatar;
       this.user_id = res.data.id;
     },
     async updateUser() {
@@ -82,7 +82,7 @@ export default {
         this.error = null;
         const params = new FormData();
         params.append("name", this.name);
-        if(this.file != this.prefile){
+        if (this.file != this.prefile) {
           params.append("avatar", this.file);
         }
         const res = await axios.put(

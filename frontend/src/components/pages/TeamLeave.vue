@@ -3,11 +3,7 @@
     <v-list>
       <v-list-item v-for="team in teams" :key="team.name">
         <v-list-item-avatar>
-          <img
-            v-if="team.team_avatar_url"
-            alt="Avatar"
-            :src="team.team_avatar_url"
-          />
+          <img v-if="team.team_avatar" alt="Avatar" :src="team.team_avatar" />
           <img v-else src="../../../public/images/default.png" />
         </v-list-item-avatar>
         <v-list-item-title>{{ team.name }}</v-list-item-title>
@@ -18,10 +14,9 @@
         </v-list-item-icon>
       </v-list-item>
     </v-list>
-                <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
-              {{ snackbar_text }}
-            </v-snackbar>
-
+    <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
+      {{ snackbar_text }}
+    </v-snackbar>
   </v-card>
 </template>
 
@@ -30,7 +25,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
-        file: null,
+    file: null,
     showPassword: false,
     dialog: false,
     password: "",

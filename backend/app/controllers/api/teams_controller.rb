@@ -3,7 +3,7 @@ module Api
     before_action :authenticate_user!
 
     def index
-      render json: current_user.teams.all, methods: [:team_avatar_url]
+      render json: current_user.teams.all, methods: [:team_avatar]
     end
 
     def create
@@ -11,15 +11,15 @@ module Api
       team.set_defaul_avatar unless params[:avatar]
 
       if team.save
-        render json: team, methods: [:team_avatar_url]
+        render json: team, methods: [:team_avatar]
       else
         render json: team.errors, status: :unprocessable_entity
       end
     end
 
     def search
-      team = Team.find_by(name: params[:name])
-      render json: team, methods: [:team_avatar_url]
+      team = Team.find_by(name: params[:name], password: params[:password])
+      render json: team, methods: [:team_avatar]
     end
 
     def join
@@ -28,7 +28,7 @@ module Api
         render json: team.errors, status: :unprocessable_entity
       else
         current_user.join_team(team)
-        render json: team, methods: [:team_avatar_url]
+        render json: team, methods: [:team_avatar]
       end
     end
 
