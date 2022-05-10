@@ -1,19 +1,11 @@
-# Build Frontend Staticfiles
-FROM node:16.14.2
-
-WORKDIR /frontend
-COPY ./ /frontend
-
+FROM node:16.14.2-alpine as production-stage
+USER node
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+COPY --chown=node:node ./package.json ./
+RUN npm install
+COPY --chown=node:node . .
 RUN npm run build
 
-EXPOSE 8080
-
-# Build Backend Packages
-FROM ruby:3.0.3
-
-WORKDIR /backend
-
-COPY ./ /backend
-
-RUN apt-get update -qq \
-&& bundle install
+FROM nginx
+COPY --from=production-stage /home/node/app/dist /home/node/app
