@@ -1,3 +1,13 @@
+# Build Frontend Staticfiles
+FROM node:16.14.2
+
+WORKDIR /frontend
+COPY ./ /frontend
+
+RUN npm run build
+
+EXPOSE 8080
+
 # Build Backend Packages
 FROM ruby:3.0.3
 
@@ -7,7 +17,3 @@ COPY ./ /backend
 
 RUN apt-get update -qq \
 && bundle install
-
-# ENV LANG C.UTF-8
-# ENV TZ Asia/Tokyo
-# CMD [ "bundle", "exec", "rails", "s" ]

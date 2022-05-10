@@ -1,0 +1,59 @@
+version: "3.8"
+services:
+  db:
+    container_name: db
+    # image: mariadb
+    image: mysql:latest
+    # image: mysql:8.0.28
+    # run: groupmod -g 1002 tomohiro && usermod -u 1002 -g 1002 tomohiro
+    command: --default-authentication-plugin=mysql_native_password
+    # volumes:
+    #   - ./backend/db/mysql_data:/var/lib/mysql
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_ROOT_PASSWORD: Mohiro1996
+      MYSQL_DATABASE: dev
+      MYSQL_USER: tomohiro
+      MYSQL_PASSWORD: Mohiro1996
+    # user: 1002:1002
+
+  # test-db:
+    # container_name: db
+    # image: mysql:8.0.28
+    # command: --default-authentication-plugin=mysql_native_password
+    # volumes:
+    #   - ./backend/db/mysql_data:/var/lib/mysql
+    # environment:
+    #   TZ: Asia/Tokyo
+    #   MYSQL_ROOT_PASSWORD: Mohiro1996
+    #   MYSQL_DATABASE: dev
+    #   MYSQL_USER: tomohiro
+    #   MYSQL_PASSWORD: Mohiro1996
+    #   MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    # user: 1002:1002
+
+  backend:
+    container_name: backend
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./backend
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+
+  frontend:
+    container_name: frontend 
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:8080
+    command: npm run serve
