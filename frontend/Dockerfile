@@ -8,4 +8,5 @@ COPY --chown=node:node . .
 RUN npm run build
 
 FROM nginx
-COPY --from=production-stage /home/node/app/dist /home/node/app
+COPY --from=production-stage /home/node/app/dist /app
+COPY nginx.conf /etc/nginx/nginx.conf
