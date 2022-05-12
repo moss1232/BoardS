@@ -1,5 +1,6 @@
 FROM ruby:3.0.3
 WORKDIR /app
+ENV RAILS_ENV production
 COPY ./ /app
 RUN apt-get update -qq && bundle install
 COPY entrypoint.sh /usr/bin/

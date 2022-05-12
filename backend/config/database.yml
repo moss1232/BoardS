@@ -45,6 +45,12 @@ development:
 #   database: test
 
 production:
-  <<: *default
-  database: prod
-  use_metadata_table: false
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  database: boards-database-1
+  username: <%= Rails.application.credentials.RDS[:username] %>
+  host: <%= Rails.application.credentials.RDS[:host] %>
+  password: <%= Rails.application.credentials.RDS[:password] %>
+  # use_metadata_table: false

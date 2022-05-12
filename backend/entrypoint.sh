@@ -7,7 +7,7 @@ cd /app
 RAILS_ENV=production bin/rails db:create
 RAILS_ENV=production bin/rails db:migrate
 RAILS_ENV=production bin/rails db:seed
-bundle exec rails s -p 3000 -b '0.0.0.0'
+bundle exec rails s -p 3000 --environment production
 
 # change userid and groupid for volume premission
 # usermod -u 1002 -o -m tomohiro
