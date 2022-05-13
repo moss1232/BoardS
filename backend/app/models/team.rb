@@ -7,14 +7,14 @@ class Team < ApplicationRecord
   has_many :users, through: :user_team_relationships
   has_many :messages, dependent: :destroy
   has_many :events, dependent: :destroy
+
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
 
-  def team_avatar
+  def team_avatar_url
     avatar.attached? ? url_for(avatar) : nil
   end
 
-#デフォルトのアバターをセット
   def set_defaul_avatar
     avatar.attach(
       io: File.open('public/images/default.png'),

@@ -57,5 +57,5 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
     Rails.application.routes.default_url_options[:host] = 'localhost'
-  Rails.application.routes.default_url_options[:port] = 3000
+  Rails.application.routes.default_url_options[:port] = 8000
 end

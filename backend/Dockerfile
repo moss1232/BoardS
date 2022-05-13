@@ -1,8 +1,13 @@
+# Build Backend Packages
 FROM ruby:3.0.3
-WORKDIR /app
-ENV RAILS_ENV production
-COPY ./ /app
-RUN apt-get update -qq && bundle install
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+
+WORKDIR /backend
+
+COPY ./ /backend
+
+RUN apt-get update -qq \
+&& bundle install
+
+# ENV LANG C.UTF-8
+# ENV TZ Asia/Tokyo
+# CMD [ "bundle", "exec", "rails", "s" ]

@@ -54,7 +54,7 @@ I, [2022-03-30T17:58:56.260027 #26725]  INFO -- : [02858a1f-07e2-452a-a0c1-b5451
 F, [2022-03-30T17:58:56.260584 #26725] FATAL -- : [02858a1f-07e2-452a-a0c1-b5451359f6b0]   
 [02858a1f-07e2-452a-a0c1-b5451359f6b0] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
 [02858a1f-07e2-452a-a0c1-b5451359f6b0]   
-[02858a1f-07e2-452a-a0c1-b5451359f6b0] app/models/team.rb:15:in `team_avatar'
+[02858a1f-07e2-452a-a0c1-b5451359f6b0] app/models/team.rb:15:in `team_avatar_url'
 [02858a1f-07e2-452a-a0c1-b5451359f6b0] app/controllers/api/teams_controller.rb:5:in `index'
 I, [2022-03-30T17:59:09.335857 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef114ce272] Started GET "/api/teams" for 127.0.0.1 at 2022-03-30 17:59:09 +0900
 I, [2022-03-30T17:59:09.338263 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef114ce272] Processing by Api::TeamsController#index as HTML
@@ -62,7 +62,7 @@ I, [2022-03-30T17:59:09.342361 #26725]  INFO -- : [c672d07d-6e18-4664-a772-8aef1
 F, [2022-03-30T17:59:09.342763 #26725] FATAL -- : [c672d07d-6e18-4664-a772-8aef114ce272]   
 [c672d07d-6e18-4664-a772-8aef114ce272] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
 [c672d07d-6e18-4664-a772-8aef114ce272]   
-[c672d07d-6e18-4664-a772-8aef114ce272] app/models/team.rb:15:in `team_avatar'
+[c672d07d-6e18-4664-a772-8aef114ce272] app/models/team.rb:15:in `team_avatar_url'
 [c672d07d-6e18-4664-a772-8aef114ce272] app/controllers/api/teams_controller.rb:5:in `index'
 I, [2022-03-30T18:13:49.243757 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d] Started POST "/auth/sign_in" for 127.0.0.1 at 2022-03-30 18:13:49 +0900
 I, [2022-03-30T18:13:49.248925 #29820]  INFO -- : [53cf08bb-3f59-4fc7-aae4-de80251b3d8d] Processing by DeviseTokenAuth::SessionsController#create as HTML
@@ -74,7 +74,7 @@ I, [2022-03-30T18:13:49.583194 #29820]  INFO -- : [7f90088b-e442-4d08-86b1-6788a
 F, [2022-03-30T18:13:49.583904 #29820] FATAL -- : [7f90088b-e442-4d08-86b1-6788ad202ab2]   
 [7f90088b-e442-4d08-86b1-6788ad202ab2] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
 [7f90088b-e442-4d08-86b1-6788ad202ab2]   
-[7f90088b-e442-4d08-86b1-6788ad202ab2] app/models/team.rb:15:in `team_avatar'
+[7f90088b-e442-4d08-86b1-6788ad202ab2] app/models/team.rb:15:in `team_avatar_url'
 [7f90088b-e442-4d08-86b1-6788ad202ab2] app/controllers/api/teams_controller.rb:5:in `index'
 I, [2022-03-30T18:30:14.843834 #436]  INFO -- : [c6355790-65bb-40a9-9428-c4893adf36af] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:30:14 +0900
 I, [2022-03-30T18:30:14.875033 #436]  INFO -- : [c6355790-65bb-40a9-9428-c4893adf36af] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
@@ -89,7 +89,7 @@ I, [2022-03-30T18:30:16.886509 #436]  INFO -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8a
 F, [2022-03-30T18:30:16.886981 #436] FATAL -- : [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1]   
 [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
 [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1]   
-[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] app/models/team.rb:15:in `team_avatar'
+[9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] app/models/team.rb:15:in `team_avatar_url'
 [9bd5a4bb-cb03-4a73-b10e-9b0bd8af98d1] app/controllers/api/teams_controller.rb:5:in `index'
 I, [2022-03-30T18:30:22.111912 #436]  INFO -- : [0371f427-ef99-4a5e-b25e-262b9e2d774e] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:30:22 +0900
 I, [2022-03-30T18:30:22.114507 #436]  INFO -- : [0371f427-ef99-4a5e-b25e-262b9e2d774e] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
@@ -104,7 +104,7 @@ I, [2022-03-30T18:31:27.262078 #783]  INFO -- : [29959f36-97d4-43ab-9efb-b0cb549
 F, [2022-03-30T18:31:27.262889 #783] FATAL -- : [29959f36-97d4-43ab-9efb-b0cb5497c610]   
 [29959f36-97d4-43ab-9efb-b0cb5497c610] ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
 [29959f36-97d4-43ab-9efb-b0cb5497c610]   
-[29959f36-97d4-43ab-9efb-b0cb5497c610] app/models/team.rb:15:in `team_avatar'
+[29959f36-97d4-43ab-9efb-b0cb5497c610] app/models/team.rb:15:in `team_avatar_url'
 [29959f36-97d4-43ab-9efb-b0cb5497c610] app/controllers/api/teams_controller.rb:5:in `index'
 I, [2022-03-30T18:34:26.868362 #1543]  INFO -- : [3658f4e9-a4ce-401d-a139-29922175bf04] Started DELETE "/auth/sign_out" for 127.0.0.1 at 2022-03-30 18:34:26 +0900
 I, [2022-03-30T18:34:26.872904 #1543]  INFO -- : [3658f4e9-a4ce-401d-a139-29922175bf04] Processing by DeviseTokenAuth::SessionsController#destroy as HTML
