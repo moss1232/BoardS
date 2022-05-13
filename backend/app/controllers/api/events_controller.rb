@@ -3,13 +3,6 @@ module Api
     before_action :authenticate_user!
 
     def index
-      current_team = Team.find_by(id: params[:team_id])
-      render json: current_team.events.all
-    end
-
-    def show
-      teams = current_user.teams.all
-      current_team = teams.find_by(id: params[:id])
       render json: current_team.events.all
     end
 
@@ -23,7 +16,6 @@ module Api
     end
 
     def update
-      current_team = Team.find_by(id: params[:team_id])
       event = current_team.events.find_by(id: params[:id])
       if event.update(event_params)
         render json: event
@@ -33,8 +25,8 @@ module Api
     end
 
     def destroy
-      current_team = Team.find_by(id: params[:team_id])
       event = current_team.events.find_by(id: params[:id])
+      event.destroy
       render json: event
     end
 
@@ -45,6 +37,7 @@ module Api
         :name,
         :team_id,
         :start,
+        :end,
         :timed,
         :description,
         :color,

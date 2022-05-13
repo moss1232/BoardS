@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         delete :leave
       end
       resources :messages, only: %w[index show create]
-      resources :events, only: %w[index show create destroy update]
+      resources :events, only: %w[index create destroy update]
     end
   end
 end
