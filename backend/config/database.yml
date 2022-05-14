@@ -50,7 +50,10 @@ production:
   reconnect: false
   pool: 5
   database: boards-database-1
-  username: <%= Rails.application.credentials.RDS[:username] %>
-  host: <%= Rails.application.credentials.RDS[:host] %>
-  password: <%= Rails.application.credentials.RDS[:password] %>
+  username: admin
+  host: boards-database-1.cwfivspnohyo.ap-northeast-1.rds.amazonaws.com
+  password: Mohiro1996
+  # username: <%= Rails.application.credentials.RDS[:username] %>
+  # host: <%= Rails.application.credentials.RDS[:host] %>
+  # password: <%= Rails.application.credentials.RDS[:password] %>
   # use_metadata_table: false
