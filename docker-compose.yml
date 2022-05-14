@@ -8,10 +8,10 @@ services:
     #   - ./backend/db/mysql_data:/var/lib/mysql
     environment:
       TZ: Asia/Tokyo
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: dev
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
     # ports:
     #   - 3306:3306
     # user: 1002:1002

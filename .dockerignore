@@ -1,11 +1,11 @@
-dist/
-node_modules/
-vendor/
-log/
-tmp/
-!/tmp/pids/.keep
-!/tmp/sockets/.keep
-.git
-.github/
+# dist/
+# node_modules/
+# vendor/
+# log/
+# tmp/
+# !/tmp/pids/.keep
+# !/tmp/sockets/.keep
+# .git
+# .github/
 # spec/
-storage/
+# storage/

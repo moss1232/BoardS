@@ -31,14 +31,18 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: <%= Rails.application.credentials.db[:username] %>
-  host: <%= Rails.application.credentials.db[:host] %>
-  password: <%= Rails.application.credentials.db[:password] %>
+  username: tomohiro
+  host: db
+  password: Mohiro1996
   timeout: 5000
 
 development:
   <<: *default
   database: dev
+
+# production:
+#   <<: *default
+#   database: dev
 
 # test:
 #   <<: *default
@@ -50,10 +54,7 @@ production:
   reconnect: false
   pool: 5
   database: boards-database-1
-  username: admin
-  host: boards-database-1.cwfivspnohyo.ap-northeast-1.rds.amazonaws.com
-  password: Mohiro1996
-  # username: <%= Rails.application.credentials.RDS[:username] %>
-  # host: <%= Rails.application.credentials.RDS[:host] %>
-  # password: <%= Rails.application.credentials.RDS[:password] %>
+  username: <%= Rails.application.credentials.RDS[:username] %>
+  host: <%= Rails.application.credentials.RDS[:host] %>
+  password: <%= Rails.application.credentials.RDS[:password] %>
   # use_metadata_table: false
