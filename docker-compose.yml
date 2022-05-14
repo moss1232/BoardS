@@ -12,6 +12,8 @@ services:
       MYSQL_DATABASE: dev
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # ports:
+    #   - 3306:3306
     # user: 1002:1002
   
     # test-db:
