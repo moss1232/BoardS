@@ -35,8 +35,6 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./backend
-    tty: true
-    stdin_open: true
     volumes:
       - ./backend:/backend
     depends_on:
