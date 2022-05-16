@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   
   namespace :api do
-    resources :health_check, only: :index    end
+    resources :health_check, only: :index
     resources :users, only: %w[index update]
     resources :teams, only: %w[index create destroy] do
       collection do
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
       resources :messages, only: %w[index show create]
       resources :events, only: %w[index create destroy update]
   end
+end
 end

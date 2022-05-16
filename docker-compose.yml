@@ -29,6 +29,16 @@ services:
     #   MYSQL_USER: ${MYSQL_USER}
     #   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     # user: 1002:1002
+  frontend:
+    container_name: frontend 
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:8080
+    command: npm run serve
 
   backend:
     container_name: backend
@@ -41,14 +51,3 @@ services:
       - db
     ports:
       - 3000:3000
-
-  frontend:
-    container_name: frontend 
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./frontend
-    volumes:
-      - ./frontend:/app
-    ports:
-      - 8080:8080
-    command: npm run serve
