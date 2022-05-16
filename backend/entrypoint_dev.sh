@@ -6,8 +6,7 @@ rm -f /myapp/tmp/pids/server.pid
 # cd /app
 bin/rails db:reset
 # bin/rails db:seed
-bundle exec rails s -p 3000
-#  -b '0.0.0.0'
+bundle exec rails s -p 3000  -b '0.0.0.0'
 
 # change userid and groupid for volume premission
 # usermod -u 1002 -o -m tomohiro
