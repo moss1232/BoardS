@@ -9,4 +9,4 @@ tmp/
 .github/
 spec/
 storage/
-# master.key
+master.key
