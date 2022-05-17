@@ -26,23 +26,23 @@
 #   timeout: 5000
 #   use_metadata_table: false
 # docker-compose
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  pool: 5
-  username: tomohiro
-  host: db
-  password: Mohiro1996
-  timeout: 5000
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   pool: 5
+#   username: tomohiro
+#   host: db
+#   password: Mohiro1996
+#   timeout: 5000
 
-development:
-  <<: *default
-  database: dev
+# development:
+#   <<: *default
+#   database: dev
 
-production:
-  <<: *default
-  database: dev
+# production:
+#   <<: *default
+#   database: dev
 
 # test:
 #   <<: *default
@@ -58,3 +58,31 @@ production:
 #   host: <%= Rails.application.credentials.RDS[:host] %>
 #   password: <%= Rails.application.credentials.RDS[:password] %>
   # use_metadata_table: false
+
+  default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: db/test.sqlite3
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: db/mysql_production
+  reconnect: false
+  pool: 5
+  username: <%= Rails.application.credentials.db[:username] %>
+  host: <%= Rails.application.credentials.db[:host] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  timeout: 5000
+  use_metadata_table: false
