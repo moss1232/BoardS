@@ -66,7 +66,7 @@ export default {
     async signUp() {
       this.error = null;
       try {
-        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth`, {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/api/auth`, {
           name: this.name,
           email: this.email,
           password: this.password,
