@@ -40,21 +40,21 @@ development:
   <<: *default
   database: dev
 
-# production:
-#   <<: *default
-#   database: dev
+production:
+  <<: *default
+  database: dev
 
 # test:
 #   <<: *default
 #   database: test
 
-production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  pool: 5
-  database: boards-database-1
-  username: <%= Rails.application.credentials.RDS[:username] %>
-  host: <%= Rails.application.credentials.RDS[:host] %>
-  password: <%= Rails.application.credentials.RDS[:password] %>
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   pool: 5
+#   database: boards-database-1
+#   username: <%= Rails.application.credentials.RDS[:username] %>
+#   host: <%= Rails.application.credentials.RDS[:host] %>
+#   password: <%= Rails.application.credentials.RDS[:password] %>
   # use_metadata_table: false
