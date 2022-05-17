@@ -65,7 +65,7 @@ export default {
       this.file = selectedFile;
     },
     async fetchUser() {
-      const res = await axios.get(`${process.env.VUE_APP_API_URL}/api/users`, {
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users`, {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
@@ -86,7 +86,7 @@ export default {
           params.append("avatar", this.file);
         }
         const res = await axios.put(
-          `${process.env.VUE_APP_API_URL}/api/users/${this.user_id}`,
+          `${process.env.VUE_APP_API_URL}/users/${this.user_id}`,
           params,
           {
             headers: {

@@ -110,7 +110,7 @@ export default {
     async logout() {
       try {
         const res = await axios.delete(
-          `${process.env.VUE_APP_API_URL}/api/auth/sign_out`,
+          `${process.env.VUE_APP_API_URL}/auth/sign_out`,
           {
             headers: {
               uid: window.localStorage.getItem("uid"),
