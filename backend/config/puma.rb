@@ -43,4 +43,5 @@ preload_app!
 plugin :tmp_restart
 
 # production
-# bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+# app_root = File.expand_path("../..", __FILE__)
+# bind "unix://#{app_root}/tmp/sockets/puma.sock"
