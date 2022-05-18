@@ -3,9 +3,9 @@
   <img src="https://user-images.githubusercontent.com/86171064/160265284-5206e80c-158d-4841-a4fd-0478c44fdc31.png" />
 </p>
 
-url:<https://board-vue-frontend.herokuapp.com>
+url:<Boards-1134248987.ap-northeast-1.elb.amazonaws.com>
 
-## 概要
+# 概要
 
 チームメンバーとの情報共有を目的としたサービスです．
 メッセージ投稿機能や共有カレンダー機能などを実装しています
@@ -52,17 +52,17 @@ url:<https://board-vue-frontend.herokuapp.com>
     - Docker
       - DockerCompose
 
-## ER 図
+# ER 図
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/86171064/158748878-8332c240-d46a-43fc-9c8a-e087ef260f91.png" />
 </p>
 
-## インフラ図
+# インフラ図
 
 ![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/168984415-8dc902de-b74f-4e38-aad3-1cdcb8242b83.png)
 - S3はActiveRecordのファイルを保管
 - SSMはRDSへの接続情報およびRailsのmasterkeyを保管
 
-## 作者
+# 作者
 url:<https://profile-site3009.herokuapp.com/>
