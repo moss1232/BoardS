@@ -7,35 +7,51 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## 概要
 
-メッセージ投稿や共有カレンダー機能を実装したの情報共有サービス  
+チームメンバーとの情報共有を目的としたサービスです．
+メッセージ投稿機能や共有カレンダー機能などを実装しています
 
 ![boards](https://user-images.githubusercontent.com/86171064/161185716-b6579727-0ad4-4833-92bb-e6b5731928b5.gif)
 
-## 制作背景
+# 機能
 
-私は大学院で研究をしていたころ，数人のチームで同じテーマの研究を扱っていました．その時はメールを使って教授とやりとりをしており，過去のメールを探したり，日程調整を文字ベースでしたりと色々面倒な点があったため，このサービスを作りました．
-
-## 工夫した点
-
-直感的に使い方が分かるような使用にしました．これは，既存の情報共有サービスの問題点として，登録に手間がかかったり，機能が多く使い方を覚えるのに時間がかかることがあるためです．技術的にはCSSフレームワークを多用した点，SPA化しスムーズに動作させる点等があげられます．
-
-# 設計詳細
-## 基本機能
-
-- ログイン/ログアウト
+- ログイン/ログアウト/ゲストログイン
 - グループ作成、検索、削除
 - メッセージ投稿
 - 画像投稿
 - 共有カレンダー
 
-## 使用技術
+# 工夫した点
 
-- フロントエンド：HTML/CSS/Javascript/Vue.JS/
-  - 拡張機能：Vuex/VueRouter/Vuetify/Vuelidate
-- バックエンド：Ruby/Rails(APIモード)
-  - テスト：Rspec
-  - gem：devise-auth-token/rubocop
-- インフラ：Heroku/AWS(S3)
+- フロントエンド，バックエンドの開発分離，SPA化
+  - Railsをjsonデータを返すAPIモードで採用
+  - axiosを用いた非同期処理
+- Dockerの実装
+  - 開発環境ではDockerComposeを用い，複数コンテナを1コマンドで同時起動
+  - 本番環境ではfargateを採用し，サーバーレス化
+- Vuex, Vuerouter, ActiveRecodeなどのライブラリの採用
+  - Vuexでステート管理
+  - VuetifyでUI向上，レスポンシブデザインを実現
+  - Vuerouterで画面遷移を無くし，SPA化
+  - Vuelidateでフロントエンドでもフォーム入力などにバリデーションを実装
+  - ActiveRecordで画像投稿機能を実装
+  - RspecでAPIのrequest,modelSpecなどを実装
+- インフラにAWSを実装
+# 使用技術
+
+- フロントエンド
+  - Vue.JS 2.
+    - 主要ライブラリ：Vuex/VueRouter/Vuetify/Vuelidate
+- バックエンド
+  - Ruby/Rails(APIモード)
+    - 主要ライブラリ：Rspec/ActiveRecord/devise-auth-token/rubocop/aws-sdk-s3/cors
+- インフラ
+    - AWS
+      - コンテナ技術：ECS(fargate)
+      - DB：RDS(Mysql)
+      - その他：S3, SSM, ALB
+    - Docker
+      - DockerCompose
+
 ## ER 図
 
 <p align="center">
@@ -44,7 +60,9 @@ url:<https://board-vue-frontend.herokuapp.com>
 
 ## インフラ図
 
-![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/161284440-6d34b9ff-0ebc-4155-a72b-878d83c4f787.png)
+![インフラ図 drawio (1)](https://user-images.githubusercontent.com/86171064/168984415-8dc902de-b74f-4e38-aad3-1cdcb8242b83.png)
+- S3はActiveRecordのファイルを保管
+- SSMはRDSへの接続情報およびRailsのmasterkeyを保管
 
 ## 作者
 url:<https://profile-site3009.herokuapp.com/>
