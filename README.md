@@ -3,7 +3,7 @@
   <img src="https://user-images.githubusercontent.com/86171064/160265284-5206e80c-158d-4841-a4fd-0478c44fdc31.png" />
 </p>
 
-url:<Boards-1134248987.ap-northeast-1.elb.amazonaws.com>
+url:<http://boards-1134248987.ap-northeast-1.elb.amazonaws.com/>
 
 # 概要
 
