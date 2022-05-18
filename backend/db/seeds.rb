@@ -87,7 +87,6 @@ team.avatar.attach(
   )
 end
 
-message = Message.find_by(id: mainuser.id)
 message.files.attach(
   io: File.open('public/images/bascketball.png'),
   filename: 'bascketball.png',

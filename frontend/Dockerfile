@@ -9,4 +9,5 @@ RUN npm run build
 
 FROM nginx
 COPY --from=production-stage /home/node/app/dist /app
+RUN chmod -R 777 /app
 COPY nginx.conf /etc/nginx/nginx.conf

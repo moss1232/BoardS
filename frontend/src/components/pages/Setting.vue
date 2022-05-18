@@ -65,7 +65,7 @@ export default {
       this.file = selectedFile;
     },
     async fetchUser() {
-      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users`, {
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/api/users`, {
         headers: {
           uid: window.localStorage.getItem("uid"),
           "access-token": window.localStorage.getItem("access-token"),
