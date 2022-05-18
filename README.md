@@ -65,5 +65,5 @@ url:<http://boards-1134248987.ap-northeast-1.elb.amazonaws.com/>
 - S3はActiveRecordのファイルを保管
 - SSMはRDSへの接続情報およびRailsのmasterkeyを保管
 
-# 作者
-url:<https://profile-site3009.herokuapp.com/>
+<!-- # 作者
+url:<https://profile-site3009.herokuapp.com/> -->
