@@ -39,18 +39,19 @@ url:<http://boards-1134248987.ap-northeast-1.elb.amazonaws.com/>
 # 使用技術
 
 - フロントエンド
-  - Vue.JS 2.
-    - 主要ライブラリ：Vuex/VueRouter/Vuetify/Vuelidate
+  - Vue.JS 2.6.1
+  - VueCLI 5.0.4
+    - 主要ライブラリ：Vuex/VueRouter/Vuetify/Vuelidate/Axios
 - バックエンド
-  - Ruby/Rails(APIモード)
+  - Ruby 3.0.3/Rails 6.1.5(APIモード)
     - 主要ライブラリ：Rspec/ActiveRecord/devise-auth-token/rubocop/aws-sdk-s3/cors
 - インフラ
     - AWS
       - コンテナ技術：ECS(fargate)
       - DB：RDS(Mysql)
       - その他：S3, SSM, ALB
-    - Docker
-      - DockerCompose
+    - Docker 20.10.14
+      - DockerCompose 1.29.2
 
 # ER 図
 
