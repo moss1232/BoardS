@@ -53,8 +53,8 @@ export default {
       );
       this.title = res.data.title;
       this.content = res.data.content;
-      this.files = res.data.attached_file;
-      this.avatar = res.data.user_avatar;
+      this.files = res.data.message_files_url;
+      this.avatar = res.data.message_user_avatar;
     },
   },
 

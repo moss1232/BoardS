@@ -73,8 +73,8 @@ export default {
         },
       });
       this.name = res.data.name;
-      this.file = res.data.team_avatar;
-      this.prefile = res.data.team_avatar;
+      this.file = res.data.profile_avatar;
+      this.prefile = res.data.profile_avatar;
       this.user_id = res.data.id;
     },
     async updateUser() {

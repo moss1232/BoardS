@@ -113,7 +113,7 @@ export default {
 
     async searchTeam() {
       const res = await axios.get(
-        `${process.env.VUE_APP_API_URL}/teams/search`,
+        `${process.env.VUE_APP_API_URL}/api/teams/search`,
         {
           headers: {
             uid: window.localStorage.getItem("uid"),
@@ -133,7 +133,7 @@ export default {
         this.snackbar = true;
       } else if (res.data !== null) {
         this.name = res.data.name;
-        this.avatar = res.data.team_avatar;
+        this.avatar = res.data.team_avatar_url;
         this.dialog = true;
       }
     },

@@ -15,9 +15,9 @@
             >
               <v-list-item-avatar size="24">
                 <img
-                  v-if="team.team_avatar"
+                  v-if="team.team_avatar_url"
                   alt="Avatar"
-                  :src="team.team_avatar"
+                  :src="team.team_avatar_url"
                 />
                 <img v-else src="../../../public/images/default.png" />
               </v-list-item-avatar>
