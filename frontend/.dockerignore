@@ -1,0 +1,6 @@
+dist/
+node_modules/
+vendor/
+log/
+storage/
+Dockerfile
