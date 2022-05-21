@@ -12,6 +12,9 @@ services:
       MYSQL_DATABASE: dev
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+    # user: 1002:1002
+    # ports:
+    #   - 3307:3306
 
   frontend:
     container_name: frontend 
@@ -31,7 +34,9 @@ services:
       context: ./backend
     env_file:
       - backend.env
-    command: bash -c "bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # user: 1002:1002
+    # command: bash -c "./wait-for-it.sh db:3306 --timeout=5"
+    command: bash -c "./wait-for-it.sh db:3306 --timeout=5"
     volumes:
       - ./backend:/backend
     depends_on:

@@ -31,9 +31,9 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: <%= Rails.application.credentials.db[:username] %>
-  host: <%= Rails.application.credentials.db[:host] %>
-  password: <%= Rails.application.credentials.db[:password] %>
+  username: tomohiro
+  host: db
+  password: Mohiro1996
   timeout: 5000
 
 development:

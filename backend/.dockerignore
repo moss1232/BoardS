@@ -3,7 +3,6 @@ tmp/
 !/tmp/sockets/.keep
 spec/
 storage/
-master.key
 Dockerfile*
 .DS_Store
 db/*.sqlite3
